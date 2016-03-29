@@ -1,0 +1,12 @@
+[submodule "src/CAHAL"]
+	path = src/CAHAL
+	url = https://github.com/bcarr092/CAHAL.git
+[submodule "src/CPCommon"]
+	path = src/CPCommon
+	url = https://github.com/bcarr092/CPCommon.git
+[submodule "src/CSignal"]
+	path = src/CSignal
+	url = https://github.com/bcarr092/CSignal.git
+[submodule "src/DarwinHelper"]
+	path = src/DarwinHelper
+	url = https://github.com/bcarr092/DarwinHelper.git
