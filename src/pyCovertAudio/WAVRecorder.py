@@ -1,94 +1,97 @@
 import wave
 import md5
 
-from pyCovertAudio_lib  import *
-from Debug              import Debug
+from pyCovertAudio_lib import *
+from Debug import Debug
 
-write           = False
+write = False
 bufferedSamples = ""
 
-def bufferSamples( in_device, in_buffer, in_buffer_length ):                         
-  global bufferedSamples
 
-  if( write ):
-    bufferedSamples = bufferedSamples + in_buffer
+def bufferSamples(in_device, in_buffer, in_buffer_length):
+    global bufferedSamples
 
-  return( "" )
+    if(write):
+        bufferedSamples = bufferedSamples + in_buffer
+
+    return("")
+
 
 class WAVRecorder:
-  def __init__( self, fileName, numberOfChannels, bitDepth, sampleRate ):
-    self.numberOfChannels = numberOfChannels
-    self.bitDepth         = bitDepth
-    self.sampleRate       = sampleRate
-    self.initialized      = False
 
-    self.fileName = Debug.instance.getOutputDirectory()+'/'+fileName
+    def __init__(self, fileName, numberOfChannels, bitDepth, sampleRate):
+        self.numberOfChannels = numberOfChannels
+        self.bitDepth = bitDepth
+        self.sampleRate = sampleRate
+        self.initialized = False
 
-  def initRecord( self, device ):
-    if  (                               \
-      device.hasAppropriateStream (     \
-            CAHAL_DEVICE_INPUT_STREAM,  \
-            self.numberOfChannels,      \
-            self.bitDepth,              \
-            self.sampleRate             \
-                                  )     \
+        self.fileName = Debug.instance.getOutputDirectory() + '/' + fileName
+
+    def initRecord(self, device):
+        if (
+                device.hasAppropriateStream(
+                    CAHAL_DEVICE_INPUT_STREAM,
+                    self.numberOfChannels,
+                    self.bitDepth,
+                    self.sampleRate
+                )
         ):
 
-      flags =                                   \
-        CAHAL_AUDIO_FORMAT_FLAGISSIGNEDINTEGER  \
-        | CAHAL_AUDIO_FORMAT_FLAGISPACKED
+            flags =                                   \
+                CAHAL_AUDIO_FORMAT_FLAGISSIGNEDINTEGER  \
+                | CAHAL_AUDIO_FORMAT_FLAGISPACKED
 
-      if  (
-        start_recording (               \
-          device.struct,                \
-          CAHAL_AUDIO_FORMAT_LINEARPCM, \
-          self.numberOfChannels,        \
-          self.sampleRate,              \
-          self.bitDepth,                \
-          bufferSamples,                \
-          flags                         \
-                        )               \
-          ):
-        print "Recording initialized..."
+            if (
+                    start_recording(
+                        device.struct,
+                    CAHAL_AUDIO_FORMAT_LINEARPCM,
+                    self.numberOfChannels,
+                    self.sampleRate,
+                    self.bitDepth,
+                    bufferSamples,
+                    flags
+                    )
+            ):
+                print "Recording initialized..."
 
-        self.initialized = True
-      else:
-        print "ERROR: Could not start recording."
-    else:
-      print "ERROR: Could not find an appropriate stream."
+                self.initialized = True
+            else:
+                print "ERROR: Could not start recording."
+        else:
+            print "ERROR: Could not find an appropriate stream."
 
-    return( self.initialized )
+        return(self.initialized)
 
-  def writeWAVFile( self ):
-    try:
-      wavFile = wave.open( self.fileName, "wb" )
-        
-      wavFile.setnchannels( self.numberOfChannels )
-      wavFile.setsampwidth( self.bitDepth / 8 )
-      wavFile.setframerate( self.sampleRate )
+    def writeWAVFile(self):
+        try:
+            wavFile = wave.open(self.fileName, "wb")
 
-      wavFile.writeframes( bufferedSamples )
+            wavFile.setnchannels(self.numberOfChannels)
+            wavFile.setsampwidth(self.bitDepth / 8)
+            wavFile.setframerate(self.sampleRate)
 
-      wavFile.close()
-    except wave.Error:
-      print "ERROR: Could not open %s for write." %( self.fileName )
+            wavFile.writeframes(bufferedSamples)
 
-  def record( self, device, duration ):
-    global write
+            wavFile.close()
+        except wave.Error:
+            print "ERROR: Could not open %s for write." % (self.fileName)
 
-    if( self.initialized ):
-      print "Starting recording..."
+    def record(self, device, duration):
+        global write
 
-      write = True
+        if(self.initialized):
+            print "Starting recording..."
 
-      cahal_sleep( duration * 1000 )
+            write = True
 
-      print "Stopping recording..."
+            cahal_sleep(duration * 1000)
 
-      cahal_stop_recording()
+            print "Stopping recording..."
 
-      print "Stopped recording."
-    else:
-      print "ERROR: Attempting to record from uninitialized recorder."
+            cahal_stop_recording()
 
-    self.writeWAVFile()
+            print "Stopped recording."
+        else:
+            print "ERROR: Attempting to record from uninitialized recorder."
+
+        self.writeWAVFile()

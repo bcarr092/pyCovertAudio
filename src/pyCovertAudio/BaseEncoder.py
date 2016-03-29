@@ -1,38 +1,39 @@
 class BaseEncoder:
-  def toString( self ):
-    string =  \
-      "BaseEncoder:\n\tBlock length (n):\t%d\n\tMessage length (k):\t%d" \
-      "\n\tRate:\t\t\t%.2f" \
-        %(
-          self.blockLength,
-          self.messageLength,
-          ( float( self.messageLength ) / float( self.blockLength ) )
-        )
 
-    return( string )
+    def toString(self):
+        string =  \
+            "BaseEncoder:\n\tBlock length (n):\t%d\n\tMessage length (k):\t%d" \
+            "\n\tRate:\t\t\t%.2f" \
+            % (
+                self.blockLength,
+                self.messageLength,
+              (float(self.messageLength) / float(self.blockLength))
+            )
 
-  def __init__( self, configuration ):
-    try:
-      self.blockLength    = configuration[ "blockLength" ]
-      self.messageLength  = configuration[ "messageLength" ]
+        return(string)
 
-    except KeyError as e:
-      print "ERROR: Could not find key %s." %( str( e ) )
+    def __init__(self, configuration):
+        try:
+            self.blockLength = configuration["blockLength"]
+            self.messageLength = configuration["messageLength"]
 
-  def encode( self, data ):
-    print "ERROR: 'encode' must be overridden."
+        except KeyError as e:
+            print "ERROR: Could not find key %s." % (str(e))
 
-    sys.exit( -1 )
-  
-  def decode( self, data, errorPositions=None ):
-    print "ERROR: 'decode' must be overridden."
+    def encode(self, data):
+        print "ERROR: 'encode' must be overridden."
 
-    sys.exit( -1 )
+        sys.exit(-1)
 
-  def checkParamterIsString( self, parameter ):
-    if( isinstance( parameter, str ) ):
-      return( True )
-    else:
-      print "ERROR: Parameter data must be a string."
+    def decode(self, data, errorPositions=None):
+        print "ERROR: 'decode' must be overridden."
 
-      return( False )
+        sys.exit(-1)
+
+    def checkParamterIsString(self, parameter):
+        if(isinstance(parameter, str)):
+            return(True)
+        else:
+            print "ERROR: Parameter data must be a string."
+
+            return(False)

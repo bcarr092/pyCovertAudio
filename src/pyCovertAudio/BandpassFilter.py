@@ -1,56 +1,58 @@
-from pyCovertAudio_lib  import *
+from pyCovertAudio_lib import *
 from BaseModifier import BaseModifier
 
-class BandpassFilter( BaseModifier ):
-  def __init__( self, sampleRate, configuration ):
-    BaseModifier.__init__( self, sampleRate, configuration )
 
-    try:
-      self.firstStopband  = configuration[ 'firstStopband' ]
-      self.firstPassband  = configuration[ 'firstPassband' ]
-      self.secondPassband = configuration[ 'secondPassband' ]
-      self.secondStopband = configuration[ 'secondStopband' ]
+class BandpassFilter(BaseModifier):
 
-      self.passbandAttenuation  = configuration[ 'passbandAttenuation' ]
-      self.stopbandAttenuation  = configuration[ 'stopbandAttenuation' ]
-    except KeyError as e:
-      print "ERROR: Could not find key %s." %( str( e ) )
+    def __init__(self, sampleRate, configuration):
+        BaseModifier.__init__(self, sampleRate, configuration)
 
-    self.filter = \
-      python_initialize_kaiser_filter (
-        self.firstStopband,
-        self.firstPassband,
-        self.secondPassband,
-        self.secondStopband,
-        self.passbandAttenuation,
-        self.stopbandAttenuation,
-        self.sampleRate
-                                      )
+        try:
+            self.firstStopband = configuration['firstStopband']
+            self.firstPassband = configuration['firstPassband']
+            self.secondPassband = configuration['secondPassband']
+            self.secondStopband = configuration['secondStopband']
 
-    self.filterDelay = python_filter_get_group_delay( self.filter )
+            self.passbandAttenuation = configuration['passbandAttenuation']
+            self.stopbandAttenuation = configuration['stopbandAttenuation']
+        except KeyError as e:
+            print "ERROR: Could not find key %s." % (str(e))
 
-  def __del__( self ):
-    csignal_destroy_passband_filter( self.filter )
+        self.filter = \
+            python_initialize_kaiser_filter(
+                self.firstStopband,
+                self.firstPassband,
+                self.secondPassband,
+                self.secondStopband,
+                self.passbandAttenuation,
+                self.stopbandAttenuation,
+                self.sampleRate
+            )
 
-  def modify( self, signal ):
-    filteredSignal = python_filter_signal( self.filter, signal )
+        self.filterDelay = python_filter_get_group_delay(self.filter)
 
-    return( filteredSignal )
+    def __del__(self):
+        csignal_destroy_passband_filter(self.filter)
 
-  def toString( self ):
-    string = "BandpassFilter:\n"
-    string = string + "\tSample rate:\t\t%d\n" %( self.sampleRate )
-    string = string + "\tFirst stopband:\t\t%d Hz\n" %( self.firstStopband )
-    string = string + "\tFirst passband:\t\t%d Hz\n" %( self.firstPassband )
-    string = string + "\tSecond passband:\t%d Hz\n" %( self.secondPassband )
-    string = string + "\tSecond stopband:\t%d Hz\n" %( self.secondStopband )
-    string = string + "\tPassband attenuation:\t%.02f dB\n" \
-      %( self.passbandAttenuation )
-    string = string + "\tStopband attenuation:\t%d dB\n"  \
-      %( self.stopbandAttenuation )
-    string = string + "\tGroup delay:\t\t%d samples\n" %( self.filterDelay )
+    def modify(self, signal):
+        filteredSignal = python_filter_signal(self.filter, signal)
 
-    return( string )
+        return(filteredSignal)
 
-  def getOffset( self ):
-    return( self.filterDelay )
+    def toString(self):
+        string = "BandpassFilter:\n"
+        string = string + "\tSample rate:\t\t%d\n" % (self.sampleRate)
+        string = string + "\tFirst stopband:\t\t%d Hz\n" % (self.firstStopband)
+        string = string + "\tFirst passband:\t\t%d Hz\n" % (self.firstPassband)
+        string = string + "\tSecond passband:\t%d Hz\n" % (self.secondPassband)
+        string = string + "\tSecond stopband:\t%d Hz\n" % (self.secondStopband)
+        string = string + "\tPassband attenuation:\t%.02f dB\n" \
+            % (self.passbandAttenuation)
+        string = string + "\tStopband attenuation:\t%d dB\n"  \
+            % (self.stopbandAttenuation)
+        string = string + "\tGroup delay:\t\t%d samples\n" % (self.filterDelay)
+
+        return(string)
+
+    def getOffset(self):
+        return(self.filterDelay)

@@ -1,11 +1,11 @@
 from ModulatorFactory import ModulatorFactory
-from ModifierFactory  import ModifierFactory
-from TestFactory      import TestFactory
-from Base             import Base
-from Debug            import Debug
-from BitPacker        import BitPacker
-from BitStream        import BitStream
-from SymbolTracker    import SymbolTracker
+from ModifierFactory import ModifierFactory
+from TestFactory import TestFactory
+from Base import Base
+from Debug import Debug
+from BitPacker import BitPacker
+from BitStream import BitStream
+from SymbolTracker import SymbolTracker
 
 import sys
 import dataset
@@ -13,152 +13,154 @@ import pickle
 import time
 import math
 
-from pyCovertAudio_lib  import *
+from pyCovertAudio_lib import *
 
-class BaseReceiver( Base ):
-  def toString( self ):
-    string =  \
-      "Base receiver:\n\tSample rate:\t\t%d Hz\n\tBits per symbol:\t" \
-      "%d bits\nDemodulator:\n%s"  \
-        %(
-          self.sampleRate,
-          self.bitsPerSymbol,
-          self.dataDemodulator.toString()
-        )
 
-    string += "Modifiers:\n"
+class BaseReceiver(Base):
 
-    for modifier in self.modifiers:
-      string += modifier.toString()
+    def toString(self):
+        string =  \
+            "Base receiver:\n\tSample rate:\t\t%d Hz\n\tBits per symbol:\t" \
+            "%d bits\nDemodulator:\n%s"  \
+            % (
+                self.sampleRate,
+                self.bitsPerSymbol,
+                self.dataDemodulator.toString()
+            )
 
-    return( string )
+        string += "Modifiers:\n"
 
-  def __init__( self, configuration ):
-    try:
-      Base.__init__( self, configuration )
+        for modifier in self.modifiers:
+            string += modifier.toString()
 
-      self.modifiers   = []
+        return(string)
 
-      self.dataDemodulator  =  \
-        ModulatorFactory.create (
-          self.bitsPerSymbol,
-          self.sampleRate,
-          self.samplesPerSymbol,
-          self.symbolExpansionFactor,
-          self.separationIntervals,
-          configuration[ 'demodulator' ]
-                                )
+    def __init__(self, configuration):
+        try:
+            Base.__init__(self, configuration)
 
-      ModifierFactory.initializeModifiers (
-        self.sampleRate,
-        configuration[ 'modifiers' ],
-        self.modifiers
-                                          )
+            self.modifiers = []
 
-    except KeyError as e:
-      print "ERROR: Could not read key %s." %( str( e ) )
+            self.dataDemodulator  =  \
+                ModulatorFactory.create(
+                    self.bitsPerSymbol,
+                    self.sampleRate,
+                    self.samplesPerSymbol,
+                    self.symbolExpansionFactor,
+                    self.separationIntervals,
+                    configuration['demodulator']
+                )
 
-  def handleModifiers( self, signal ):
-    for modifier in self.modifiers:
-      signal = modifier.modify( signal )
+            ModifierFactory.initializeModifiers(
+                self.sampleRate,
+                configuration['modifiers'],
+                self.modifiers
+            )
 
-      offset = modifier.getOffset()
+        except KeyError as e:
+            print "ERROR: Could not read key %s." % (str(e))
 
-      signal = signal[ offset : ]
+    def handleModifiers(self, signal):
+        for modifier in self.modifiers:
+            signal = modifier.modify(signal)
 
-    Debug.instance.debugSignal( 'modified.WAV', signal, self.sampleRate )
+            offset = modifier.getOffset()
 
-    return( signal )
+            signal = signal[offset:]
 
-  def handleDemodulation( self, signal ):
-    sampleOffset  = None
-    symbols       = self.dataDemodulator.demodulate( signal )
-    offsetSymbol  = self.locateData( symbols )
+        Debug.instance.debugSignal('modified.WAV', signal, self.sampleRate)
 
-    if( offsetSymbol is not None ):
-      print "Signal starts at symbol %d." %( offsetSymbol )
-  
-      sampleOffset =  \
-        ( offsetSymbol + 1 )  \
-        * self.samplesPerSymbol \
-        * self.symbolExpansionFactor
+        return(signal)
 
-      print "Sample offset is %d." %( sampleOffset )
+    def handleDemodulation(self, signal):
+        sampleOffset = None
+        symbols = self.dataDemodulator.demodulate(signal)
+        offsetSymbol = self.locateData(symbols)
 
-      decodedSymbols = self.extractSymbols( symbols, ( offsetSymbol  + 1 ) )
+        if(offsetSymbol is not None):
+            print "Signal starts at symbol %d." % (offsetSymbol)
 
-    return( symbols, sampleOffset )
+            sampleOffset =  \
+                ( offsetSymbol + 1 )  \
+                * self.samplesPerSymbol \
+                * self.symbolExpansionFactor
 
-  def receive( self ):
-    offsetSignal  = None
-    signal        = self.receiveSignal()
+            print "Sample offset is %d." % (sampleOffset)
 
-    Debug.instance.debugSignal( 'received.WAV', signal, self.sampleRate )   
+            decodedSymbols = self.extractSymbols(symbols, (offsetSymbol + 1))
 
-    signal = self.handleModifiers( signal )
+        return(symbols, sampleOffset)
 
-    demodulationStartTime = time.time()
+    def receive(self):
+        offsetSignal = None
+        signal = self.receiveSignal()
 
-    ( symbols, sampleOffset ) = self.handleDemodulation( signal )
+        Debug.instance.debugSignal('received.WAV', signal, self.sampleRate)
 
-    runningTime = time.time() - demodulationStartTime
+        signal = self.handleModifiers(signal)
 
-    print "Demodulation time: %.04f" %( runningTime )
-  
-  def locateData( self, symbols ):
-    maxIndex    = 0
-    convolution = \
-      python_convolve (
-        [ 1.0 if( x ) else -1.0 for x in symbols ],
-        [ 1.0 if( x ) else -1.0 for x in reversed( self.sentinelSymbols ) ]
-                      )
+        demodulationStartTime = time.time()
 
-    for i in range( len( convolution ) ):
-      if( convolution[ i ] > convolution[ maxIndex ] ):
-        maxIndex = i
+        (symbols, sampleOffset) = self.handleDemodulation(signal)
 
-    if( maxIndex >= len( symbols ) ):
-      print "WARN: Could no locate sentinel in data."
+        runningTime = time.time() - demodulationStartTime
 
-      return( None )
+        print "Demodulation time: %.04f" % (runningTime)
 
-    return( maxIndex )
+    def locateData(self, symbols):
+        maxIndex = 0
+        convolution = \
+            python_convolve(
+                [1.0 if(x) else -1.0 for x in symbols],
+                [1.0 if(x) else -1.0 for x in reversed(self.sentinelSymbols)]
+            )
 
-  def extractSymbols( self, symbols, offset ):
-    bitPacker = BitPacker()
-    bitStream = BitStream( False, bitPacker )
+        for i in range(len(convolution)):
+            if(convolution[i] > convolution[maxIndex]):
+                maxIndex = i
 
-    for i in range( offset, len( symbols ) ):
-      bitPacker.writeByte( symbols[ i ], 1 )
+        if(maxIndex >= len(symbols)):
+            print "WARN: Could no locate sentinel in data."
 
-    data = bitStream.getRawBytes()
+            return(None)
 
-    print "Data (%d):" %( len( data ) )
-    for i in range( len( data ) ):
-      if( i != 0 and i % 8 == 0 ):
+        return(maxIndex)
+
+    def extractSymbols(self, symbols, offset):
+        bitPacker = BitPacker()
+        bitStream = BitStream(False, bitPacker)
+
+        for i in range(offset, len(symbols)):
+            bitPacker.writeByte(symbols[i], 1)
+
+        data = bitStream.getRawBytes()
+
+        print "Data (%d):" % (len(data))
+        for i in range(len(data)):
+            if(i != 0 and i % 8 == 0):
+                print
+
+            print "0x%02x " % (ord(data[i])),
         print
 
-      print "0x%02x " %( ord( data[ i ] ) ),
-    print
+        decodedData = self.decodeData(data)
 
-    decodedData = self.decodeData( data )
+        print "Decoded data (%d):" % (len(decodedData))
+        for i in range(len(decodedData)):
+            if(i != 0 and i % 8 == 0):
+                print
 
-    print "Decoded data (%d):" %( len( decodedData ) )
-    for i in range( len( decodedData ) ):
-      if( i != 0 and i % 8 == 0 ):
+            print "0x%02x " % (ord(decodedData[i])),
         print
 
-      print "0x%02x " %( ord( decodedData[ i ] ) ),
-    print
+        print "Decoded string: '%s'" % (decodedData)
 
-    print "Decoded string: '%s'" %( decodedData )
+        decodedSymbols      = \
+            SymbolTracker.toList(self.bitsPerSymbol, decodedData)
 
-    decodedSymbols      = \
-      SymbolTracker.toList( self.bitsPerSymbol, decodedData )
+        return(decodedSymbols)
 
-    return( decodedSymbols )
+    def receiveSignal(self):
+        print "ERROR: Must be overridden."
 
-  def receiveSignal( self ):
-    print "ERROR: Must be overridden."
-
-    sys.exit( -1 )
+        sys.exit(-1)

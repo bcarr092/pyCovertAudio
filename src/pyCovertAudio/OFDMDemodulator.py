@@ -1,129 +1,132 @@
-from pyCovertAudio_lib      import *
-from BaseDemodulator  import BaseDemodulator
-from BFSKDemodulator  import BFSKDemodulator
-from Debug            import Debug
-from SignalFunctions  import SignalFunctions
+from pyCovertAudio_lib import *
+from BaseDemodulator import BaseDemodulator
+from BFSKDemodulator import BFSKDemodulator
+from Debug import Debug
+from SignalFunctions import SignalFunctions
 
 import time
 import math
 import struct
 
-class OFDMDemodulator( BaseDemodulator ):
-  def __init__  (
-    self, bitsPerSymbol, sampleRate, samplesPerSymbol, symbolExpansionFactor,
-    separationIntervals, configuration
-                ):
 
-    configuration[ "carrierFrequency" ] = 0.0
-                
-    BaseDemodulator.__init__  (
-      self,
-      bitsPerSymbol,
-      sampleRate,
-      samplesPerSymbol,
-      symbolExpansionFactor,
-      separationIntervals,
-      configuration
-                            )
+class OFDMDemodulator(BaseDemodulator):
 
-    (
-      self.symbol0Frequency,
-      self.symbol1Frequency,
-      self.deltaFrequency,
-      self.bandwidth
-    ) = \
-      python_BFSK_determine_frequencies (
-        self.samplesPerSymbol,
-        self.sampleRate,
-        0,
-        self.separationIntervals
-                                        )
+    def __init__(
+            self, bitsPerSymbol, sampleRate, samplesPerSymbol, symbolExpansionFactor,
+            separationIntervals, configuration
+    ):
 
-    try:
-      self.minimumFrequency         = configuration[ "minimumFrequency" ]
-      self.maximumFrequency         = configuration[ "maximumFrequency" ]
-      self.symbolFrequencyBandwidth = configuration[ 'symbolFrequencyBandwidth' ]
-      self.bandwidthDivisor         = configuration[ "bandwidthDivisor" ]
+        configuration["carrierFrequency"] = 0.0
 
-      self.bandwidth /= self.bandwidthDivisor
+        BaseDemodulator.__init__(
+            self,
+            bitsPerSymbol,
+            sampleRate,
+            samplesPerSymbol,
+            symbolExpansionFactor,
+            separationIntervals,
+            configuration
+        )
 
-      self.carrierFrequencies   = \
-        SignalFunctions.getCarrierFrequencies (
-          self.minimumFrequency,
-          self.maximumFrequency,
-          self.bandwidth
-                                              )
-      self.numberOfSubChannels  = len( self.carrierFrequencies )
+        (
+            self.symbol0Frequency,
+            self.symbol1Frequency,
+            self.deltaFrequency,
+            self.bandwidth
+        ) = \
+            python_BFSK_determine_frequencies(
+            self.samplesPerSymbol,
+            self.sampleRate,
+            0,
+            self.separationIntervals
+        )
 
-    except KeyError as e:
-      print "ERROR: Could not find key %s" %( str( e ) )
+        try:
+            self.minimumFrequency = configuration["minimumFrequency"]
+            self.maximumFrequency = configuration["maximumFrequency"]
+            self.symbolFrequencyBandwidth = configuration[
+                'symbolFrequencyBandwidth']
+            self.bandwidthDivisor = configuration["bandwidthDivisor"]
 
-    self.initializeSubChannelDemodulators()
+            self.bandwidth /= self.bandwidthDivisor
 
-  def initializeSubChannelDemodulators( self ):
-    self.demodulators = []
+            self.carrierFrequencies   = \
+                SignalFunctions.getCarrierFrequencies(
+                    self.minimumFrequency,
+                    self.maximumFrequency,
+                    self.bandwidth
+                )
+            self.numberOfSubChannels = len(self.carrierFrequencies)
 
-    for carrierFrequency in self.carrierFrequencies:
-      demodulator = \
-        BFSKDemodulator (
-          self.bitsPerSymbol,
-          self.sampleRate,
-          self.samplesPerSymbol,
-          self.symbolExpansionFactor,
-          self.separationIntervals,
-          {
-            "carrierFrequency"          : carrierFrequency,
-            "symbolFrequencyBandwidth"  : self.symbolFrequencyBandwidth,
-            "decimatedSamplesPerSymbol" : self.decimatedSamplesPerSymbol
-          }
-                        )
+        except KeyError as e:
+            print "ERROR: Could not find key %s" % (str(e))
 
-      self.demodulators.append( demodulator )
+        self.initializeSubChannelDemodulators()
 
-  def assembleSymbols( self, offset, symbolsList ):
-    symbols = []
+    def initializeSubChannelDemodulators(self):
+        self.demodulators = []
 
-    if( len( symbolsList ) != len( self.demodulators ) ):
-      print "ERROR: Symbols list length (%d) is not equal"  \
-            "to the number of sub-channels (%d)." \
-            %( len( symbolsList ), len( self.demodualtors ) )
-    else:
-      minimumLength = min( map( len, symbolsList ) )
+        for carrierFrequency in self.carrierFrequencies:
+            demodulator = \
+                BFSKDemodulator(
+                    self.bitsPerSymbol,
+                    self.sampleRate,
+                    self.samplesPerSymbol,
+                    self.symbolExpansionFactor,
+                    self.separationIntervals,
+                    {
+                        "carrierFrequency": carrierFrequency,
+                        "symbolFrequencyBandwidth": self.symbolFrequencyBandwidth,
+                        "decimatedSamplesPerSymbol": self.decimatedSamplesPerSymbol
+                    }
+                )
 
-      print "Min length: %d." %( minimumLength )
+            self.demodulators.append(demodulator)
 
-      for i in range( offset, minimumLength ):
-        for j in range( len( symbolsList ) ):
-          symbol = symbolsList[ j ][ i ]
+    def assembleSymbols(self, offset, symbolsList):
+        symbols = []
 
-          symbols.append( symbol )
+        if(len(symbolsList) != len(self.demodulators)):
+            print "ERROR: Symbols list length (%d) is not equal"  \
+                  "to the number of sub-channels (%d)." \
+                  % (len(symbolsList), len(self.demodualtors))
+        else:
+            minimumLength = min(map(len, symbolsList))
 
-    return( symbols )
+            print "Min length: %d." % (minimumLength)
 
-  def demodulate( self, signal ):
-    symbolsList = []
-    identifier  = 1
+            for i in range(offset, minimumLength):
+                for j in range(len(symbolsList)):
+                    symbol = symbolsList[j][i]
 
-    for demodulator in self.demodulators:
-      symbols = demodulator.demodulate( signal, identifier )
+                    symbols.append(symbol)
 
-      symbolsList.append( symbols )
+        return(symbols)
 
-      identifier += 1
+    def demodulate(self, signal):
+        symbolsList = []
+        identifier = 1
 
-    return( symbolsList )
+        for demodulator in self.demodulators:
+            symbols = demodulator.demodulate(signal, identifier)
 
-  def toString( self ):
-    return  (
-      "Demodulator:\n\tAlgorithm:\t\t\tOFDM\n\tSymbol 0 frequency:\t\t%.02f\n\t"
-      "Symbol 1 frequency:\t\t%.02f\n\tMin frequency separation:\t%.02f\n\t"
-      "Bandwidth:\t\t\t%.02f\n\tFrequency bandwidth:\t\t%d\n%s" \
-      %(
-        self.symbol0Frequency,
-        self.symbol1Frequency,
-        self.deltaFrequency,
-        self.bandwidth,
-        self.symbolFrequencyBandwidth,
-        BaseDemodulator.toString( self )
-      )
+            symbolsList.append(symbols)
+
+            identifier += 1
+
+        return(symbolsList)
+
+    def toString(self):
+        return (
+            "Demodulator:\n\tAlgorithm:\t\t\tOFDM\n\tSymbol 0 frequency:\t\t%.02f\n\t"
+            "Symbol 1 frequency:\t\t%.02f\n\tMin frequency separation:\t%.02f\n\t"
+            "Bandwidth:\t\t\t%.02f\n\tFrequency bandwidth:\t\t%d\n%s"
+            % (
+                self.symbol0Frequency,
+                self.symbol1Frequency,
+                self.deltaFrequency,
+                self.bandwidth,
+                self.symbolFrequencyBandwidth,
+                BaseDemodulator.toString(self)
             )
+        )

@@ -2,39 +2,41 @@ from pyCovertAudio_lib import *
 
 import struct
 
+
 class SymbolTracker:
-  def __init__( self, bitsPerSymbol, data ):
-    self.data           = data
-    self.bitsPerSymbol  = bitsPerSymbol
 
-    self.dataStream = python_bit_stream_initialize( False, self.data )
+    def __init__(self, bitsPerSymbol, data):
+        self.data = data
+        self.bitsPerSymbol = bitsPerSymbol
 
-  def __del__( self ):
-    bit_stream_destroy( self.dataStream )
+        self.dataStream = python_bit_stream_initialize(False, self.data)
 
-  def getSize( self ):
-    return( bit_stream_get_number_of_remaining_bits( self.dataStream ) )
+    def __del__(self):
+        bit_stream_destroy(self.dataStream)
 
-  def getNextSymbol( self ):
-    symbol = None
+    def getSize(self):
+        return(bit_stream_get_number_of_remaining_bits(self.dataStream))
 
-    ( numberOfBits, buffer ) = \
-      python_bit_stream_get_bits( self.dataStream, self.bitsPerSymbol ) 
+    def getNextSymbol(self):
+        symbol = None
 
-    if( 0 < numberOfBits ):
-      symbol = struct.unpack( "B", buffer )[ 0 ] >> ( 8 - self.bitsPerSymbol )   
+        ( numberOfBits, buffer ) = \
+            python_bit_stream_get_bits(self.dataStream, self.bitsPerSymbol)
 
-    return( symbol )
+        if(0 < numberOfBits):
+            symbol = struct.unpack("B", buffer)[0] >> (8 - self.bitsPerSymbol)
 
-  @staticmethod
-  def toList( bitsPerSymbol, data ):
-    returnList  = []
-    dataStream  = SymbolTracker( bitsPerSymbol, data )
-    symbol      = dataStream.getNextSymbol() 
+        return(symbol)
 
-    while( symbol != None ):
-      returnList.append( symbol ) 
+    @staticmethod
+    def toList(bitsPerSymbol, data):
+        returnList = []
+        dataStream = SymbolTracker(bitsPerSymbol, data)
+        symbol = dataStream.getNextSymbol()
 
-      symbol = dataStream.getNextSymbol()
+        while(symbol != None):
+            returnList.append(symbol)
 
-    return( returnList )
+            symbol = dataStream.getNextSymbol()
+
+        return(returnList)

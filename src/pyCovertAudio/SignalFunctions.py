@@ -1,163 +1,165 @@
-from pyCovertAudio_lib      import *
+from pyCovertAudio_lib import *
 
 import sys
 import math
 import scipy.fftpack
-import numpy          as np
+import numpy as np
+
 
 class SignalFunctions():
-  @staticmethod
-  def removeBias( signal ):
-    mean = float( sum( signal ) ) / float( len( signal ) )
 
-    print "Mean: %f" %( mean )
+    @staticmethod
+    def removeBias(signal):
+        mean = float(sum(signal)) / float(len(signal))
 
-    return( [ sample - mean for sample in signal ] )
+        print "Mean: %f" % (mean)
 
-  @staticmethod
-  def interpolateSignal( signal, sampleRate, transitionBW ):
-    upsampledSignal = [ 0.0 for i in range( 2 * len( signal ) ) ]
+        return([sample - mean for sample in signal])
 
-    for i in range( len( signal ) ):
-      upsampledSignal[ i * 2 ] = signal[ i ]
+    @staticmethod
+    def interpolateSignal(signal, sampleRate, transitionBW):
+        upsampledSignal = [0.0 for i in range(2 * len(signal))]
 
-    lowPassFilter = \
-      python_initialize_kaiser_lowpass_filter (
-        sampleRate / 2,
-        ( sampleRate / 2 ) + transitionBW,
-        0.1,
-        80,
-        sampleRate * 2
-                                                  )
+        for i in range(len(signal)):
+            upsampledSignal[i * 2] = signal[i]
 
-    filterDelay = python_filter_get_group_delay( lowPassFilter )
+        lowPassFilter = \
+            python_initialize_kaiser_lowpass_filter(
+                sampleRate / 2,
+                (sampleRate / 2) + transitionBW,
+                0.1,
+                80,
+                sampleRate * 2
+            )
 
-    print "Interpolator filter delay: %d." %( filterDelay )
+        filterDelay = python_filter_get_group_delay(lowPassFilter)
 
-    filteredSignal = python_filter_signal( lowPassFilter, upsampledSignal )
-    filteredSignal = filteredSignal[ filterDelay : ]
+        print "Interpolator filter delay: %d." % (filterDelay)
 
-    csignal_destroy_passband_filter( lowPassFilter )
+        filteredSignal = python_filter_signal(lowPassFilter, upsampledSignal)
+        filteredSignal = filteredSignal[filterDelay:]
 
-    return( filteredSignal )
+        csignal_destroy_passband_filter(lowPassFilter)
 
-  @staticmethod
-  def squareSignal( signal, sampleRate, passband, transitionBW ):
-    squaredSignal = [ x ** 2.0 for x in signal ]
+        return(filteredSignal)
 
-    lowPassFilter = \
-      python_initialize_kaiser_lowpass_filter (
-        passband,
-        passband + transitionBW,
-        0.1,
-        80,
-        sampleRate
-                                              )
+    @staticmethod
+    def squareSignal(signal, sampleRate, passband, transitionBW):
+        squaredSignal = [x ** 2.0 for x in signal]
 
-    filterDelay = python_filter_get_group_delay( lowPassFilter )
+        lowPassFilter = \
+            python_initialize_kaiser_lowpass_filter(
+                passband,
+                passband + transitionBW,
+                0.1,
+                80,
+                sampleRate
+            )
 
-    print "Lowpass filter delay: %d." %( filterDelay )
-    
-    filteredSignal = python_filter_signal( lowPassFilter, squaredSignal )
-    filteredSignal = filteredSignal[ filterDelay : ]
+        filterDelay = python_filter_get_group_delay(lowPassFilter)
 
-    return( filteredSignal )
+        print "Lowpass filter delay: %d." % (filterDelay)
 
-  @staticmethod
-  def decimate( signal, decimationFactor ):
-    decimatedSignal = \
-      [ signal[ i ] for i in range( 0, len( signal ), decimationFactor ) ]
+        filteredSignal = python_filter_signal(lowPassFilter, squaredSignal)
+        filteredSignal = filteredSignal[filterDelay:]
 
-    return( decimatedSignal )
+        return(filteredSignal)
 
-  @staticmethod
-  def movingAverage( signal, numberOfSamples ):
-    averageSignal = [ 0.0 for i in range( len( signal ) ) ]
+    @staticmethod
+    def decimate(signal, decimationFactor):
+        decimatedSignal = \
+            [signal[i] for i in range(0, len(signal), decimationFactor)]
 
-    summer = [ 0.0 for i in range( numberOfSamples ) ]
+        return(decimatedSignal)
 
-    for i in range( len( signal ) ):
-      summer[ i % numberOfSamples ] = signal[ i ]
+    @staticmethod
+    def movingAverage(signal, numberOfSamples):
+        averageSignal = [0.0 for i in range(len(signal))]
 
-      for x in summer:
-        averageSignal[ i ] += x
+        summer = [0.0 for i in range(numberOfSamples)]
 
-      averageSignal[ i ] =  \
-        float( averageSignal[ i ] ) / float( numberOfSamples )
+        for i in range(len(signal)):
+            summer[i % numberOfSamples] = signal[i]
 
-    return( averageSignal )
+            for x in summer:
+                averageSignal[i] += x
 
-  @staticmethod
-  def normalizeSignal( signal ):
-    average = sum( signal ) / ( 1.0 * len( signal ) )
+            averageSignal[ i ] =  \
+                float(averageSignal[i]) / float(numberOfSamples)
 
-    print "Max: %d\tMin: %d\tAverage: %.04f"  \
-      %( max( signal ), min( signal ), average )
+        return(averageSignal)
 
-    maxValue  = max( [ max( signal ), abs( min( signal ) ) ] )
-    signal    = map( lambda x: ( x * 1.0 ) / ( maxValue * 1.0 ), signal )
+    @staticmethod
+    def normalizeSignal(signal):
+        average = sum(signal) / (1.0 * len(signal))
 
-    average = sum( signal ) / ( 1.0 * len( signal ) )
+        print "Max: %d\tMin: %d\tAverage: %.04f"  \
+            % (max(signal), min(signal), average)
 
-    print "Max: %+.04f\tMin: %+.04f\tAverage: %+.04f" \
-      %( max( signal ), min( signal ), average )
+        maxValue = max([max(signal), abs(min(signal))])
+        signal = map(lambda x: (x * 1.0) / (maxValue * 1.0), signal)
 
-    return( signal )
+        average = sum(signal) / (1.0 * len(signal))
 
-  @staticmethod
-  def nextPowOf2( value ):
-    nextPow = np.ceil( np.log2( value ) )
+        print "Max: %+.04f\tMin: %+.04f\tAverage: %+.04f" \
+            % (max(signal), min(signal), average)
 
-    return( nextPow )
+        return(signal)
 
-  @staticmethod
-  def filterByFFT( signal, sampleRate, passFrequency, lowPass ):
-    N = 2 ** SignalFunctions.nextPowOf2( len( signal ) )
-    X = scipy.fftpack.rfft( signal, N )
+    @staticmethod
+    def nextPowOf2(value):
+        nextPow = np.ceil(np.log2(value))
 
-    deltaF = ( 1.0 / float( N ) ) * ( float( sampleRate ) / 2.0 )
+        return(nextPow)
 
-    if( lowPass ):
-      frequencyBin = np.ceil( float( passFrequency ) / deltaF )
+    @staticmethod
+    def filterByFFT(signal, sampleRate, passFrequency, lowPass):
+        N = 2 ** SignalFunctions.nextPowOf2(len(signal))
+        X = scipy.fftpack.rfft(signal, N)
 
-      X[ frequencyBin : ] = 0.0
-    else:
-      frequencyBin = np.floor( float( passFrequency ) / deltaF )
+        deltaF = (1.0 / float(N)) * (float(sampleRate) / 2.0)
 
-      X[ : frequencyBin ] = 0.0
+        if(lowPass):
+            frequencyBin = np.ceil(float(passFrequency) / deltaF)
 
-    x = scipy.fftpack.irfft( X )
+            X[frequencyBin:] = 0.0
+        else:
+            frequencyBin = np.floor(float(passFrequency) / deltaF)
 
-    return( x )
+            X[: frequencyBin] = 0.0
 
-  @staticmethod
-  def modulateFSK( signalLength, sampleRate, frequencies ):
-    N       = 2 ** SignalFunctions.nextPowOf2( signalLength )
-    deltaF  = ( 1.0 / float( N ) ) * ( float( sampleRate ) / 2.0 )
+        x = scipy.fftpack.irfft(X)
 
-    X  = [ 0.0 for i in range( int( N ) ) ]
+        return(x)
 
-    for frequency in frequencies:
-      frequencyBin  = int( frequency / deltaF )
+    @staticmethod
+    def modulateFSK(signalLength, sampleRate, frequencies):
+        N = 2 ** SignalFunctions.nextPowOf2(signalLength)
+        deltaF = (1.0 / float(N)) * (float(sampleRate) / 2.0)
 
-      X[ frequencyBin ] = float( sys.maxint )
+        X = [0.0 for i in range(int(N))]
 
-    x = scipy.fftpack.irfft( X )
+        for frequency in frequencies:
+            frequencyBin = int(frequency / deltaF)
 
-    return( x )
+            X[frequencyBin] = float(sys.maxint)
 
-  @staticmethod
-  def getCarrierFrequencies( minimumFrequency, maximumFrequency, bandwidth ):
-    carrierFrequencies  = []
-    carrierFrequency    = minimumFrequency + ( bandwidth / 2.0 )
+        x = scipy.fftpack.irfft(X)
 
-    while (
-      ( carrierFrequency + ( bandwidth / 2.0 ) ) <= maximumFrequency
-          ):
-      carrierFrequencies.append( carrierFrequency )
+        return(x)
 
-      print "Added carrier %.02f." %( carrierFrequency )
+    @staticmethod
+    def getCarrierFrequencies(minimumFrequency, maximumFrequency, bandwidth):
+        carrierFrequencies = []
+        carrierFrequency = minimumFrequency + (bandwidth / 2.0)
 
-      carrierFrequency += bandwidth
+        while (
+            (carrierFrequency + (bandwidth / 2.0)) <= maximumFrequency
+        ):
+            carrierFrequencies.append(carrierFrequency)
 
-    return( carrierFrequencies )
+            print "Added carrier %.02f." % (carrierFrequency)
+
+            carrierFrequency += bandwidth
+
+        return(carrierFrequencies)

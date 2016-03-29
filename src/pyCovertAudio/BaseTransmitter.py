@@ -1,75 +1,78 @@
 from ModulatorFactory import ModulatorFactory
-from ModifierFactory  import ModifierFactory
-from BitStream        import BitStream
-from SymbolTracker    import SymbolTracker
-from Base             import Base
-from Debug            import Debug
+from ModifierFactory import ModifierFactory
+from BitStream import BitStream
+from SymbolTracker import SymbolTracker
+from Base import Base
+from Debug import Debug
 
 import sys
 
-class BaseTransmitter( Base ):
-  def __init__( self, configuration ):
-    try:
-      Base.__init__( self, configuration )
 
-      self.dataModulator  =  \
-        ModulatorFactory.create (
-          self.bitsPerSymbol,
-          self.sampleRate,
-          self.samplesPerSymbol,
-          self.symbolExpansionFactor,
-          self.separationIntervals,
-          configuration[ 'modulator' ]
-                                )
+class BaseTransmitter(Base):
 
-      self.modifiers = []
+    def __init__(self, configuration):
+        try:
+            Base.__init__(self, configuration)
 
-      ModifierFactory.initializeModifiers (
-        self.sampleRate,
-        configuration[ 'modifiers' ],
-        self.modifiers
-                                          )
+            self.dataModulator  =  \
+                ModulatorFactory.create(
+                    self.bitsPerSymbol,
+                    self.sampleRate,
+                    self.samplesPerSymbol,
+                    self.symbolExpansionFactor,
+                    self.separationIntervals,
+                    configuration['modulator']
+                )
 
-    except KeyError as e:
-      print "ERROR: Could not find key %s." %( str( e  ) )
+            self.modifiers = []
 
-  def toString( self ):
-    string =  \
-      "Base transmitter:\nModulator:\n%sModifiers:\n" \
-      %(
-        self.dataModulator.toString(),
-      )
+            ModifierFactory.initializeModifiers(
+                self.sampleRate,
+                configuration['modifiers'],
+                self.modifiers
+            )
 
-    for modifier in self.modifiers:
-      string += modifier.toString()
+        except KeyError as e:
+            print "ERROR: Could not find key %s." % (str(e))
 
-    return( string )
+    def toString(self):
+        string =  \
+            "Base transmitter:\nModulator:\n%sModifiers:\n" \
+            % (
+                self.dataModulator.toString(),
+            )
 
-  def transmit( self ):
-    signal = []
+        for modifier in self.modifiers:
+            string += modifier.toString()
 
-    self.prepareDataToTransmit()
+        return(string)
 
-    symbolSequence  = []
-    symbol          = self.symbolTracker.getNextSymbol()
+    def transmit(self):
+        signal = []
 
-    while( symbol != None ):
-      symbolSequence.append( symbol )
+        self.prepareDataToTransmit()
 
-      symbol = self.symbolTracker.getNextSymbol()
+        symbolSequence = []
+        symbol = self.symbolTracker.getNextSymbol()
 
-    self.dataModulator.modulate( symbolSequence, signal, self.sentinel )
+        while(symbol != None):
+            symbolSequence.append(symbol)
 
-    Debug.instance.debugSignal( 'modulatedSignal.WAV', signal, self.sampleRate )
+            symbol = self.symbolTracker.getNextSymbol()
 
-    for modifier in self.modifiers:
-      signal = modifier.modify( signal )
+        self.dataModulator.modulate(symbolSequence, signal, self.sentinel)
 
-    Debug.instance.debugSignal( 'transmitted.WAV', signal, self.sampleRate )
+        Debug.instance.debugSignal(
+            'modulatedSignal.WAV', signal, self.sampleRate)
 
-    return( signal )
+        for modifier in self.modifiers:
+            signal = modifier.modify(signal)
 
-  def prepareDataToTransmit( self ):
-    data = self.sentinel + self.encodeData()
+        Debug.instance.debugSignal('transmitted.WAV', signal, self.sampleRate)
 
-    self.symbolTracker = SymbolTracker( self.bitsPerSymbol, data )
+        return(signal)
+
+    def prepareDataToTransmit(self):
+        data = self.sentinel + self.encodeData()
+
+        self.symbolTracker = SymbolTracker(self.bitsPerSymbol, data)

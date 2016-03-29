@@ -4,118 +4,121 @@ import md5
 
 from pyCovertAudio_lib import *
 
-bufferIndex     = 0
+bufferIndex = 0
 bufferedSamples = ""
 
-def playback( in_device, in_buffer_length ):                                    
-  global bufferIndex
 
-  data = ''
+def playback(in_device, in_buffer_length):
+    global bufferIndex
 
-  bufferLength  = len( bufferedSamples )
-  lastIndex     = bufferIndex + in_buffer_length
+    data = ''
 
-  if( lastIndex > bufferLength ):
-    lastIndex = bufferLength + 1
+    bufferLength = len(bufferedSamples)
+    lastIndex = bufferIndex + in_buffer_length
 
-  data = bufferedSamples[ bufferIndex : lastIndex ]
+    if(lastIndex > bufferLength):
+        lastIndex = bufferLength + 1
 
-  bufferIndex += in_buffer_length
+    data = bufferedSamples[bufferIndex: lastIndex]
 
-  return( data )
+    bufferIndex += in_buffer_length
+
+    return(data)
+
 
 class WAVPlayer:
-  def __init__( self, fileName, volume, delay ):
-    self.fileName     = fileName
-    self.volume       = volume
-    self.delay        = delay
-    self.initialized  = False
 
-    self.readWAVFile()
+    def __init__(self, fileName, volume, delay):
+        self.fileName = fileName
+        self.volume = volume
+        self.delay = delay
+        self.initialized = False
 
-  def readWAVFile( self ):
-    global bufferedSamples
+        self.readWAVFile()
 
-    try:
-      self.wavFile = wave.open( self.fileName, "rb" )
+    def readWAVFile(self):
+        global bufferedSamples
 
-      frameSize = self.wavFile.getnchannels() * self.wavFile.getsampwidth()
+        try:
+            self.wavFile = wave.open(self.fileName, "rb")
 
-      print "WAV file information:"
-      print "\tFile:\t\t\t'%s'" %( self.fileName )
-      print "\tNumber of channels:\t%d" %( self.wavFile.getnchannels() )
-      print "\tBit depth:\t\t%d bits" %( self.wavFile.getsampwidth() * 8 )
-      print "\tSample rate:\t\t%d Hz" %( self.wavFile.getframerate() )
-      print "\tFrame size:\t\t%d B" %( frameSize )
-      print "\tNumber of frames:\t%d" %( self.wavFile.getnframes() )
-      print "\tDuration:\t\t%d secs"  \
-        %( 
-          math.ceil (
-            ( self.wavFile.getnframes() * 1.0 )
-            / ( self.wavFile.getframerate() * 1.0 )
-                    )
-        )
+            frameSize = self.wavFile.getnchannels() * self.wavFile.getsampwidth()
 
-      delayFrames = self.delay * self.wavFile.getframerate()
-      delayBytes  = \
-        delayFrames * self.wavFile.getnchannels() * self.wavFile.getsampwidth()
+            print "WAV file information:"
+            print "\tFile:\t\t\t'%s'" % (self.fileName)
+            print "\tNumber of channels:\t%d" % (self.wavFile.getnchannels())
+            print "\tBit depth:\t\t%d bits" % (self.wavFile.getsampwidth() * 8)
+            print "\tSample rate:\t\t%d Hz" % (self.wavFile.getframerate())
+            print "\tFrame size:\t\t%d B" % (frameSize)
+            print "\tNumber of frames:\t%d" % (self.wavFile.getnframes())
+            print "\tDuration:\t\t%d secs"  \
+                % (
+                  math.ceil(
+                      (self.wavFile.getnframes() * 1.0)
+                      / (self.wavFile.getframerate() * 1.0)
+                  )
+                )
 
-      bufferedSamples = "\x00" * int( math.ceil( delayBytes ) )
+            delayFrames = self.delay * self.wavFile.getframerate()
+            delayBytes  = \
+                delayFrames * self.wavFile.getnchannels() * self.wavFile.getsampwidth()
 
-      for i in range( 0, self.wavFile.getnframes(), 10000 ):
-        samples = self.wavFile.readframes( 10000 )
+            bufferedSamples = "\x00" * int(math.ceil(delayBytes))
 
-        bufferedSamples = bufferedSamples + samples
+            for i in range(0, self.wavFile.getnframes(), 10000):
+                samples = self.wavFile.readframes(10000)
 
-      self.wavFile.close()
-    except wave.Error:
-      print "ERROR: Could not open %s for read." %( self.fileName )
+                bufferedSamples = bufferedSamples + samples
 
-  def initPlayback( self, device ):
-    if  (                                         \
-        device.hasAppropriateStream (             \
-            CAHAL_DEVICE_OUTPUT_STREAM,           \
-            self.wavFile.getnchannels(),          \
-            self.wavFile.getsampwidth() * 8,      \
-            self.wavFile.getframerate()           \
-                                    )             \
+            self.wavFile.close()
+        except wave.Error:
+            print "ERROR: Could not open %s for read." % (self.fileName)
+
+    def initPlayback(self, device):
+        if (
+            device.hasAppropriateStream(
+                CAHAL_DEVICE_OUTPUT_STREAM,
+                self.wavFile.getnchannels(),
+                self.wavFile.getsampwidth() * 8,
+                self.wavFile.getframerate()
+            )
         ):
-      flags =                                   \
-        CAHAL_AUDIO_FORMAT_FLAGISSIGNEDINTEGER  \
-        | CAHAL_AUDIO_FORMAT_FLAGISPACKED
-  
-      if  (
-        start_playback  (                   \
-          device.struct,                    \
-          CAHAL_AUDIO_FORMAT_LINEARPCM,     \
-          self.wavFile.getnchannels(),      \
-          self.wavFile.getframerate(),      \
-          self.wavFile.getsampwidth() * 8,  \
-          self.volume,                      \
-          playback,                         \
-          flags                             \
-                        )                   \
-          ):
-        print "Playback initialized..."
+            flags =                                   \
+                CAHAL_AUDIO_FORMAT_FLAGISSIGNEDINTEGER  \
+                | CAHAL_AUDIO_FORMAT_FLAGISPACKED
 
-        self.initialized = True
-      else:
-        print "ERROR: Could not start playing."
-    else:
-      print "ERROR: Could not find an appropriate stream."
+            if (
+                    start_playback(
+                        device.struct,
+                    CAHAL_AUDIO_FORMAT_LINEARPCM,
+                    self.wavFile.getnchannels(),
+                    self.wavFile.getframerate(),
+                    self.wavFile.getsampwidth() * 8,
+                    self.volume,
+                    playback,
+                    flags
+                    )
+            ):
+                print "Playback initialized..."
 
-    return( self.initialized )
+                self.initialized = True
+            else:
+                print "ERROR: Could not start playing."
+        else:
+            print "ERROR: Could not find an appropriate stream."
 
-  def play( self, device, duration ):
-    if( self.initialized ):
-      print "Starting playback..."
+        return(self.initialized)
 
-      cahal_sleep( int( math.ceil( ( duration + self.delay ) * 1000 ) ) )
+    def play(self, device, duration):
+        if(self.initialized):
+            print "Starting playback..."
 
-      print "Stopping playback..."
-        
-      cahal_stop_playback()
+            cahal_sleep(int(math.ceil((duration + self.delay) * 1000)))
 
-      print "Stopped playback."
-    else:
-      print "ERROR: Attempting to play from uninitialized player."
+            print "Stopping playback..."
+
+            cahal_stop_playback()
+
+            print "Stopped playback."
+        else:
+            print "ERROR: Attempting to play from uninitialized player."

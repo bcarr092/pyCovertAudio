@@ -1,92 +1,93 @@
-from SymbolTracker  import SymbolTracker
+from SymbolTracker import SymbolTracker
 from EncoderFactory import EncoderFactory
 
 import struct
 import random
 
+
 class Base:
-  def __init__( self, configuration ):
-    try:
-      self.sampleRate             = configuration[ 'sampleRate' ]
-      self.bitsPerSymbol          = configuration[ 'bitsPerSymbol' ]
-      self.samplesPerSymbol       = configuration[ 'samplesPerSymbol' ]
-      self.symbolExpansionFactor  = configuration[ 'symbolExpansionFactor' ]
-      self.separationIntervals    = configuration[ 'separationIntervals' ]
 
-      self.initializeData( configuration[ 'dataInfo' ] )
+    def __init__(self, configuration):
+        try:
+            self.sampleRate = configuration['sampleRate']
+            self.bitsPerSymbol = configuration['bitsPerSymbol']
+            self.samplesPerSymbol = configuration['samplesPerSymbol']
+            self.symbolExpansionFactor = configuration['symbolExpansionFactor']
+            self.separationIntervals = configuration['separationIntervals']
 
-    except KeyError as e:
-      print "ERROR: Could not find key %s." %( str( e ) )
+            self.initializeData(configuration['dataInfo'])
 
-  def decodeData( self, data ):
-    if( self.dataModifiers is not None and len( self.dataModifiers ) != 0 ):
-      errorPositions = []
+        except KeyError as e:
+            print "ERROR: Could not find key %s." % (str(e))
 
-      for modifier in self.dataModifiers:
-        data = modifier.decode( data, errorPositions )
+    def decodeData(self, data):
+        if(self.dataModifiers is not None and len(self.dataModifiers) != 0):
+            errorPositions = []
 
-    return( data )
+            for modifier in self.dataModifiers:
+                data = modifier.decode(data, errorPositions)
 
-  def encodeData( self ):
-    data = self.data
+        return(data)
 
-    if( self.dataModifiers is not None and len( self.dataModifiers ) != 0 ):
-      for modifier in self.dataModifiers:
-        data = modifier.encode( data )
+    def encodeData(self):
+        data = self.data
 
-    return( data )
+        if(self.dataModifiers is not None and len(self.dataModifiers) != 0):
+            for modifier in self.dataModifiers:
+                data = modifier.encode(data)
 
-  def initializeSentinel( self ):
-    if( self.sentinel != "" ):
-      sentinelTracker = SymbolTracker( self.bitsPerSymbol, self.sentinel )
-      symbol          = sentinelTracker.getNextSymbol()
+        return(data)
 
-      while( symbol != None ):
-        self.sentinelSymbols.append( symbol )
-  
-        symbol = sentinelTracker.getNextSymbol()
+    def initializeSentinel(self):
+        if(self.sentinel != ""):
+            sentinelTracker = SymbolTracker(self.bitsPerSymbol, self.sentinel)
+            symbol = sentinelTracker.getNextSymbol()
 
-  def initializeData( self, modulationInfo ):
-    self.data             = ""
-    self.sentinel         = ""
-    self.dataModifiers    = []
-    self.sentinelSymbols  = []
+            while(symbol != None):
+                self.sentinelSymbols.append(symbol)
 
-    try:
-      data = ""
+                symbol = sentinelTracker.getNextSymbol()
 
-      if( 'byteCount' in modulationInfo ):
-        data = self.generateRandomData( modulationInfo[ 'byteCount' ] )  
-      elif( 'data' in modulationInfo ):
-        data = str( modulationInfo[ 'data' ] )
-      else:
-        print \
-          "WARNING: Missing required keys 'byteCount' or 'data' in 'dataInfo' (This is normal if running in Receiver mode)."
+    def initializeData(self, modulationInfo):
+        self.data = ""
+        self.sentinel = ""
+        self.dataModifiers = []
+        self.sentinelSymbols = []
 
-      if( 'sentinel' in modulationInfo ):
-        self.sentinel = str( modulationInfo[ 'sentinel' ] )
+        try:
+            data = ""
 
-        self.initializeSentinel()
+            if('byteCount' in modulationInfo):
+                data = self.generateRandomData(modulationInfo['byteCount'])
+            elif('data' in modulationInfo):
+                data = str(modulationInfo['data'])
+            else:
+                print \
+                    "WARNING: Missing required keys 'byteCount' or 'data' in 'dataInfo' (This is normal if running in Receiver mode)."
 
-      dataModifiers = modulationInfo[ 'modifiers' ]
-      
-      for modifier in dataModifiers:
-        self.dataModifiers.append( EncoderFactory.create( modifier ) ) 
+            if('sentinel' in modulationInfo):
+                self.sentinel = str(modulationInfo['sentinel'])
 
-    except KeyError as e:
-      print "ERROR: Key %s is not present" %( str( e ) )
+                self.initializeSentinel()
 
-    self.data = data
+            dataModifiers = modulationInfo['modifiers']
 
-  def generateRandomData( self, numberOfBytes ):
-    data =  \
-      ''.join (
-        random.SystemRandom().
-          choice  (
-            string.printable
-                  )
-            for _ in range( numberOfBytes )
-              )
+            for modifier in dataModifiers:
+                self.dataModifiers.append(EncoderFactory.create(modifier))
 
-    return( data )
+        except KeyError as e:
+            print "ERROR: Key %s is not present" % (str(e))
 
+        self.data = data
+
+    def generateRandomData(self, numberOfBytes):
+        data =  \
+            ''.join(
+                random.SystemRandom().
+                choice(
+                    string.printable
+                )
+                for _ in range(numberOfBytes)
+            )
+
+        return(data)

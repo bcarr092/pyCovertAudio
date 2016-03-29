@@ -1,68 +1,71 @@
-from pyCovertAudio_lib      import *
-from BaseModulator    import BaseModulator
-from SignalFunctions  import SignalFunctions
+from pyCovertAudio_lib import *
+from BaseModulator import BaseModulator
+from SignalFunctions import SignalFunctions
 
-class BFSKModulator( BaseModulator ):
-  def __init__  (
-    self, bitsPerSymbol, sampleRate, samplesPerSymbol, symbolExpansionFactor,
-    separationIntervals, configuration
-                ):
 
-    BaseModulator.__init__  (
-      self,
-      bitsPerSymbol,
-      sampleRate,
-      samplesPerSymbol,
-      symbolExpansionFactor,
-      separationIntervals,
-      configuration
-                            )
+class BFSKModulator(BaseModulator):
 
-    (
-      self.symbol0Frequency,
-      self.symbol1Frequency,
-      self.deltaFrequency,
-      self.bandwidth
-    ) = \
-      python_BFSK_determine_frequencies (
-        self.samplesPerSymbol,
-        self.sampleRate,
-        self.carrierFrequency,
-        self.separationIntervals
-                                        )
+    def __init__(
+            self, bitsPerSymbol, sampleRate, samplesPerSymbol, symbolExpansionFactor,
+            separationIntervals, configuration
+    ):
 
-  def modulate( self, symbolSequence, signal, sentinel=None ):
-    symbolSignalLength  = self.samplesPerSymbol * self.symbolExpansionFactor
+        BaseModulator.__init__(
+            self,
+            bitsPerSymbol,
+            sampleRate,
+            samplesPerSymbol,
+            symbolExpansionFactor,
+            separationIntervals,
+            configuration
+        )
 
-    for symbol in symbolSequence:
-      symbolFrequency = self.carrierFrequency
+        (
+            self.symbol0Frequency,
+            self.symbol1Frequency,
+            self.deltaFrequency,
+            self.bandwidth
+        ) = \
+            python_BFSK_determine_frequencies(
+            self.samplesPerSymbol,
+            self.sampleRate,
+            self.carrierFrequency,
+            self.separationIntervals
+        )
 
-      if( symbol == 1 ):
-        symbolFrequency += self.symbol1Frequency
-      else:
-        symbolFrequency += self.symbol0Frequency
+    def modulate(self, symbolSequence, signal, sentinel=None):
+        symbolSignalLength = self.samplesPerSymbol * self.symbolExpansionFactor
 
-      x = \
-        SignalFunctions.modulateFSK (
-          symbolSignalLength, self.sampleRate, [ symbolFrequency ]
-                                    )
+        for symbol in symbolSequence:
+            symbolFrequency = self.carrierFrequency
 
-      signal.extend( x[ : self.samplesPerSymbol ] )
+            if(symbol == 1):
+                symbolFrequency += self.symbol1Frequency
+            else:
+                symbolFrequency += self.symbol0Frequency
 
-      signal.extend (
-        [ 0.0 for i in range( ( self.symbolExpansionFactor - 1 ) * self.samplesPerSymbol ) ]
-                    )
+            x = \
+                SignalFunctions.modulateFSK(
+                    symbolSignalLength, self.sampleRate, [symbolFrequency]
+                )
 
-  def toString( self ):
-    return  (
-      "Modulator:\n\tAlgorithm:\t\t\tBFSK\n\tSymbol 0 frequency:\t\t%.02f\n\t"
-      "Symbol 1 frequency:\t\t%.02f\n\tMin frequency separation:\t%.02f\n\t"
-      "Bandwidth:\t\t\t%.02f\n%s" \
-      %(
-        self.symbol0Frequency,
-        self.symbol1Frequency,
-        self.deltaFrequency,
-        self.bandwidth,
-        BaseModulator.toString( self )
-      )
+            signal.extend(x[: self.samplesPerSymbol])
+
+            signal.extend(
+                [0.0 for i in range(
+                    (self.symbolExpansionFactor - 1) * self.samplesPerSymbol)]
             )
+
+    def toString(self):
+        return (
+            "Modulator:\n\tAlgorithm:\t\t\tBFSK\n\tSymbol 0 frequency:\t\t%.02f\n\t"
+            "Symbol 1 frequency:\t\t%.02f\n\tMin frequency separation:\t%.02f\n\t"
+            "Bandwidth:\t\t\t%.02f\n%s"
+            % (
+                self.symbol0Frequency,
+                self.symbol1Frequency,
+                self.deltaFrequency,
+                self.bandwidth,
+                BaseModulator.toString(self)
+            )
+        )
