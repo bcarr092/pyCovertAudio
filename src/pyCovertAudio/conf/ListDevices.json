@@ -1,0 +1,9 @@
+{
+  "listDevices" :
+  {
+  },
+
+  "debugDirectory"  : "tmp",
+  "debugEnabled"    : 1,
+  "outputDirectory" : "output"
+}

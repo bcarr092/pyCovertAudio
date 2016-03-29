@@ -1,6 +1,6 @@
 cmake_minimum_required( VERSION 3.0 )
 
-set( PROJECT_NAME "projectx" )
+set( PROJECT_NAME "pyCovertAudio" )
 
 project( ${PROJECT_NAME} )
 
@@ -21,18 +21,18 @@ endif()
 
 add_subdirectory( cahal )
 add_subdirectory( csignal )
-add_subdirectory( cpaudio )
+add_subdirectory( pyCovertAudio )
 
 if( ${CMAKE_SYSTEM_NAME} STREQUAL "Darwin" )
-  #add_custom_target (
-    #doc DEPENDS
-    #doc_csignal
-    #doc_cpcommon
-    #doc_darwinhelper
-    #doc_cahal
-                    #)
+  add_custom_target (
+    doc DEPENDS
+    doc_csignal
+    doc_cpcommon
+    doc_darwinhelper
+    doc_cahal
+                    )
 else()
-  #add_custom_target( doc DEPENDS doc_csignal doc_cpcommon doc_cahal )
+  add_custom_target( doc DEPENDS doc_csignal doc_cpcommon doc_cahal )
 endif()
 
 enable_testing()

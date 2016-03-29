@@ -1,0 +1,14 @@
+{
+  "playback" :
+  {
+    "deviceName"        : "Speakers",
+    "inputFile"         : "output/out.wav",
+    "duration"          : 5,
+    "volume"            : 1.0,
+    "delay"             : 0.0
+  },
+
+  "debugDirectory"  : "tmp",
+  "debugEnabled"    : 1,
+  "outputDirectory" : "output"
+}

@@ -1,0 +1,16 @@
+{
+  "record" :
+  {
+    "deviceName"        : "Microphone",
+    "outputFile"        : "out.wav",
+    "duration"          : 5,
+    "bitDepth"          : 16,
+    "numberOfChannels"  : 2,
+    "sampleRate"        : 48000
+
+  },
+
+  "debugDirectory"  : "tmp",
+  "debugEnabled"    : 1,
+  "outputDirectory" : "output"
+}

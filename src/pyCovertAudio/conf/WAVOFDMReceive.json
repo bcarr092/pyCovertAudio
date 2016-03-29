@@ -1,0 +1,75 @@
+{
+  "receiver" :
+  {
+    "class"       : "WAVMultiCarrierReceiver.WAVMultiCarrierReceiver",
+    "attributes"  :
+    {
+      "bitsPerSymbol"         : 1,
+      "sampleRate"            : 48000,
+      "samplesPerSymbol"      : 480,
+      "symbolExpansionFactor" : 2,
+      "separationIntervals"   : 2,
+
+      "WAVInfo" :
+      {
+        "fileName"  : "output/transmit.wav"
+      },
+
+      "demodulator" :
+      {
+        "class"       : "OFDMDemodulator.OFDMDemodulator",
+        "attributes"  :
+        {
+          "minimumFrequency"          : 18000,
+          "maximumFrequency"          : 20000,
+          "bandwidthDivisor"          : 1.0,
+          "decimatedSamplesPerSymbol" : 2,
+          "symbolFrequencyBandwidth"  : 10
+        }
+      },
+
+      "modifiers" :
+      [
+        {
+          "class"       : "BandpassFilter.BandpassFilter",
+          "attributes"  :
+          {
+            "firstStopband"       : 17800,
+            "firstPassband"       : 18000,
+            "secondPassband"      : 20000,
+            "secondStopband"      : 22000,
+            "passbandAttenuation" : 0.1,
+            "stopbandAttenuation" : 80
+          }
+        }
+      ],
+
+      "dataInfo"  :
+      {
+        "data"      : "Hello",
+        "sentinel"  : "UW",
+        "modifiers" :
+        [
+          {
+            "class"       : "ManchesterEncoder.ManchesterEncoder",
+            "attributes"  :
+            {
+            }
+          },
+          {
+            "class"       : "ReedSolomonEncoder.ReedSolomonEncoder",
+            "attributes"  :
+            {
+              "messageLength" : 16,
+              "blockLength"   : 32
+            }
+          }
+        ]
+      }
+    }
+  },
+
+  "debugDirectory"  : "tmp",
+  "debugEnabled"    : 1,
+  "outputDirectory" : "output"
+}

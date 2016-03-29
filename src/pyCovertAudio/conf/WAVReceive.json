@@ -1,0 +1,72 @@
+{
+  "receiver" :
+  {
+    "class"       : "WAVReceiver.WAVReceiver",
+    "attributes"  :
+    {
+      "bitsPerSymbol"         : 1,
+      "sampleRate"            : 48000,
+      "samplesPerSymbol"      : 480,
+      "symbolExpansionFactor" : 3,
+      "separationIntervals"   : 4,
+
+      "WAVInfo" :
+      {
+        "fileName"  : "output/transmit.wav"
+      },
+
+      "demodulator" :
+      {
+        "class"       : "BFSKDemodulator.BFSKDemodulator",
+        "attributes"  :
+        {
+          "carrierFrequency"          : 18000,
+          "decimatedSamplesPerSymbol" : 2,
+          "symbolFrequencyBandwidth"  : 10
+        }
+      },
+
+      "modifiers" :
+      [
+        {
+          "class"       : "BandpassFilter.BandpassFilter",
+          "attributes"  :
+          {
+            "firstStopband"       : 17500,
+            "firstPassband"       : 17700,
+            "secondPassband"      : 18300,
+            "secondStopband"      : 18500,
+            "passbandAttenuation" : 0.1,
+            "stopbandAttenuation" : 80
+          }
+        }
+      ],
+
+      "dataInfo"  :
+      {
+        "sentinel"  : "UW",
+        "modifiers" :
+        [
+          {
+            "class"       : "ManchesterEncoder.ManchesterEncoder",
+            "attributes"  :
+            {
+            }
+          },
+          {
+            "class"       : "ReedSolomonEncoder.ReedSolomonEncoder",
+            "attributes"  :
+            {
+              "messageLength" : 16,
+              "blockLength"   : 32
+            }
+          }
+        ]
+      }
+    }
+  },
+
+  "debugDirectory"  : "tmp",
+  "debugEnabled"    : 1,
+  "outputDirectory" : "output"
+}
