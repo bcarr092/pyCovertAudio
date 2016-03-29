@@ -3,7 +3,6 @@ from pyCovertAudio_lib import *
 import sys
 import math
 import scipy.fftpack
-import numpy as np
 
 
 class SignalFunctions():
@@ -108,29 +107,9 @@ class SignalFunctions():
 
     @staticmethod
     def nextPowOf2(value):
-        nextPow = np.ceil(np.log2(value))
+        nextPow = math.ceil(math.log(value, 2))
 
         return(nextPow)
-
-    @staticmethod
-    def filterByFFT(signal, sampleRate, passFrequency, lowPass):
-        N = 2 ** SignalFunctions.nextPowOf2(len(signal))
-        X = scipy.fftpack.rfft(signal, N)
-
-        deltaF = (1.0 / float(N)) * (float(sampleRate) / 2.0)
-
-        if(lowPass):
-            frequencyBin = np.ceil(float(passFrequency) / deltaF)
-
-            X[frequencyBin:] = 0.0
-        else:
-            frequencyBin = np.floor(float(passFrequency) / deltaF)
-
-            X[: frequencyBin] = 0.0
-
-        x = scipy.fftpack.irfft(X)
-
-        return(x)
 
     @staticmethod
     def modulateFSK(signalLength, sampleRate, frequencies):
