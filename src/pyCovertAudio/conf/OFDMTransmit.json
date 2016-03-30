@@ -1,7 +1,7 @@
 {
   "transmitter" :
   {
-    "class"       : "WAVTransmitter.WAVTransmitter",
+    "class"       : "WAVMultiCarrierTransmitter.WAVMultiCarrierTransmitter",
     "attributes"  :
     {
       "bitsPerSymbol"         : 1,
@@ -19,11 +19,11 @@
 
       "modulator" :
       {
-        "class"       : "FHSSModulator.FHSSModulator",
+        "class"       : "OFDMModulator.OFDMModulator",
         "attributes"  :
         {
           "minimumFrequency"              : 18000,
-          "maximumFrequency"              : 20000,
+          "maximumFrequency"              : 19600,
           "bandwidthDivisor"              : 1.0
         }
       },
@@ -36,8 +36,8 @@
           {
             "firstStopband"       : 17800,
             "firstPassband"       : 18000,
-            "secondPassband"      : 20000,
-            "secondStopband"      : 22000,
+            "secondPassband"      : 19600,
+            "secondStopband"      : 19800,
             "passbandAttenuation" : 0.1,
             "stopbandAttenuation" : 80
           }
@@ -46,8 +46,8 @@
   
       "dataInfo"  :
       {
-        "data"      : "Hello",
-        "sentinel"  : "UUW",
+        "data"      : "What hath God wrought?",
+        "sentinel"  : "UUUUUUUUW",
         "modifiers" :
         [
           {
@@ -56,12 +56,6 @@
             {
               "messageLength" : 16,
               "blockLength"   : 32
-            }
-          },
-          {
-            "class"       : "ManchesterEncoder.ManchesterEncoder",
-            "attributes"  :
-            {
             }
           }
         ]

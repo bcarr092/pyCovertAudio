@@ -1,28 +1,28 @@
 {
-  "transmitter" :
+  "receiver" :
   {
-    "class"       : "WAVTransmitter.WAVTransmitter",
+    "class"       : "WAVReceiver.WAVReceiver",
     "attributes"  :
     {
       "bitsPerSymbol"         : 1,
       "sampleRate"            : 48000,
       "samplesPerSymbol"      : 480,
-      "symbolExpansionFactor" : 3,
-      "separationIntervals"   : 4,
+      "symbolExpansionFactor" : 9,
+      "separationIntervals"   : 2,
 
       "WAVInfo" :
       {
-        "fileName"          : "transmit.wav",
-        "numberOfChannels"  : 2,
-        "channelMode"       : "blank"
+        "fileName"  : "output/transmit.wav"
       },
 
-      "modulator" :
+      "demodulator" :
       {
-        "class"       : "BFSKModulator.BFSKModulator",
+        "class"       : "BFSKDemodulator.BFSKDemodulator",
         "attributes"  :
         {
-          "carrierFrequency"  : 18000
+          "carrierFrequency"          : 18000,
+          "decimatedSamplesPerSymbol" : 2,
+          "symbolFrequencyBandwidth"  : 10
         }
       },
 
@@ -41,11 +41,10 @@
           }
         }
       ],
-  
+
       "dataInfo"  :
       {
-        "data"      : "Hello",
-        "sentinel"  : "UUW",
+        "sentinel"  : "UUUUUUUW",
         "modifiers" :
         [
           {
@@ -54,12 +53,6 @@
             {
               "messageLength" : 16,
               "blockLength"   : 32
-            }
-          },
-          {
-            "class"       : "ManchesterEncoder.ManchesterEncoder",
-            "attributes"  :
-            {
             }
           }
         ]

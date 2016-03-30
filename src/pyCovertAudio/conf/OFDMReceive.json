@@ -7,7 +7,7 @@
       "bitsPerSymbol"         : 1,
       "sampleRate"            : 48000,
       "samplesPerSymbol"      : 480,
-      "symbolExpansionFactor" : 2,
+      "symbolExpansionFactor" : 9,
       "separationIntervals"   : 2,
 
       "WAVInfo" :
@@ -21,7 +21,7 @@
         "attributes"  :
         {
           "minimumFrequency"          : 18000,
-          "maximumFrequency"          : 20000,
+          "maximumFrequency"          : 19600,
           "bandwidthDivisor"          : 1.0,
           "decimatedSamplesPerSymbol" : 2,
           "symbolFrequencyBandwidth"  : 10
@@ -36,8 +36,8 @@
           {
             "firstStopband"       : 17800,
             "firstPassband"       : 18000,
-            "secondPassband"      : 20000,
-            "secondStopband"      : 22000,
+            "secondPassband"      : 19600,
+            "secondStopband"      : 19800,
             "passbandAttenuation" : 0.1,
             "stopbandAttenuation" : 80
           }
@@ -46,16 +46,9 @@
 
       "dataInfo"  :
       {
-        "data"      : "Hello",
-        "sentinel"  : "UW",
+        "sentinel"  : "UUUUUUUW",
         "modifiers" :
         [
-          {
-            "class"       : "ManchesterEncoder.ManchesterEncoder",
-            "attributes"  :
-            {
-            }
-          },
           {
             "class"       : "ReedSolomonEncoder.ReedSolomonEncoder",
             "attributes"  :

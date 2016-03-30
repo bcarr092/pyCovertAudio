@@ -1,28 +1,28 @@
 {
-  "receiver" :
+  "transmitter" :
   {
-    "class"       : "WAVReceiver.WAVReceiver",
+    "class"       : "WAVTransmitter.WAVTransmitter",
     "attributes"  :
     {
       "bitsPerSymbol"         : 1,
       "sampleRate"            : 48000,
       "samplesPerSymbol"      : 480,
-      "symbolExpansionFactor" : 3,
-      "separationIntervals"   : 4,
+      "symbolExpansionFactor" : 9,
+      "separationIntervals"   : 2,
 
       "WAVInfo" :
       {
-        "fileName"  : "output/transmit.wav"
+        "fileName"          : "transmit.wav",
+        "numberOfChannels"  : 2,
+        "channelMode"       : "blank"
       },
 
-      "demodulator" :
+      "modulator" :
       {
-        "class"       : "BFSKDemodulator.BFSKDemodulator",
+        "class"       : "BFSKModulator.BFSKModulator",
         "attributes"  :
         {
-          "carrierFrequency"          : 18000,
-          "decimatedSamplesPerSymbol" : 2,
-          "symbolFrequencyBandwidth"  : 10
+          "carrierFrequency"  : 18000
         }
       },
 
@@ -41,18 +41,13 @@
           }
         }
       ],
-
+  
       "dataInfo"  :
       {
-        "sentinel"  : "UW",
+        "data"      : "What hath God wrought?",
+        "sentinel"  : "UUUUUUUUW",
         "modifiers" :
         [
-          {
-            "class"       : "ManchesterEncoder.ManchesterEncoder",
-            "attributes"  :
-            {
-            }
-          },
           {
             "class"       : "ReedSolomonEncoder.ReedSolomonEncoder",
             "attributes"  :
