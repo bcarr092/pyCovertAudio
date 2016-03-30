@@ -1,6 +1,5 @@
 from pyCovertAudio_lib import *
 from BaseModulator import BaseModulator
-from BFSKModulator import BFSKModulator
 from SignalFunctions import SignalFunctions
 
 import random
@@ -9,8 +8,8 @@ import random
 class FHSSModulator(BaseModulator):
 
     def __init__(
-            self, bitsPerSymbol, sampleRate, samplesPerSymbol, symbolExpansionFactor,
-            separationIntervals, configuration
+            self, bitsPerSymbol, sampleRate, samplesPerSymbol,
+            symbolExpansionFactor, separationIntervals, configuration
     ):
 
         BaseModulator.__init__(
@@ -43,7 +42,7 @@ class FHSSModulator(BaseModulator):
 
             self.bandwidth /= self.bandwidthDivisor
 
-            self.carrierFrequencies   = \
+            self.carrierFrequencies = \
                 SignalFunctions.getCarrierFrequencies(
                     self.minimumFrequency,
                     self.maximumFrequency,
@@ -59,7 +58,9 @@ class FHSSModulator(BaseModulator):
 
         for symbol in symbolSequence:
             carrierFrequencyIndex = \
-                random.SystemRandom().randint(0, len(self.carrierFrequencies) - 1)
+                random.SystemRandom().randint(
+                                0, len(self.carrierFrequencies) - 1
+                                             )
 
             carrierFrequency = self.carrierFrequencies[carrierFrequencyIndex]
             symbolFrequency = carrierFrequency
@@ -83,10 +84,10 @@ class FHSSModulator(BaseModulator):
 
     def toString(self):
         return (
-            "Modulator:\n\tAlgorithm:\t\t\tFHSS\n\tMinimum frequency:\t\t%.02f Hz\n\t"
-            "Maximum frequency:\t\t%.02f Hz\n\t"
-            "Symbol 0 frequency (rel):\t%.02f Hz\n\t"
-            "Symbol 1 frequency (rel):\t%.02f Hz\n\tBandwidth:\t\t\t%.02f Hz\n%s"
+            "Modulator:\n\tAlgorithm:\t\t\tFHSS\n\tMinimum frequency:\t\t"
+            "%.02f Hz\n\tMaximum frequency:\t\t%.02f Hz\n\tSymbol 0 frequency"
+            " (rel):\t%.02f Hz\n\tSymbol 1 frequency (rel):\t%.02f Hz\n\t"
+            "Bandwidth:\t\t\t%.02f Hz\n%s"
             % (
                 self.minimumFrequency,
                 self.maximumFrequency,

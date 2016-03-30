@@ -1,6 +1,5 @@
 import wave
 import math
-import md5
 
 from pyCovertAudio_lib import *
 
@@ -42,7 +41,8 @@ class WAVPlayer:
         try:
             self.wavFile = wave.open(self.fileName, "rb")
 
-            frameSize = self.wavFile.getnchannels() * self.wavFile.getsampwidth()
+            frameSize = \
+                self.wavFile.getnchannels() * self.wavFile.getsampwidth()
 
             print "WAV file information:"
             print "\tFile:\t\t\t'%s'" % (self.fileName)
@@ -54,14 +54,15 @@ class WAVPlayer:
             print "\tDuration:\t\t%d secs"  \
                 % (
                   math.ceil(
-                      (self.wavFile.getnframes() * 1.0)
-                      / (self.wavFile.getframerate() * 1.0)
+                      (self.wavFile.getnframes() * 1.0) /
+                      (self.wavFile.getframerate() * 1.0)
                   )
                 )
 
             delayFrames = self.delay * self.wavFile.getframerate()
-            delayBytes  = \
-                delayFrames * self.wavFile.getnchannels() * self.wavFile.getsampwidth()
+            delayBytes = \
+                delayFrames * self.wavFile.getnchannels() * \
+                self.wavFile.getsampwidth()
 
             bufferedSamples = "\x00" * int(math.ceil(delayBytes))
 

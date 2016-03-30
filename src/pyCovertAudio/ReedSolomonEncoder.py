@@ -1,5 +1,4 @@
 from BaseEncoder import BaseEncoder
-from SymbolTracker import SymbolTracker
 from ReedSolomon import ReedSolomon
 from BitPacker import BitPacker
 from BitStream import BitStream
@@ -14,8 +13,9 @@ class ReedSolomonEncoder(BaseEncoder):
         BaseEncoder.__init__(self, configuration)
 
         if (
-            self.messageLength % ReedSolomonEncoder.SYMBOL_SIZE_IN_BITS == 0
-            and self.blockLength % ReedSolomonEncoder.SYMBOL_SIZE_IN_BITS == 0
+            self.messageLength % ReedSolomonEncoder.SYMBOL_SIZE_IN_BITS ==
+            0 and
+            self.blockLength % ReedSolomonEncoder.SYMBOL_SIZE_IN_BITS == 0
         ):
 
             self.codec = ReedSolomon()
@@ -35,7 +35,8 @@ class ReedSolomonEncoder(BaseEncoder):
 
     def toString(self):
         string =  \
-            "ReedSolomonEncoder\n\tBlock symbols:\t\t%d\n\tMessage symbols:\t%d\n%s"  \
+            "ReedSolomonEncoder\n\tBlock symbols:\t\t%d\n\tMessage symbols:"\
+            "\t%d\n%s"  \
             % (
                 self.numberOfBlockSymbols,
                 self.numberOfMessageSymbols,
@@ -49,7 +50,7 @@ class ReedSolomonEncoder(BaseEncoder):
             bitPacker = BitPacker()
             bitStream = BitStream(False, bitPacker)
             symbolTracker = BitStream(False, data)
-            numberOfBlocks  = \
+            numberOfBlocks = \
                 int(
                     math.ceil(
                         float(symbolTracker.getSize()) /
@@ -69,7 +70,10 @@ class ReedSolomonEncoder(BaseEncoder):
                 codeword =  \
                     self.codec.RSEncode(
                         blockValues,
-                        (self.numberOfBlockSymbols - self.numberOfMessageSymbols)
+                        (
+                            self.numberOfBlockSymbols -
+                            self.numberOfMessageSymbols
+                        )
                     )
 
                 map(
@@ -92,7 +96,7 @@ class ReedSolomonEncoder(BaseEncoder):
             bitPacker = BitPacker()
             bitStream = BitStream(False, bitPacker)
             symbolTracker = BitStream(False, data)
-            numberOfBlocks  = \
+            numberOfBlocks = \
                 int(
                     math.ceil(
                         float(symbolTracker.getSize()) /
@@ -110,16 +114,19 @@ class ReedSolomonEncoder(BaseEncoder):
                     blockValues[j] = ord(buffer[j])
 
                     if (
-                        errorPositions is not None
-                        and index < len(errorPositions)
-                        and errorPositions[index]
+                        errorPositions is not None and
+                        index < len(errorPositions) and
+                        errorPositions[index]
                     ):
                         blockValues[j] = -1
 
                 message =  \
                     self.codec.RSDecode(
                         blockValues,
-                        (self.numberOfBlockSymbols - self.numberOfMessageSymbols)
+                        (
+                            self.numberOfBlockSymbols -
+                            self.numberOfMessageSymbols
+                        )
                     )
 
                 if(message is not None):

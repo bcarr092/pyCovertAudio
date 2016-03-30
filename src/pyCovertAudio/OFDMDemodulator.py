@@ -1,19 +1,14 @@
 from pyCovertAudio_lib import *
 from BaseDemodulator import BaseDemodulator
 from BFSKDemodulator import BFSKDemodulator
-from Debug import Debug
 from SignalFunctions import SignalFunctions
-
-import time
-import math
-import struct
 
 
 class OFDMDemodulator(BaseDemodulator):
 
     def __init__(
-            self, bitsPerSymbol, sampleRate, samplesPerSymbol, symbolExpansionFactor,
-            separationIntervals, configuration
+            self, bitsPerSymbol, sampleRate, samplesPerSymbol,
+            symbolExpansionFactor, separationIntervals, configuration
     ):
 
         configuration["carrierFrequency"] = 0.0
@@ -50,7 +45,7 @@ class OFDMDemodulator(BaseDemodulator):
 
             self.bandwidth /= self.bandwidthDivisor
 
-            self.carrierFrequencies   = \
+            self.carrierFrequencies = \
                 SignalFunctions.getCarrierFrequencies(
                     self.minimumFrequency,
                     self.maximumFrequency,
@@ -76,8 +71,10 @@ class OFDMDemodulator(BaseDemodulator):
                     self.separationIntervals,
                     {
                         "carrierFrequency": carrierFrequency,
-                        "symbolFrequencyBandwidth": self.symbolFrequencyBandwidth,
-                        "decimatedSamplesPerSymbol": self.decimatedSamplesPerSymbol
+                        "symbolFrequencyBandwidth":
+                        self.symbolFrequencyBandwidth,
+                        "decimatedSamplesPerSymbol":
+                        self.decimatedSamplesPerSymbol
                     }
                 )
 
@@ -118,9 +115,10 @@ class OFDMDemodulator(BaseDemodulator):
 
     def toString(self):
         return (
-            "Demodulator:\n\tAlgorithm:\t\t\tOFDM\n\tSymbol 0 frequency:\t\t%.02f\n\t"
-            "Symbol 1 frequency:\t\t%.02f\n\tMin frequency separation:\t%.02f\n\t"
-            "Bandwidth:\t\t\t%.02f\n\tFrequency bandwidth:\t\t%d\n%s"
+            "Demodulator:\n\tAlgorithm:\t\t\tOFDM\n\tSymbol 0 frequency:\t\t"
+            "%.02f\n\tSymbol 1 frequency:\t\t%.02f\n\tMin frequency"
+            " separation:\t%.02f\n\tBandwidth:\t\t\t%.02f\n\tFrequency"
+            " bandwidth:\t\t%d\n%s"
             % (
                 self.symbol0Frequency,
                 self.symbol1Frequency,

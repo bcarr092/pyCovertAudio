@@ -5,14 +5,13 @@ from SignalFunctions import SignalFunctions
 
 import time
 import math
-import struct
 
 
 class BFSKDemodulator(BaseDemodulator):
 
     def __init__(
-            self, bitsPerSymbol, sampleRate, samplesPerSymbol, symbolExpansionFactor,
-            separationIntervals, configuration
+            self, bitsPerSymbol, sampleRate, samplesPerSymbol,
+            symbolExpansionFactor, separationIntervals, configuration
     ):
 
         BaseDemodulator.__init__(
@@ -46,21 +45,22 @@ class BFSKDemodulator(BaseDemodulator):
             self.separationIntervals
         )
 
-        print "Symbol 0: %.02f\tSymbol 1: %.02f\tDelta: %.02f\tBandwidth: %.02f"  \
+        print                                       \
+            "Symbol 0: %.02f\tSymbol 1: %.02f\t"    \
+            "Delta: %.02f\tBandwidth: %.02f"        \
             % (
               self.symbol0Frequency,
               self.symbol1Frequency,
-                self.deltaFrequency,
-                self.bandwidth
+              self.deltaFrequency,
+              self.bandwidth
             )
 
         self.interpolationGap =  \
             int(
-                2.0
-                * (
-                    (float(self.sampleRate) / 2.0)
-                    - (self.carrierFrequency + (self.bandwidth / 2.0))
-                )
+                2.0 * (
+                    (float(self.sampleRate) / 2.0) -
+                    (self.carrierFrequency + (self.bandwidth / 2.0))
+                      )
             )
 
         print "Gap: %d" % (self.interpolationGap)
@@ -68,23 +68,26 @@ class BFSKDemodulator(BaseDemodulator):
         self.decimationFactor =  \
             int(
                 math.floor(
-                    (2.0 * self.samplesPerSymbol)
-                    / float(self.decimatedSamplesPerSymbol)
+                    (2.0 * self.samplesPerSymbol) /
+                    float(self.decimatedSamplesPerSymbol)
                 )
             )
         self.decimatedSampleRate = \
             int(
                 math.ceil(
-                    (2.0 * self.sampleRate)
-                    / float(self.decimationFactor)
+                    (2.0 * self.sampleRate) /
+                    float(self.decimationFactor)
                 )
             )
 
     def initializeFilters(self):
-        passbandSymbol0Frequency = self.carrierFrequency + self.symbol0Frequency
-        passbandSymbol1Frequency = self.carrierFrequency + self.symbol1Frequency
+        passbandSymbol0Frequency =  \
+            self.carrierFrequency + self.symbol0Frequency
+        passbandSymbol1Frequency =  \
+            self.carrierFrequency + self.symbol1Frequency
 
-        frequencySeparation = passbandSymbol1Frequency - passbandSymbol0Frequency
+        frequencySeparation =   \
+            passbandSymbol1Frequency - passbandSymbol0Frequency
 
         self.filter0 = \
             python_initialize_kaiser_filter(
@@ -258,9 +261,10 @@ class BFSKDemodulator(BaseDemodulator):
 
     def toString(self):
         return (
-            "Demodulator:\n\tAlgorithm:\t\t\tBFSK\n\tSymbol 0 frequency:\t\t%.02f\n\t"
-            "Symbol 1 frequency:\t\t%.02f\n\tMin frequency separation:\t%.02f\n\t"
-            "Bandwidth:\t\t\t%.02f\n\tFrequency bandwidth:\t\t%d\n%s"
+            "Demodulator:\n\tAlgorithm:\t\t\tBFSK\n\tSymbol 0 frequency:"
+            "\t\t%.02f\n\tSymbol 1 frequency:\t\t%.02f\n\tMin frequency"
+            " separation:\t%.02f\n\tBandwidth:\t\t\t%.02f\n\tFrequency"
+            " bandwidth:\t\t%d\n%s"
             % (
                 self.symbol0Frequency,
                 self.symbol1Frequency,
@@ -314,7 +318,8 @@ class BFSKDemodulator(BaseDemodulator):
         samplePoints =  \
             self.runGardnerAlgorithm(
                 averaged,
-                2 * self.symbolExpansionFactor * self.decimatedSamplesPerSymbol,
+                2 * self.symbolExpansionFactor *
+                self.decimatedSamplesPerSymbol,
                 2 * self.decimatedSampleRate
             )
 
@@ -339,7 +344,7 @@ class BFSKDemodulator(BaseDemodulator):
         while(((n * samplesPerSymbol) + offset) < len(signal)):
             nextPoint = n * samplesPerSymbol + offset
             previousPoint = (n - 1) * samplesPerSymbol + offset
-            midPoint      = \
+            midPoint = \
                 int(nextPoint - int(math.floor(samplesPerSymbol / 2.0)))
 
             samplePoints.append(nextPoint)
@@ -352,23 +357,6 @@ class BFSKDemodulator(BaseDemodulator):
                     offset += 1
                 elif(e > 0.0001):
                     offset -= 1
-
-            #print \
-                #"Time: %.04f s\tn: %d (%d)\tNext: %d (%.04f)\tPrev: %d (%.04f)\t" \
-                #"Mid: %d (%.04f)\tError: %e\tOffset: %d" \
-                #%(
-                    #float( nextPoint ) / sampleRate,
-                    # n,
-                    #n * samplesPerSymbol,
-                    # nextPoint,
-                    #signal[ nextPoint ],
-                    # previousPoint,
-                    #signal[ previousPoint],
-                    # midPoint,
-                    #signal[ midPoint ],
-                    # e,
-                    # offset
-                #)
 
             n += 1
 

@@ -1,8 +1,8 @@
 from SymbolTracker import SymbolTracker
 from EncoderFactory import EncoderFactory
 
-import struct
 import random
+import string
 
 
 class Base:
@@ -43,7 +43,7 @@ class Base:
             sentinelTracker = SymbolTracker(self.bitsPerSymbol, self.sentinel)
             symbol = sentinelTracker.getNextSymbol()
 
-            while(symbol != None):
+            while(symbol is not None):
                 self.sentinelSymbols.append(symbol)
 
                 symbol = sentinelTracker.getNextSymbol()
@@ -63,7 +63,8 @@ class Base:
                 data = str(modulationInfo['data'])
             else:
                 print \
-                    "WARNING: Missing required keys 'byteCount' or 'data' in 'dataInfo' (This is normal if running in Receiver mode)."
+                    "WARNING: Missing required keys 'byteCount' or 'data' in" \
+                    " 'dataInfo' (This is normal if running in Receiver mode)."
 
             if('sentinel' in modulationInfo):
                 self.sentinel = str(modulationInfo['sentinel'])

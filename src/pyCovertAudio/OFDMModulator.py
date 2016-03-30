@@ -10,8 +10,8 @@ from SymbolTracker import SymbolTracker
 class OFDMModulator(BaseModulator):
 
     def __init__(
-            self, bitsPerSymbol, sampleRate, samplesPerSymbol, symbolExpansionFactor,
-            separationIntervals, configuration
+            self, bitsPerSymbol, sampleRate, samplesPerSymbol,
+            symbolExpansionFactor, separationIntervals, configuration
     ):
 
         BaseModulator.__init__(
@@ -44,7 +44,7 @@ class OFDMModulator(BaseModulator):
 
             self.bandwidth /= self.bandwidthDivisor
 
-            self.carrierFrequencies   = \
+            self.carrierFrequencies = \
                 SignalFunctions.getCarrierFrequencies(
                     self.minimumFrequency,
                     self.maximumFrequency,
@@ -106,7 +106,7 @@ class OFDMModulator(BaseModulator):
             symbolTracker = SymbolTracker(self.bitsPerSymbol, sentinel)
             symbol = symbolTracker.getNextSymbol()
 
-            while(symbol != None):
+            while(symbol is not None):
                 for i in range(self.numberOfSubChannels):
                     sentinelSequence.append(symbol)
 
@@ -132,7 +132,7 @@ class OFDMModulator(BaseModulator):
                 subChannelSignals[i]
             )
 
-            subChannelSignals[ i ] = \
+            subChannelSignals[i] = \
                 self.filters[i].modify(subChannelSignals[i])
 
         maxLength = max([len(x) for x in subChannelSignals])
@@ -148,10 +148,10 @@ class OFDMModulator(BaseModulator):
 
     def toString(self):
         string =  \
-            "Modulator:\n\tAlgorithm:\t\t\tOFDM\n\tMinimum frequency:\t\t%.02f Hz\n\t"  \
-            "Maximum frequency:\t\t%.02f Hz\n\t"  \
-            "Symbol 0 frequency (rel):\t%.02f Hz\n\t" \
-            "Symbol 1 frequency (rel):\t%.02f Hz\n\tBandwidth:\t\t\t%.02f Hz\n" \
+            "Modulator:\n\tAlgorithm:\t\t\tOFDM\n\tMinimum frequency:\t\t" \
+            "%.02f Hz\n\tMaximum frequency:\t\t%.02f Hz\n\tSymbol 0 frequency"\
+            " (rel):\t%.02f Hz\n\tSymbol 1 frequency (rel):\t%.02f Hz\n\t"\
+            "Bandwidth:\t\t\t%.02f Hz\n" \
             % (
                 self.minimumFrequency,
                 self.maximumFrequency,

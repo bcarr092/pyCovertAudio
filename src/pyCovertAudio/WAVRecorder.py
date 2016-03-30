@@ -1,5 +1,4 @@
 import wave
-import md5
 
 from pyCovertAudio_lib import *
 from Debug import Debug

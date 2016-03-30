@@ -10,13 +10,14 @@ class CAHALAudioFormatDescription:
             self.bitDepth = audioFormat.bit_depth
             self.numberOfChannels = audioFormat.number_of_channels
             self.format = audioFormat.format_id
-            self.sampleRate       =                         \
+            self.sampleRate = \
                 CAHALSampleRateRange(
                     audioFormat.sample_rate_range.minimum_rate,
                     audioFormat.sample_rate_range.maximum_rate
                 )
         else:
-            print "Device is not the correct instance: %s." % (type(audioFormat))
+            print "Device is not the correct instance: %s." \
+                % (type(audioFormat))
 
     def printMe(self, indent):
         print "%s%s, %d channel(s), %d bits, %.02f Hz"    \

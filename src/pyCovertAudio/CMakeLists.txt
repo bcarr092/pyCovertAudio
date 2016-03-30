@@ -9,6 +9,10 @@ message( STATUS "Project directory: ${PROJECT_SOURCE_DIR}" )
 set( SOURCE_DIR "${PROJECT_SOURCE_DIR}" )
 set( INCLUDE_DIR "${SOURCE_DIR}/include" )
 set( INSTALL_DIR "${CMAKE_INSTALL_PREFIX}" )
+set (
+    INSTALL_LIB_DIR
+    "${INSTALL_DIR}/lib/${PLATFORM}/${TARGET}/${ARCHITECTURE}"
+    )
 
 message( STATUS "Source directory: ${SOURCE_DIR}" )
 message( STATUS "Include directory: ${INCLUDE_DIR}" )
@@ -150,7 +154,6 @@ list( APPEND PY_LIB "${SOURCE_DIR}/ReedSolomon.py" )
 list( APPEND PY_LIB "${SOURCE_DIR}/ReedSolomonEncoder.py" )
 list( APPEND PY_LIB "${SOURCE_DIR}/SignalFunctions.py" )
 list( APPEND PY_LIB "${SOURCE_DIR}/SymbolTracker.py" )
-list( APPEND PY_LIB "${SOURCE_DIR}/TestFactory.py" )
 list( APPEND PY_LIB "${SOURCE_DIR}/WAVMultiCarrierReceiver.py" )
 list( APPEND PY_LIB "${SOURCE_DIR}/WAVMultiCarrierTransmitter.py" )
 list( APPEND PY_LIB "${SOURCE_DIR}/WAVPlayer.py" )
@@ -173,13 +176,13 @@ foreach( FILE_TO_COPY IN ITEMS ${SCRIPTS} )
 endforeach( FILE_TO_COPY )
 
 install(  TARGETS "_${PROJECT_NAME}" DESTINATION
-          "${INSTALL_DIR}/lib" )
+          "${INSTALL_LIB_DIR}" )
 install(  PROGRAMS ${PY_BIN} DESTINATION
           "${INSTALL_DIR}" )
 install(  PROGRAMS ${PY_LIB} DESTINATION
           "${INSTALL_DIR}/lib" )
 install(  FILES ${WRAPPERS} DESTINATION
-          "${INSTALL_DIR}/lib" )
+          "${INSTALL_LIB_DIR}" )
 install(  DIRECTORY "conf/" DESTINATION
           "${INSTALL_DIR}/conf" )
 

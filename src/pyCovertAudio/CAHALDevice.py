@@ -24,7 +24,7 @@ class CAHALDevice:
             self.preferences = {}
 
             if(device.preferred_number_of_channels):
-                self.preferences[ 'numberOfChannels' ] =  \
+                self.preferences['numberOfChannels'] =  \
                     device.preferred_number_of_channels
 
             if(device.preferred_sample_rate):
@@ -42,7 +42,7 @@ class CAHALDevice:
 
         if(device.supported_sample_rates):
             sample_rate_index = 0
-            sample_rate       =                   \
+            sample_rate = \
                 cahal_sample_rate_range_list_get(
                     device.supported_sample_rates,
                     sample_rate_index
@@ -70,7 +70,7 @@ class CAHALDevice:
 
         if(device.device_streams):
             stream_index = 0
-            stream        =                   \
+            stream = \
                 cahal_device_stream_list_get(
                     device.device_streams,
                     stream_index
@@ -80,7 +80,7 @@ class CAHALDevice:
                 self.streams.append(CAHALDeviceStream(stream))
 
                 stream_index += 1
-                stream        =                   \
+                stream = \
                     cahal_device_stream_list_get(
                         device.device_streams,
                         stream_index
@@ -128,8 +128,8 @@ class CAHALDevice:
         print "\tRunning?: %s" % ("Yes" if self.isRunning else "No")
 
         if (
-            'numberOfChannels' in self.preferences
-            and 'sampleRate' in self.preferences
+            'numberOfChannels' in self.preferences and
+            'sampleRate' in self.preferences
         ):
 
             print "\tPreferences:"
@@ -151,28 +151,31 @@ class CAHALDevice:
             for stream in self.streams:
                 stream.printMe("\t\t")
 
-    def doesSupportFormat(self, stream, numberOfChannels, bitDepth, sampleRate):
+    def doesSupportFormat(
+        self, stream, numberOfChannels, bitDepth, sampleRate
+                         ):
         for format in stream.supportedFormats:
             if(
-                format.numberOfChannels == numberOfChannels
-                and format.bitDepth == bitDepth
-                and
+                format.numberOfChannels == numberOfChannels and
+                format.bitDepth == bitDepth and
                 (
-                    format.sampleRate.minimum <= sampleRate
-                    and format.sampleRate.maximum >= sampleRate
+                    format.sampleRate.minimum <= sampleRate and
+                    format.sampleRate.maximum >= sampleRate
                 )
             ):
                 return(True)
 
         return(False)
 
-    def hasAppropriateStream(self, direction, numberOfChannels, bitDepth, sampleRate):
+    def hasAppropriateStream(
+        self, direction, numberOfChannels, bitDepth, sampleRate
+                            ):
         foundStream = False
 
         for stream in self.streams:
             if(
-                stream.direction == direction
-                and self.doesSupportFormat(
+                stream.direction == direction and
+                self.doesSupportFormat(
                     stream,
                     numberOfChannels,
                     bitDepth,
@@ -185,7 +188,7 @@ class CAHALDevice:
 
     @staticmethod
     def catalogueDevices():
-        if(None == CAHALDevice.devices):
+        if(CAHALDevice.devices is None):
             device_list = cahal_get_device_list()
             index = 0
             device = cahal_device_list_get(device_list, index)
@@ -202,7 +205,7 @@ class CAHALDevice:
 
     @staticmethod
     def findDevice(deviceName):
-        if(None == CAHALDevice.devices):
+        if(CAHALDevice.devices is None):
             CAHALDevice.catalogueDevices()
 
         for device in CAHALDevice.devices:

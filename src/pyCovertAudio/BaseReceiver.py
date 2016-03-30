@@ -1,6 +1,5 @@
 from ModulatorFactory import ModulatorFactory
 from ModifierFactory import ModifierFactory
-from TestFactory import TestFactory
 from Base import Base
 from Debug import Debug
 from BitPacker import BitPacker
@@ -8,10 +7,7 @@ from BitStream import BitStream
 from SymbolTracker import SymbolTracker
 
 import sys
-import dataset
-import pickle
 import time
-import math
 
 from pyCovertAudio_lib import *
 
@@ -41,7 +37,7 @@ class BaseReceiver(Base):
 
             self.modifiers = []
 
-            self.dataDemodulator  =  \
+            self.dataDemodulator =  \
                 ModulatorFactory.create(
                     self.bitsPerSymbol,
                     self.sampleRate,
@@ -81,18 +77,17 @@ class BaseReceiver(Base):
             print "Signal starts at symbol %d." % (offsetSymbol)
 
             sampleOffset =  \
-                ( offsetSymbol + 1 )  \
+                (offsetSymbol + 1)  \
                 * self.samplesPerSymbol \
                 * self.symbolExpansionFactor
 
             print "Sample offset is %d." % (sampleOffset)
 
-            decodedSymbols = self.extractSymbols(symbols, (offsetSymbol + 1))
+            self.extractSymbols(symbols, (offsetSymbol + 1))
 
         return(symbols, sampleOffset)
 
     def receive(self):
-        offsetSignal = None
         signal = self.receiveSignal()
 
         Debug.instance.debugSignal('received.WAV', signal, self.sampleRate)
@@ -155,7 +150,7 @@ class BaseReceiver(Base):
 
         print "Decoded string: '%s'" % (decodedData)
 
-        decodedSymbols      = \
+        decodedSymbols = \
             SymbolTracker.toList(self.bitsPerSymbol, decodedData)
 
         return(decodedSymbols)

@@ -1,16 +1,7 @@
-import os
-import re
-import socket
-import select
 import sys
 import json
-import math
 import time
 import argparse
-
-# Add the lib directory in the installation directory
-sys.path.append('lib')
-
 import pyCovertAudio_lib
 
 from CAHALDevice import CAHALDevice
@@ -176,15 +167,9 @@ def listDevices():
         for device in devices:
             if('None' == filter):
                 device.printMe()
-            elif (
-                    'Output' == filter
-                    and device.doesSupportPlayback()
-            ):
+            elif('Output' == filter and device.doesSupportPlayback()):
                 device.printMe()
-            elif (
-                    'Input' == filter
-                    and device.doesSupportRecording()
-            ):
+            elif('Input' == filter and device.doesSupportRecording()):
                 device.printMe()
             elif(device.name == filter):
                 device.printMe()
@@ -283,7 +268,7 @@ def record():
         print "\tSample rate:\t\t%d Hz" % (sampleRate)
 
         device = CAHALDevice.findDevice(deviceName)
-        recorder  =                 \
+        recorder =                 \
             WAVRecorder(
                 outputFile,
                 numberOfChannels,
@@ -350,15 +335,15 @@ def main():
     else:
         print debug.toString()
 
-    if(configuration.has_key('listDevices')):
+    if("listDevices" in configuration):
         listDevices()
-    elif(configuration.has_key('record')):
+    elif("recorc" in configuration):
         record()
-    elif(configuration.has_key('playback')):
+    elif("playback" in configuration):
         playback()
-    elif(configuration.has_key('transmitter')):
+    elif("transmitter" in configuration):
         transmit()
-    elif(configuration.has_key('receiver')):
+    elif("receiver" in configuration):
         receive()
     else:
         parser.print_help()

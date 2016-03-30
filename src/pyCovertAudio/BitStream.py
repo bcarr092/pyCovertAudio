@@ -1,7 +1,5 @@
 from pyCovertAudio_lib import *
 
-from BitPacker import BitPacker
-
 import struct
 
 
@@ -24,7 +22,7 @@ class BitStream:
         self.bitPacker = None
 
     def readBytes(self, numberOfBits):
-        ( numBitsRead, buffer ) = \
+        (numBitsRead, buffer) = \
             python_bit_stream_get_bits(self.stream, numberOfBits)
 
         return(buffer)
@@ -35,7 +33,7 @@ class BitStream:
         if(32 < numberOfBits):
             returnValue = self.readBytes(numberOfBits)
         else:
-            ( numBitsRead, buffer ) = \
+            (numBitsRead, buffer) = \
                 python_bit_stream_get_bits(self.stream, numberOfBits)
 
             if(numberOfBits == 8):
@@ -56,7 +54,7 @@ class BitStream:
         if(32 < numberOfBits):
             returnValue = self.readBytes(numberOfBits)
         else:
-            ( numBitsRead, buffer ) = \
+            (numBitsRead, buffer) = \
                 python_bit_stream_get_bits(self.stream, numberOfBits)
 
             if(0 < numBitsRead and buffer and 4 >= len(buffer)):

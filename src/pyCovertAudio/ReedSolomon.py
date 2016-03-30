@@ -340,7 +340,7 @@ class ReedSolomon:
 
         # locate the message errors
         errList = self._rsFindErr(errLoci, len(codeBuffer))
-        if (errList == None):
+        if (errList is None):
             # print "Could not find any errors"
             return (None)
         else:

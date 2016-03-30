@@ -83,7 +83,7 @@ class SignalFunctions():
             for x in summer:
                 averageSignal[i] += x
 
-            averageSignal[ i ] =  \
+            averageSignal[i] =  \
                 float(averageSignal[i]) / float(numberOfSamples)
 
         return(averageSignal)

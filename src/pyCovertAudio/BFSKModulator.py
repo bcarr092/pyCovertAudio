@@ -6,8 +6,8 @@ from SignalFunctions import SignalFunctions
 class BFSKModulator(BaseModulator):
 
     def __init__(
-            self, bitsPerSymbol, sampleRate, samplesPerSymbol, symbolExpansionFactor,
-            separationIntervals, configuration
+            self, bitsPerSymbol, sampleRate, samplesPerSymbol,
+            symbolExpansionFactor, separationIntervals, configuration
     ):
 
         BaseModulator.__init__(
@@ -58,9 +58,9 @@ class BFSKModulator(BaseModulator):
 
     def toString(self):
         return (
-            "Modulator:\n\tAlgorithm:\t\t\tBFSK\n\tSymbol 0 frequency:\t\t%.02f\n\t"
-            "Symbol 1 frequency:\t\t%.02f\n\tMin frequency separation:\t%.02f\n\t"
-            "Bandwidth:\t\t\t%.02f\n%s"
+            "Modulator:\n\tAlgorithm:\t\t\tBFSK\n\tSymbol 0 frequency:\t\t"
+            "%.02f\n\tSymbol 1 frequency:\t\t%.02f\n\tMin frequency"
+            " separation:\t%.02f\n\tBandwidth:\t\t\t%.02f\n%s"
             % (
                 self.symbol0Frequency,
                 self.symbol1Frequency,

@@ -35,7 +35,7 @@ class ManchesterEncoder(BaseEncoder):
                 ManchesterEncoder.MESSAGE_LENGTH, data)
             symbol = symbolTracker.getNextSymbol()
 
-            while(symbol != None):
+            while(symbol is not None):
                 if(symbol == 1):
                     bitPacker.writeByte(
                         ManchesterEncoder.HI_SYMBOL,
@@ -63,13 +63,15 @@ class ManchesterEncoder(BaseEncoder):
             symbol = symbolTracker.getNextSymbol()
             errorBitPositions = []
 
-            while(symbol != None):
+            while(symbol is not None):
                 if(symbol == ManchesterEncoder.HI_SYMBOL):
                     bitPacker.writeByte(1, 1)
                 elif(symbol == ManchesterEncoder.LO_SYMBOL):
                     bitPacker.writeByte(0, 1)
                 else:
-                    print "WARN: Received unknown symbol (0x%x) at position %d." % (symbol, bitStream.getSize())
+                    print   \
+                        "WARN: Received unknown symbol (0x%x) at position %d."\
+                        % (symbol, bitStream.getSize())
 
                     errorBitPositions.append(bitStream.getSize())
 

@@ -16,7 +16,7 @@ class WAVTransmitter(BaseTransmitter):
             if(os.path.isabs(wavInfo['fileName'])):
                 self.fileName = wavInfo['fileName']
             else:
-                self.fileName         = \
+                self.fileName = \
                     os.path.join(
                         Debug.instance.getOutputDirectory(),
                         wavInfo['fileName']

@@ -13,14 +13,15 @@ class CAHALDeviceStream:
 
             self.catalogueAudioFormats(device_stream)
         else:
-            print "Device is not the correct instance: %s." % (type(device_stream))
+            print "Device is not the correct instance: %s." \
+                            % (type(device_stream))
 
     def catalogueAudioFormats(self, stream):
         self.supportedFormats = []
 
         if(stream.supported_formats):
             format_description_index = 0
-            format_description        =                 \
+            format_description =\
                 cahal_audio_format_description_list_get(
                     stream.supported_formats,
                     format_description_index
@@ -32,7 +33,7 @@ class CAHALDeviceStream:
                 self.supportedFormats.append(format)
 
                 format_description_index += 1
-                format_description        =                 \
+                format_description = \
                     cahal_audio_format_description_list_get(
                         stream.supported_formats,
                         format_description_index

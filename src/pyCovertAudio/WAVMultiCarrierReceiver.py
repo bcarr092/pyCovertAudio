@@ -1,5 +1,4 @@
 from WAVReceiver import WAVReceiver
-from Debug import Debug
 
 import operator
 
@@ -15,11 +14,10 @@ class WAVMultiCarrierReceiver(WAVReceiver):
         symbolsList = self.dataDemodulator.demodulate(signal)
 
         if (
-            type(symbolsList) is list
-            and 0 < len(symbolsList)
-            and type(symbolsList[0]) is list
+            type(symbolsList) is list and
+            0 < len(symbolsList) and
+            type(symbolsList[0]) is list
         ):
-            offsteSymbol = None
             offsetCount = dict()
 
             for symbols in symbolsList:
@@ -47,7 +45,7 @@ class WAVMultiCarrierReceiver(WAVReceiver):
                 print "Signal starts at symbol %d." % (offsetSymbol)
 
             sampleOffset =  \
-                ( offsetSymbol + 1 )  \
+                (offsetSymbol + 1)  \
                 * self.samplesPerSymbol \
                 * self.symbolExpansionFactor
 
@@ -59,7 +57,7 @@ class WAVMultiCarrierReceiver(WAVReceiver):
                     symbolsList
                 )
 
-            decodedSymbols = self.extractSymbols(symbols, 0)
+            self.extractSymbols(symbols, 0)
         else:
             print "ERROR: Expected a list of lists."
 

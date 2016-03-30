@@ -1,11 +1,8 @@
 from ModulatorFactory import ModulatorFactory
 from ModifierFactory import ModifierFactory
-from BitStream import BitStream
 from SymbolTracker import SymbolTracker
 from Base import Base
 from Debug import Debug
-
-import sys
 
 
 class BaseTransmitter(Base):
@@ -14,7 +11,7 @@ class BaseTransmitter(Base):
         try:
             Base.__init__(self, configuration)
 
-            self.dataModulator  =  \
+            self.dataModulator =  \
                 ModulatorFactory.create(
                     self.bitsPerSymbol,
                     self.sampleRate,
@@ -55,7 +52,7 @@ class BaseTransmitter(Base):
         symbolSequence = []
         symbol = self.symbolTracker.getNextSymbol()
 
-        while(symbol != None):
+        while(symbol is not None):
             symbolSequence.append(symbol)
 
             symbol = self.symbolTracker.getNextSymbol()

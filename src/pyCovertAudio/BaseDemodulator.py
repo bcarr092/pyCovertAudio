@@ -6,8 +6,8 @@ import sys
 class BaseDemodulator:
 
     def __init__(
-            self, bitsPerSymbol, sampleRate, samplesPerSymbol, symbolExpansionFactor,
-            separationIntervals, configuration
+            self, bitsPerSymbol, sampleRate, samplesPerSymbol,
+            symbolExpansionFactor, separationIntervals, configuration
     ):
 
         self.initializeDemodulation(
@@ -20,12 +20,12 @@ class BaseDemodulator:
         )
 
     def initializeDemodulation(
-            self, bitsPerSymbol, sampleRate, samplesPerSymbol, symbolExpansionFactor,
-            separationIntervals, modulationInfo
+            self, bitsPerSymbol, sampleRate, samplesPerSymbol,
+            symbolExpansionFactor, separationIntervals, modulationInfo
     ):
         try:
             self.carrierFrequency = modulationInfo['carrierFrequency']
-            self.decimatedSamplesPerSymbol  = \
+            self.decimatedSamplesPerSymbol = \
                 modulationInfo['decimatedSamplesPerSymbol']
             self.bitsPerSymbol = bitsPerSymbol
             self.sampleRate = sampleRate
@@ -50,8 +50,8 @@ class BaseDemodulator:
         return (
             "Base demodulator:\n\tCarrier frequency:\t\t%d Hz\n\t"
             "Bits per symbol:\t\t%d bits\n\tSample rate:\t\t\t%d Hz\n\t"
-            "Samples per symbol:\t\t%d samples\n\tConstellation size:\t\t%d\n\t"
-            "Decimated samples per symbol:\t%d\n"
+            "Samples per symbol:\t\t%d samples\n\tConstellation size:\t\t"
+            "%d\n\tDecimated samples per symbol:\t%d\n"
             % (
                 self.carrierFrequency,
                 self.bitsPerSymbol,

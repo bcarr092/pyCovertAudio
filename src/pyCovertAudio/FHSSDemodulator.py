@@ -5,14 +5,13 @@ from SignalFunctions import SignalFunctions
 
 import time
 import math
-import struct
 
 
 class FHSSDemodulator(BaseDemodulator):
 
     def __init__(
-            self, bitsPerSymbol, sampleRate, samplesPerSymbol, symbolExpansionFactor,
-            separationIntervals, configuration
+            self, bitsPerSymbol, sampleRate, samplesPerSymbol,
+            symbolExpansionFactor, separationIntervals, configuration
     ):
 
         configuration["carrierFrequency"] = 0.0
@@ -49,7 +48,7 @@ class FHSSDemodulator(BaseDemodulator):
 
             self.bandwidth /= self.bandwidthDivisor
 
-            self.carrierFrequencies   = \
+            self.carrierFrequencies = \
                 SignalFunctions.getCarrierFrequencies(
                     self.minimumFrequency,
                     self.maximumFrequency,
@@ -67,10 +66,10 @@ class FHSSDemodulator(BaseDemodulator):
     def initializeSignals(self):
         self.interpolationGap =  \
             int(
-                2.0
-                * (
-                    (float(self.sampleRate) / 2.0)
-                    - (self.carrierFrequencies[-1] + (self.bandwidth / 2.0))
+                2.0 *
+                (
+                    (float(self.sampleRate) / 2.0) -
+                    (self.carrierFrequencies[-1] + (self.bandwidth / 2.0))
                 )
             )
 
@@ -79,15 +78,15 @@ class FHSSDemodulator(BaseDemodulator):
         self.decimationFactor =  \
             int(
                 math.floor(
-                    (2.0 * self.samplesPerSymbol)
-                    / float(self.decimatedSamplesPerSymbol)
+                    (2.0 * self.samplesPerSymbol) /
+                    float(self.decimatedSamplesPerSymbol)
                 )
             )
         self.decimatedSampleRate = \
             int(
                 math.ceil(
-                    (2.0 * self.sampleRate)
-                    / float(self.decimationFactor)
+                    (2.0 * self.sampleRate) /
+                    float(self.decimationFactor)
                 )
             )
 
@@ -104,7 +103,8 @@ class FHSSDemodulator(BaseDemodulator):
         passbandSymbol0Frequency = carrierFrequency + self.symbol0Frequency
         passbandSymbol1Frequency = carrierFrequency + self.symbol1Frequency
 
-        frequencySeparation = passbandSymbol1Frequency - passbandSymbol0Frequency
+        frequencySeparation =   \
+            passbandSymbol1Frequency - passbandSymbol0Frequency
 
         filter0 = \
             python_initialize_kaiser_filter(
@@ -171,7 +171,7 @@ class FHSSDemodulator(BaseDemodulator):
         interpolatorStartTime = time.time()
 
         for filteredSignal in filtered:
-            interpolatedSignal  = \
+            interpolatedSignal = \
                 SignalFunctions.interpolateSignal(
                     filteredSignal,
                     self.sampleRate,
@@ -305,9 +305,10 @@ class FHSSDemodulator(BaseDemodulator):
 
     def toString(self):
         return (
-            "Demodulator:\n\tAlgorithm:\t\t\tBFSK\n\tSymbol 0 frequency:\t\t%.02f\n\t"
-            "Symbol 1 frequency:\t\t%.02f\n\tMin frequency separation:\t%.02f\n\t"
-            "Bandwidth:\t\t\t%.02f\n\tFrequency bandwidth:\t\t%d\n%s"
+            "Demodulator:\n\tAlgorithm:\t\t\tBFSK\n\tSymbol 0 frequency"
+            ":\t\t%.02f\n\tSymbol 1 frequency:\t\t%.02f\n\tMin frequency"
+            " separation:\t%.02f\n\tBandwidth:\t\t\t%.02f\n\tFrequency"
+            " bandwidth:\t\t%d\n%s"
             % (
                 self.symbol0Frequency,
                 self.symbol1Frequency,
@@ -353,7 +354,8 @@ class FHSSDemodulator(BaseDemodulator):
         samplePoints =  \
             self.runGardnerAlgorithm(
                 averaged,
-                2 * self.symbolExpansionFactor * self.decimatedSamplesPerSymbol,
+                2 * self.symbolExpansionFactor *
+                self.decimatedSamplesPerSymbol,
                 2 * self.decimatedSampleRate
             )
 
@@ -378,7 +380,7 @@ class FHSSDemodulator(BaseDemodulator):
         while(((n * samplesPerSymbol) + offset) < len(signal)):
             nextPoint = n * samplesPerSymbol + offset
             previousPoint = (n - 1) * samplesPerSymbol + offset
-            midPoint      = \
+            midPoint = \
                 int(nextPoint - int(math.floor(samplesPerSymbol / 2.0)))
 
             samplePoints.append(nextPoint)

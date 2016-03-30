@@ -44,7 +44,8 @@ class BitPacker:
                         ord(byte), numberOfReadBits, self.packer)
 
                 if(CPC_ERROR_CODE_NO_ERROR != result):
-                    print "ERROR: Could not write %d bits of byte (%s): 0x%x." \
+                    print   \
+                        "ERROR: Could not write %d bits of byte (%s): 0x%x." \
                         % (numberofReadBits, bin(ord(byte)), result)
 
                 numberOfBits -= numberOfReadBits
@@ -55,8 +56,8 @@ class BitPacker:
     def writeBytes(self, buffer):
         if(buffer):
             if (
-                CPC_ERROR_CODE_NO_ERROR
-                != python_bit_packer_add_bytes(buffer, self.packer)
+                CPC_ERROR_CODE_NO_ERROR !=
+                python_bit_packer_add_bytes(buffer, self.packer)
             ):
                 print "ERROR: Could not store buffer."
         else:

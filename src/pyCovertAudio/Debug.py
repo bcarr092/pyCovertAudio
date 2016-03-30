@@ -1,9 +1,5 @@
 import sys
 import os
-import socket
-import platform
-import random
-import string
 
 import pyCovertAudio_lib
 
@@ -64,7 +60,7 @@ class Debug:
 
     @staticmethod
     def getInstance(configuration):
-        if(None == Debug.instance):
+        if(Debug.instance is None):
             try:
                 debugDirectory = configuration['debugDirectory']
                 debug = True if(configuration['debugEnabled']) else False
@@ -112,7 +108,7 @@ class Debug:
         if(os.path.exists(fileName)):
             os.unlink(fileName)
 
-        error = pyCovertAudio_lib.python_write_FLOAT_wav(
+        pyCovertAudio_lib.python_write_FLOAT_wav(
             fileName,
             len(samples),
             sampleRate,
@@ -136,7 +132,7 @@ class Debug:
         )
 
     def saveSequence(self, fileName, sequence, variable):
-        if(None == variable):
+        if(variable is None):
             variable = [i for i in range(len(sequence))]
 
         try:

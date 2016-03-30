@@ -20,7 +20,7 @@ class SymbolTracker:
     def getNextSymbol(self):
         symbol = None
 
-        ( numberOfBits, buffer ) = \
+        (numberOfBits, buffer) = \
             python_bit_stream_get_bits(self.dataStream, self.bitsPerSymbol)
 
         if(0 < numberOfBits):
@@ -34,7 +34,7 @@ class SymbolTracker:
         dataStream = SymbolTracker(bitsPerSymbol, data)
         symbol = dataStream.getNextSymbol()
 
-        while(symbol != None):
+        while(symbol is not None):
             returnList.append(symbol)
 
             symbol = dataStream.getNextSymbol()

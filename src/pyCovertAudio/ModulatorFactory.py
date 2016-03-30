@@ -12,7 +12,7 @@ class ModulatorFactory:
 
             module = __import__(moduleName)
             classObject = getattr(module, className)
-            instance    = \
+            instance = \
                 classObject(
                     bitsPerSymbol,
                     sampleRate,

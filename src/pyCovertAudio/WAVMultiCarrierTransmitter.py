@@ -1,9 +1,6 @@
-import os
-
 from pyCovertAudio_lib import *
 from WAVTransmitter import WAVTransmitter
 from SymbolTracker import SymbolTracker
-from Debug import Debug
 
 
 class WAVMultiCarrierTransmitter(WAVTransmitter):

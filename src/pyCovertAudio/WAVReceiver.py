@@ -1,5 +1,4 @@
 from BaseReceiver import BaseReceiver
-from Debug import Debug
 from SignalFunctions import SignalFunctions
 
 import wave

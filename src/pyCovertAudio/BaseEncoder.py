@@ -1,9 +1,12 @@
+import sys
+
+
 class BaseEncoder:
 
     def toString(self):
         string =  \
-            "BaseEncoder:\n\tBlock length (n):\t%d\n\tMessage length (k):\t%d" \
-            "\n\tRate:\t\t\t%.2f" \
+            "BaseEncoder:\n\tBlock length (n):\t%d\n\tMessage length (k):"  \
+            "\t%d\n\tRate:\t\t\t%.2f" \
             % (
                 self.blockLength,
                 self.messageLength,

@@ -6,8 +6,8 @@ import sys
 class BaseModulator:
 
     def __init__(
-            self, bitsPerSymbol, sampleRate, samplesPerSymbol, symbolExpansionFactor,
-            separationIntervals, configuration
+            self, bitsPerSymbol, sampleRate, samplesPerSymbol,
+            symbolExpansionFactor, separationIntervals, configuration
     ):
 
         self.initializeModulation(
@@ -20,8 +20,8 @@ class BaseModulator:
         )
 
     def initializeModulation(
-            self, bitsPerSymbol, sampleRate, samplesPerSymbol, symbolExpansionFactor,
-            separationIntervals, modulationInfo
+            self, bitsPerSymbol, sampleRate, samplesPerSymbol,
+            symbolExpansionFactor, separationIntervals, modulationInfo
     ):
         try:
             self.carrierFrequency = modulationInfo['carrierFrequency']
@@ -45,8 +45,8 @@ class BaseModulator:
         return (
             "Base modulator:\n\tCarrier frequency:\t\t%d Hz\n\t"
             "Bits per symbol:\t\t%d bits\n\tSample rate:\t\t\t%d Hz\n\t"
-            "Samples per symbol:\t\t%d samples\n\tConstellation size:\t\t%d\n\t"
-            "Symbol expansion factor:\t%d\n\tSeparation intervals:\t\t%d\n"
+            "Samples per symbol:\t\t%d samples\n\tConstellation size:\t\t%d"
+            "\n\tSymbol expansion factor:\t%d\n\tSeparation intervals:\t\t%d\n"
             % (
                 self.carrierFrequency,
                 self.bitsPerSymbol,
