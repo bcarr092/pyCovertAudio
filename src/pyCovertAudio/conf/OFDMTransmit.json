@@ -12,7 +12,7 @@
 
       "WAVInfo" :
       {
-        "fileName"          : "transmit.wav",
+        "fileName"          : "out.wav",
         "numberOfChannels"  : 2,
         "channelMode"       : "blank"
       },

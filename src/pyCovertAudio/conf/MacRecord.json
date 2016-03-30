@@ -3,7 +3,7 @@
   {
     "deviceName"        : "Built-in Microphone",
     "outputFile"        : "out.wav",
-    "duration"          : 5,
+    "duration"          : 60,
     "bitDepth"          : 16,
     "numberOfChannels"  : 2,
     "sampleRate"        : 48000

@@ -3,7 +3,7 @@
   {
     "deviceName"        : "MicGeneric",
     "outputFile"        : "out.wav",
-    "duration"          : 5,
+    "duration"          : 60,
     "bitDepth"          : 16,
     "numberOfChannels"  : 1,
     "sampleRate"        : 48000

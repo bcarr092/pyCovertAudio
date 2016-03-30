@@ -337,7 +337,7 @@ def main():
 
     if("listDevices" in configuration):
         listDevices()
-    elif("recorc" in configuration):
+    elif("record" in configuration):
         record()
     elif("playback" in configuration):
         playback()

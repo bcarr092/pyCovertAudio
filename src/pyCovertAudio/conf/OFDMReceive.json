@@ -12,7 +12,7 @@
 
       "WAVInfo" :
       {
-        "fileName"  : "output/transmit.wav"
+        "fileName"  : "output/out.wav"
       },
 
       "demodulator" :
