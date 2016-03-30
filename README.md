@@ -53,7 +53,7 @@ cd build
 cmake -DPLATFORM=<platform> -DTARGET=<target> -DARCHITECTURE=<arch> -DCMAKE_INSTALL_PREFIX=../bin -G "<generator>" -DCMAKE_BUILD_TYPE=Release ../src
 ```
 
-Since, at this point, we are building for a specific target the values for <platform>, <target>, and <arch> are not all that important. They become more important when cross-compiling this library, however (see below).
+Since, at this point, we are building for a specific target the values for `<platform>`, `<target>`, and `<arch>` are not all that important. They become more important when cross-compiling this library, however (see below).
 
 The value for <generator> should be set to the build system that will be used to actually build the pyCovertAudio application. For a complete list of the generators that are supported on your platform run the command:
 
