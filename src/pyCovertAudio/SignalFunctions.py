@@ -2,7 +2,6 @@ from pyCovertAudio_lib import *
 
 import sys
 import math
-import scipy.fftpack
 
 
 class SignalFunctions():
@@ -114,7 +113,7 @@ class SignalFunctions():
     @staticmethod
     def modulateFSK(signalLength, sampleRate, frequencies):
         N = 2 ** SignalFunctions.nextPowOf2(signalLength)
-        deltaF = (1.0 / float(N)) * (float(sampleRate) / 2.0)
+        deltaF = (1.0 / float(N)) * float(sampleRate)
 
         X = [0.0 for i in range(int(N))]
 
@@ -123,7 +122,7 @@ class SignalFunctions():
 
             X[frequencyBin] = float(sys.maxint)
 
-        x = scipy.fftpack.irfft(X)
+        x = python_calculate_IFFT(X)
 
         return(x)
 
