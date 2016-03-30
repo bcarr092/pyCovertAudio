@@ -53,9 +53,9 @@ cd build
 cmake -DPLATFORM=<platform> -DTARGET=<target> -DARCHITECTURE=<arch> -DCMAKE_INSTALL_PREFIX=../bin -G "<generator>" -DCMAKE_BUILD_TYPE=Release ../src
 ```
 
-Since, at this point, we are building for a specific target the values for `<platform>`, `<target>`, and `<arch>` are not all that important. They become more important when cross-compiling this library, however (see below).
+Since, at this point, we are building for a specific target the values for `<platform>`, `<target>`, and `<arch>` are not all that important. They become more important when cross-compiling this application, however (see below).
 
-The value for <generator> should be set to the build system that will be used to actually build the pyCovertAudio application. For a complete list of the generators that are supported on your platform run the command:
+The value for `<generator> should be set to the build system that will be used to actually build the pyCovertAudio application. For a complete list of the generators that are supported on your platform run the command:
 
 ```
 cmake --help
@@ -66,7 +66,7 @@ The generators are listed at the end of cmake's help output. pyCovertAudio has b
 * "Unix Makefiles" on Mac OS X
 * "NMake Makefiles" on Windows 7 and 10
 
-If "Unix Makefiles" was used in place of <generator> simply run `make` to build the application. If "NMake Makefiles" was used, on the other name, run `nmake` and use `nmake` in place of `make` in the remaining instructions:
+If "Unix Makefiles" was used in place of `<generator>` simply run `make` to build the application. If "NMake Makefiles" was used, on the other name, run `nmake` and use `nmake` in place of `make` in the remaining instructions:
 
 ### Documentation and Tests
 
