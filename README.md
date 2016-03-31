@@ -161,8 +161,14 @@ pyCovertAudio was built from the ground up to be run on multiple different platf
 
 ### Assumptions
 
-* For Mac OS X buildinng, the Mac OS X toolchain has been installed (check this by running `xcrun --sdk macosx --show-sdk-path`)
-* For iOS building, the iOS toolchain has been installed (check this by running `xcrun --sdk iphoneos --show-sdk-path`)
+* For Mac OS X buildinng, the Mac OS X toolchain has been installed. Check this by running:
+
+```xcrun --sdk macosx --show-sdk-path```
+
+* For iOS building, the iOS toolchain has been installed. Check this by running:
+
+```xcrun --sdk iphoneos --show-sdk-path```
+
 * For Android building, the [Android NDK](https://developer.android.com/ndk/downloads/index.html) has been downloaded and unpacked
 
 Contributors
