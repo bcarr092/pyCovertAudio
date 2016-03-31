@@ -1,19 +1,35 @@
 pyCovertAudio
 =============
 
-pyCovertAudio is the result of my [PhD research](http://www.site.uottawa.ca/~bcarr092/) at the University of Ottawa. This tool is powered by JSON configuration scripts and can perform the following functions:
+pyCovertAudio is the result of [my](http://www.site.uottawa.ca/~bcarr092/) PhD studies at the University of Ottawa. My research focussed on defining and characterizing *air-gap covert channels* (i.e., illict communication between disconnected systems) and *out-of-band covert channels* (i.e., *air-gap covert channels* that do not require hardware modification) as well as on building and testing *covert-acoustic channels* (i.e., *out-of-band covert channels* established using audio signals). pyCovertAudio was used to generate results for the following publications:
+
+* *On Acoustic Covert Channels Between Air-Gapped Systems* (Foundations and Practice of Security, 2014 - Springer) and
+* *On Characterizing and Measuring Out-of-Band Covert Channels* (ACM Workshop on Information Hiding and Multimedia Security, 2015 - ACM).
+
+pyCovertAudio supports the ability to modulate and demodulate data using the following digital communication schemes:
+
+* [Frequency-Shift Keying (FSK)](https://en.wikipedia.org/wiki/Frequency-shift_keying),
+* [Frequency-Hopping Spread Spectrum (FHSS)](https://en.wikipedia.org/wiki/Frequency-hopping_spread_spectrum), and
+* [Orthoganal Frequency-Division Multiplexing (OFDM)](https://en.wikipedia.org/wiki/Orthogonal_frequency-division_multiplexing).
+
+and can perform the following functions:
 
 * List a system's audio input (i.e., microphones) and audio output (i.e., speakers) devices and their supported formats
 * Play a given WAV file using a specified audio output device
 * Record audio into a WAV file using a specified audio input device
-* Modulate a text message into a WAV file.
-* Demodulate a given WAV file to recreate a modulated message. Demodulation algorithsm for FSK, FHSS, and OFDM are supported
+* Modulate a text message into a WAV file
+* Demodulate a given WAV file to recreate a modulated message
 
-pyCovertAudio supports the following digital modulation schemes:
+pyCovertAudio is powered by JSON configuration files. Sample configuration files can be found in the `src/pyCovertAudio/conf` directory. They are briefly outlined here:
 
-* [Frequency-Shift Keying (FSK)](https://en.wikipedia.org/wiki/Frequency-shift_keying)
-* [Frequency-Hopping Spread Spectrum (FHSS)](https://en.wikipedia.org/wiki/Frequency-hopping_spread_spectrum)
-* [Orthoganal Frequency-Division Multiplexing (OFDM)](https://en.wikipedia.org/wiki/Orthogonal_frequency-division_multiplexing)
+* **ListDevices.json**: Lists the audio input and output devices on the system
+* **&lt;platform&gt;Playback.json**: Plays a WAV audio file. The key parameters in this file are:
+..* **deviceName**: The audio output device to use to play the WAV file
+..* **inputFile**: Path to the WAV file to play
+* **&lt;platform&gt;Recrod.json**: Records samples into a WAV audio file. They key parameters in this file are:
+..* **deviceName**: The audio input device to use to record audio samples
+..* **outputFile**: Path to the WAV file that will be created and populated with the recorded audio
+..* **duration**: Duration, in seconds, to record audio for
 
 Dependencies
 ============
