@@ -24,12 +24,12 @@ pyCovertAudio is powered by JSON configuration files. Sample configuration files
 
 * **ListDevices.json**: Lists the audio input and output devices on the system
 * **&lt;platform&gt;Playback.json**: Plays a WAV audio file. The key parameters in this file are:
-** **deviceName**: The audio output device to use to play the WAV file
-** **inputFile**: Path to the WAV file to play
+    * **deviceName**: The audio output device to use to play the WAV file
+    * **inputFile**: Path to the WAV file to play
 * **&lt;platform&gt;Recrod.json**: Records samples into a WAV audio file. They key parameters in this file are:
-** **deviceName**: The audio input device to use to record audio samples
-** **outputFile**: Path to the WAV file that will be created and populated with the recorded audio
-** **duration**: Duration, in seconds, to record audio for
+    * **deviceName**: The audio input device to use to record audio samples
+    * **outputFile**: Path to the WAV file that will be created and populated with the recorded audio
+    * **duration**: Duration, in seconds, to record audio for
 
 Dependencies
 ============
