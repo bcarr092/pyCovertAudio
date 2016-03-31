@@ -161,15 +161,62 @@ pyCovertAudio was built from the ground up to be run on multiple different platf
 
 ### Assumptions
 
-* For Mac OS X buildinng, the Mac OS X toolchain has been installed. Check this by running:
+* To build for Mac OS X targets the Mac OS X toolchain must be install. Check this by running:
 
 ```xcrun --sdk macosx --show-sdk-path```
 
-* For iOS building, the iOS toolchain has been installed. Check this by running:
+* To build for iOS targets the iOS toolchain must be installed. Check this by running:
 
 ```xcrun --sdk iphoneos --show-sdk-path```
 
-* For Android building, the [Android NDK](https://developer.android.com/ndk/downloads/index.html) has been downloaded and unpacked
+* To build for Android targets the [Android NDK](https://developer.android.com/ndk/downloads/index.html) must be downloaded and unpacked
+
+### Configuration
+
+The following environment variables must also be set:
+
+* **APPLE_TOOLCHAIN_DIR**: This must point to the Xcode 'Developer' directory. The 'Platforms' directory must be a sub-directory of the location pointed to by this environment variable. This variable must be set to build for Mac OS X and iOS targets.
+* **ANDROID_TOOLCHAIN_DIR**: This must be set to the directory the Android NDK was extracted to. The 'platforms' directory must be a sub-directory of the location pointed to by this environment variable. This variable, along with DEVELOPER_ROOT, must be set to build Android targets.
+* **DEVELOPER_ROOT**: The `generateMakefile.pl` script will automatically build all the Android toolchains contained in the ANDROID_TOOLCHAIN_DIR and store them in the location pointed to by this environment variable. This variable, along with ANDROID_TOOLCHAIN_DIR, must be set to build Android targets. 
+
+Note that in addition to these environment variables the *PYTHON_BIN*, *PYTHON_LIB*, and *PYTHON_INCLUDE* environment variables (described above) must also be set.
+
+### Generating Makefiles
+
+To see a list of all the platforms that pyCovertAudio can be built for on your machine, run the following command:
+
+```
+perl generateMakefile.pl --mode=Release --source=<source directory> --platform
+```
+
+where `<source directory>` is the absolute path of the 'src' sub-directory of the pyCovertAudio repos.
+
+Before generating the build Makefiles for the desired targets create a build directory (`mkdir build`) and an install directory (`mkdir bin`). Also note that the default generator used by `generateMakefile.pl` is "Unix Makefiles." To change this use the appropriate switch.
+
+To build for the Mac OS X platform, v10.10 target, and x86_64 architecture, as an example, execute the following command
+
+```
+perl generateMakefile.pl --mode=Release --source=<source directory> --build=<build directory> --install=<install directory> --platform=MacOSX --target=MacOSX10.10 --architecture=x86_64
+```
+
+where `<source directory>`, `<build directory>`, and `<install directory>` are the absolute paths to the 'src' sub-directory of the pyCovertAudio repos, the build directory you created, and the install directory you created, respectively.
+
+### Building
+
+To build for a specific generated target first `cd <build directory>` then `cd` to the sub-directory of the target you would like to build. Each sub-directory of `<build directory>` has the following structure:
+
+```
+build-<generator>-<platform>-<target>-<architecture>-<mode>
+```
+
+pyCovertAudio can be built and installed for the specific build target by executing:
+
+```
+make
+make install
+```
+
+*Note*: In order for the build to succeedd PYTHON_LIB and PYTHON_INCLUDE must point to a location that contains python built for the same target and architecture that pyCovertAudio is being built for.
 
 Contributors
 ============
