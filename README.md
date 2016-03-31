@@ -20,6 +20,20 @@ as well as perform the following functions:
 * modulate a text message into a WAV file, and
 * demodulate a given WAV file to recreate a modulated message.
 
+## Tested Platforms, Targets, and Architectures
+
+pyCovertAudio has been tested on the following platforms and architectures:
+
+| Platform      | Target                | Architecture  |
+|---------------|:---------------------:|--------------:|
+| Mac OS X      | 10.9, 10.10, 10.11    | x86\_64       |
+| Windows       | 7, 10                 | x86           |
+| iOS           | 8                     | ARM           |
+| Android       | android-19            | ARM           |
+
+Configuration
+=============
+
 pyCovertAudio is powered by JSON configuration files. Sample configuration files can be found in the `src/pyCovertAudio/conf` directory. They are briefly outlined here:
 
 * **ListDevices.json**: Lists the audio input and output devices on the system
@@ -50,8 +64,8 @@ pyCovertAudio is powered by JSON configuration files. Sample configuration files
     * **modifiers**: This section contains filter information. If the carrier frequency is modified this section must be updated accordingly.
 
 
-Building
-========
+Building and Running
+====================
 
 ##Dependencies
 
