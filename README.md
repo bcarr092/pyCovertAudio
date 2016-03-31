@@ -28,7 +28,7 @@ Build
 
 ### Checkout
 
-Note that this project uses Git submodules
+Note that this project uses Git submodules. As such, execute the following command to checkout this project:
 
 ```
 git clone --recursive https://github.com/bcarr092/pyCovertAudio.git
@@ -36,9 +36,9 @@ git clone --recursive https://github.com/bcarr092/pyCovertAudio.git
 
 ### Configuration
 
-The cmake configuration as well as the build process require knowledge of the Python include and lib directories in order to build tests as well as the libraries that pyCovertAudio relies upon.
+The cmake configuration as well as the build process require knowledge of the Python include and lib directories for the Python installation that matches the platform and architecture that pyCovertAudio is being built for in order to build all tests as well as the main library that pyCovertAudio.py relies upon.
 
-Locate both of these directories and set the following three environment variables:
+Locate the appropriate Python include and lib directories and set the following three environment variables:
 
 * **PYTHON_BIN**: Set this to the directory that contains the python binary (e.g., /usr/local/bin, C:\python27)
 * **PYTHON_INCLUDE**: Set this to Python's include directory (e.g., C:\python27\include) that includes Python.h 
@@ -76,7 +76,7 @@ To execute tests to ensure the dependant libraries (e.g., CAHAL and CSignal) are
 
 ### Running pyCovertAudio
 
-To launch the pyCovertAudio application first run the command `make install` then set add the following paths to the **PYTHONPATH** environment variable:
+To launch the pyCovertAudio application first run the command `make install` then add the following paths to the **PYTHONPATH** environment variable:
 
 * lib
 * lib/&lt;platform&gt;/&lt;target&gt;/&lt;arch&gt;
@@ -85,7 +85,7 @@ Once environment variable has been set execute the following commands:
 
 ```
 cd ../bin
-python pyCovertAudio.py -c conf\ListDevices.json
+python pyCovertAudio.py -c conf/ListDevices.json
 ```
 
 This should list all the input (i.e., recording) and output (i.e., playback) devices on your system.
