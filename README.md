@@ -139,7 +139,7 @@ If "Unix Makefiles" was used in place of `<generator>` simply run `make` to buil
 
 ### Documentation and Tests
 
-To build all the documentation for pyCovertAudio and its dependencies run `make doc`. The generated documentation will be generated in `../bin/doc`.
+To build all the documentation for pyCovertAudio and its dependencies run `make doc`. The generated documentation will be placed in `../bin/doc`.
 
 To execute tests to ensure that the dependant libraries (e.g., CAHAL and CSignal) are running correctly run `make test`.
 
