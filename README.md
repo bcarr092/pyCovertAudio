@@ -220,7 +220,7 @@ make
 make install
 ```
 
-*Note*: In order for the build to succeed PYTHON_LIB and PYTHON_INCLUDE must point to a location that contains python built for the same target and architecture that pyCovertAudio is being built for.
+*Note*: In order for the build to succeed *PYTHON_LIB* and *PYTHON_INCLUDE* must point to a location that contains python built for the same target and architecture that pyCovertAudio is being built for.
 
 pyCovertAudio can be installed to the same directory, the installation script will generate the appropriate sub-directories for each platform, target, and architecture combination. To execute pyCovertAudio copy the `<install directory>` to the platform you want to run it on, set the *PYTHONPATH* environment variable appropriately (see above), and run pyCovertAudio.
 
