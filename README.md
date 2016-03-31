@@ -89,7 +89,7 @@ Lastly, this project has been tested with the following toolchains:
 * Visual Studio 2013
 * Android (API level 19)
 
-##Building for Your Current Platform
+## Building and Running on Your Current Platform
 
 ### Checkout
 
@@ -154,6 +154,16 @@ python pyCovertAudio.py -c conf/ListDevices.json
 ```
 
 This should list all the input (i.e., recording) and output (i.e., playback) devices on your system.
+
+## Cross-Compiling
+
+pyCovertAudio was built from the ground up to be run on multiple different platforms. The Cmake tool makes this possible through its cross-compiling functionality. The instructions that follow allow pyCovertAudio to be built against Mac OS X, iOS, and Android platforms, targets, and architectures from the Mac OS X platform. A convenience tool, `generateMakefile.pl`, can be found in the root of the pyCovertAudio repo to facilitate this process (*Note*: A TODO is port this script to Windows).
+
+### Assumptions
+
+* For Mac OS X buildinng, the Mac OS X toolchain has been installed (check this by running `xcrun --sdk macosx --show-sdk-path`)
+* For iOS building, the iOS toolchain has been installed (check this by running `xcrun --sdk iphoneos --show-sdk-path`)
+* For Android building, the [Android NDK](https://developer.android.com/ndk/downloads/index.html) has been downloaded and unpacked
 
 Contributors
 ============
