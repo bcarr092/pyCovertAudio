@@ -55,7 +55,7 @@ cmake -DPLATFORM=<platform> -DTARGET=<target> -DARCHITECTURE=<arch> -DCMAKE_INST
 
 Since, at this point, we are building for a specific target the values for `<platform>`, `<target>`, and `<arch>` are not all that important. They become more important when cross-compiling this application, however (see below).
 
-The value for `<generator> should be set to the build system that will be used to actually build the pyCovertAudio application. For a complete list of the generators that are supported on your platform run the command:
+The value for `<generator>` should be set to the build system that will be used to actually build the pyCovertAudio application. For a complete list of the generators that are supported on your platform run the command:
 
 ```
 cmake --help
@@ -66,22 +66,27 @@ The generators are listed at the end of cmake's help output. pyCovertAudio has b
 * "Unix Makefiles" on Mac OS X
 * "NMake Makefiles" on Windows 7 and 10
 
-If "Unix Makefiles" was used in place of `<generator>` simply run `make` to build the application. If "NMake Makefiles" was used, on the other name, run `nmake` and use `nmake` in place of `make` in the remaining instructions:
+If "Unix Makefiles" was used in place of `<generator>` simply run `make` to build the application. If "NMake Makefiles" was used run `nmake`. Otherwise, execute the build command for your generator.
 
 ### Documentation and Tests
 
-To build all the documentation for pyCovertAudio and its dependencies run `make doc`.
+To build all the documentation for pyCovertAudio and its dependencies run `make doc`. The generated documentation will show up in `../bin/doc`.
 
 To execute tests to ensure the dependant libraries (e.g., CAHAL and CSignal) are running correctly run `make test`.
 
 ### Running pyCovertAudio
 
-To launch the pyCovertAudio application run the following commands:
+To launch the pyCovertAudio application first run the command `make install` then set add the following paths to the **PYTHONPATH** environment variable:
 
 ```
-make install
+lib
+lib/<platform>/<target>/<arch>
+```
+
+Once environment variable is set execute the following commands:
+
+```
 cd ../bin
-set PYTHONPATH=%PYTHONPATH%;lib;lib/<platform>/<target>/<arch>
 python pyCovertAudio.py -c conf\ListDevices.json
 ```
 
