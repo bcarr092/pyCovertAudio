@@ -24,12 +24,12 @@ as well as perform the following functions:
 
 pyCovertAudio has been tested on the following platforms and architectures:
 
-| Platform      | Target                | Architecture  |
-|---------------|-----------------------|---------------|
-| Mac OS X      | 10.9, 10.10, 10.11    | x86\_64       |
-| Windows       | 7, 10                 | x86           |
-| iOS           | 8                     | ARM           |
-| Android       | android-19            | ARM           |
+| Platform      | Target                        | Architecture  |
+|---------------|-------------------------------|---------------|
+| Mac OS X      | 10.9, 10.10, 10.11            | x86\_64       |
+| Windows       | 7, 10                         | x86           |
+| iOS           | 8                             | ARM           |
+| Android       | android-19 (KitKat, 4.4.4)    | ARM           |
 
 Configuration
 =============
