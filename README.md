@@ -1,6 +1,20 @@
 pyCovertAudio
 =============
 
+pyCovertAudio is the result of my [PhD research](http://www.site.uottawa.ca/~bcarr092/) at the University of Ottawa. This tool is powered by JSON configuration scripts and can perform the following functions:
+
+* List a system's audio input (i.e., microphones) and audio output (i.e., speakers) devices and their supported formats
+* Play a given WAV file using a specified audio output device
+* Record audio into a WAV file using a specified audio input device
+* Modulate a text message into a WAV file.
+* Demodulate a given WAV file to recreate a modulated message. Demodulation algorithsm for FSK, FHSS, and OFDM are supported
+
+pyCovertAudio supports the following digital modulation schemes:
+
+* [Frequency-Shift Keying (FSK)](https://en.wikipedia.org/wiki/Frequency-shift_keying)
+* [Frequency-Hopping Spread Spectrum (FHSS)](https://en.wikipedia.org/wiki/Frequency-hopping_spread_spectrum)
+* [Orthoganal Frequency-Division Multiplexing (OFDM)](https://en.wikipedia.org/wiki/Orthogonal_frequency-division_multiplexing)
+
 Dependencies
 ============
 
@@ -8,6 +22,7 @@ This project requires the following software to build/run:
 
 * [CMake](https://cmake.org/)
 * [Python](https://www.python.org/downloads/) (requires 2.7.x)
+* [Perl](https://www.perl.org/)
 * [Doxygen](http://www.stack.nl/~dimitri/doxygen/) (optional, required for generating documentation)
 
 This project includes the following GitHub projects:
