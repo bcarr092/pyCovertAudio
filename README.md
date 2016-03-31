@@ -6,19 +6,19 @@ pyCovertAudio is the result of [my](http://www.site.uottawa.ca/~bcarr092/) PhD s
 * *On Acoustic Covert Channels Between Air-Gapped Systems* (Foundations and Practice of Security, 2014 - Springer) and
 * *On Characterizing and Measuring Out-of-Band Covert Channels* (ACM Workshop on Information Hiding and Multimedia Security, 2015 - ACM).
 
-pyCovertAudio supports the ability to modulate and demodulate data using the following digital communication schemes:
+pyCovertAudio has the ability to modulate and demodulate data using the following digital communication schemes:
 
 * [Frequency-Shift Keying (FSK)](https://en.wikipedia.org/wiki/Frequency-shift_keying),
 * [Frequency-Hopping Spread Spectrum (FHSS)](https://en.wikipedia.org/wiki/Frequency-hopping_spread_spectrum), and
-* [Orthoganal Frequency-Division Multiplexing (OFDM)](https://en.wikipedia.org/wiki/Orthogonal_frequency-division_multiplexing).
+* [Orthoganal Frequency-Division Multiplexing (OFDM)](https://en.wikipedia.org/wiki/Orthogonal_frequency-division_multiplexing),
 
-and can perform the following functions:
+as well as perform the following functions:
 
-* List a system's audio input (i.e., microphones) and audio output (i.e., speakers) devices and their supported formats
-* Play a given WAV file using a specified audio output device
-* Record audio into a WAV file using a specified audio input device
-* Modulate a text message into a WAV file
-* Demodulate a given WAV file to recreate a modulated message
+* list a system's audio input (i.e., microphones) and audio output (i.e., speakers) devices and their supported formats,
+* play a given WAV file using a specified audio output device,
+* record audio into a WAV file using a specified audio input device,
+* modulate a text message into a WAV file, and
+* demodulate a given WAV file to recreate a modulated message.
 
 pyCovertAudio is powered by JSON configuration files. Sample configuration files can be found in the `src/pyCovertAudio/conf` directory. They are briefly outlined here:
 
@@ -26,13 +26,13 @@ pyCovertAudio is powered by JSON configuration files. Sample configuration files
 * **&lt;platform&gt;Playback.json**: Plays a WAV audio file. The key parameters in this file are:
     * **deviceName**: The audio output device to use to play the WAV file
     * **inputFile**: Path to the WAV file to play
-* **&lt;platform&gt;Recrod.json**: Records samples into a WAV audio file. The key parameters in this file are:
+* **&lt;platform&gt;Record.json**: Records samples into a WAV audio file. The key parameters in this file are:
     * **deviceName**: The audio input device to use to record audio samples
     * **outputFile**: Path to the WAV file that will be created and populated with the recorded audio
     * **duration**: Duration, in seconds, to record audio for
 * **Transmitter.json**: Modulates a given text message using FSK and produces a WAV file. The key parameters in this file are:
     * **fileName**: Path to the WAV file that will be created containing the modulated message
-    * **carrierFrequency**: The carrier frequency, in Hz, that the modulated symbol will be transmitted on. **Note**: Frequencies above 20 kHz cannot be heard by humans and adults have trouble hearing frequencies above 18 kHz.
+    * **carrierFrequency**: The carrier frequency, in Hz, that the modulated symbol will be transmitted on (*Note*: Frequencies above 20 kHz cannot be heard by humans and adults have trouble hearing frequencies above 18 kHz.).
     * **data**: The text message that will be modulated
     * **modifiers**: This section contains filter information. If the carrier frequency is modified this section must be updated accordingly.
 * **Receiver.json**: Demodulates a given WAV file using FSK to recreate the text message the audio file contains. The key parameters in this file are:
@@ -49,8 +49,11 @@ pyCovertAudio is powered by JSON configuration files. Sample configuration files
     * **minimumFrequency** and **maximumFrequency**: Given that both FHSS and OFDM are multicarrier modulation schemes, these parameters define the passband that the schemes can use.
     * **modifiers**: This section contains filter information. If the carrier frequency is modified this section must be updated accordingly.
 
-Dependencies
-============
+
+Building
+========
+
+##Dependencies
 
 This project requires the following software to build/run:
 
@@ -72,8 +75,7 @@ Lastly, this project has been tested with the following toolchains:
 * Visual Studio 2013
 * Android (API level 19)
 
-Build
-=====
+##Building for Your Current Platform
 
 ### Checkout
 
