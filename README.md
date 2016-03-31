@@ -1,18 +1,22 @@
 pyCovertAudio
 =============
 
-pyCovertAudio is the result of [my](http://www.site.uottawa.ca/~bcarr092/) PhD studies at the University of Ottawa. My research focussed on defining and characterizing *air-gap covert channels* (i.e., illict communication between disconnected systems) and *out-of-band covert channels* (i.e., *air-gap covert channels* that do not require hardware modification) as well as on building and testing *covert-acoustic channels* (i.e., *out-of-band covert channels* established using audio signals). This tool was used to generate results for the following publications:
+## Background
+
+pyCovertAudio is the result of [my](http://www.site.uottawa.ca/~bcarr092/) PhD studies at the University of Ottawa. My research focused on defining and characterizing *air-gap covert channels* (i.e., illicit communication between disconnected systems) and *out-of-band covert channels* (i.e., *air-gap covert channels* that do not require hardware modification) as well as on building and testing *covert-acoustic channels* (i.e., *out-of-band covert channels* established using audio signals). This tool was used to generate results for the following publications:
 
 * *On Acoustic Covert Channels Between Air-Gapped Systems* (Foundations and Practice of Security, 2014 - Springer) and
 * *On Characterizing and Measuring Out-of-Band Covert Channels* (ACM Workshop on Information Hiding and Multimedia Security, 2015 - ACM).
 
-pyCovertAudio has the ability to modulate and demodulate data using the following digital communication schemes:
+## Overview
+
+pyCovertAudio is a Python tool used to modulate and demodulate data using the following digital communication schemes:
 
 * [Frequency-Shift Keying (FSK)](https://en.wikipedia.org/wiki/Frequency-shift_keying),
 * [Frequency-Hopping Spread Spectrum (FHSS)](https://en.wikipedia.org/wiki/Frequency-hopping_spread_spectrum), and
-* [Orthoganal Frequency-Division Multiplexing (OFDM)](https://en.wikipedia.org/wiki/Orthogonal_frequency-division_multiplexing),
+* [Orthogonal Frequency-Division Multiplexing (OFDM)](https://en.wikipedia.org/wiki/Orthogonal_frequency-division_multiplexing).
 
-as well as perform the following functions:
+Specifically, pyCovertAudio can perform the following functions:
 
 * list a system's audio input (i.e., microphones) and audio output (i.e., speakers) devices and their supported formats,
 * play a given WAV file using a specified audio output device,
@@ -34,7 +38,7 @@ pyCovertAudio has been tested on the following platforms and architectures:
 Configuration
 =============
 
-pyCovertAudio is powered by JSON configuration files. Sample configuration files can be found in the `src/pyCovertAudio/conf` directory. They are briefly outlined here:
+pyCovertAudio is powered by JSON configuration files. Sample configuration files can be found in the `src/pyCovertAudio/conf` directory. Each JSON file is briefly outlined here:
 
 * **ListDevices.json**: Lists the audio input and output devices on the system
 * **&lt;platform&gt;Playback.json**: Plays a WAV audio file. The key parameters in this file are:
@@ -126,18 +130,18 @@ The value for `<generator>` should be set to the build system that will be used 
 cmake --help
 ```
 
-The generators are listed at the end of cmake's help output. pyCovertAudio has been built using the following generators:
+The generators are listed at the end of cmake's help output. For a point of reference, pyCovertAudio has previously been built using the following generators:
 
 * "Unix Makefiles" on Mac OS X
 * "NMake Makefiles" on Windows 7 and 10
 
-If "Unix Makefiles" was used in place of `<generator>` simply run `make` to build the application. If "NMake Makefiles" was used run `nmake`. Otherwise, execute the build command for your generator.
+If "Unix Makefiles" was used in place of `<generator>` simply run `make` to build the application. If "NMake Makefiles" was used run `nmake` (and use `nmake` in the subsequent instructions in place of `make`, as well). Otherwise, execute the build command for your generator.
 
 ### Documentation and Tests
 
-To build all the documentation for pyCovertAudio and its dependencies run `make doc`. The generated documentation will show up in `../bin/doc`.
+To build all the documentation for pyCovertAudio and its dependencies run `make doc`. The generated documentation will be generated in `../bin/doc`.
 
-To execute tests to ensure the dependant libraries (e.g., CAHAL and CSignal) are running correctly run `make test`.
+To execute tests to ensure that the dependant libraries (e.g., CAHAL and CSignal) are running correctly run `make test`.
 
 ### Running pyCovertAudio
 
@@ -146,7 +150,7 @@ To launch the pyCovertAudio application first run the command `make install` the
 * lib
 * lib/&lt;platform&gt;/&lt;target&gt;/&lt;arch&gt;
 
-Once environment variable has been set execute the following commands:
+Once the environment variable has been set, execute the following commands:
 
 ```
 cd ../bin
@@ -157,15 +161,15 @@ This should list all the input (i.e., recording) and output (i.e., playback) dev
 
 ## Cross-Compiling
 
-pyCovertAudio was built from the ground up to be run on multiple different platforms. The Cmake tool makes this possible through its cross-compiling functionality. The instructions that follow allow pyCovertAudio to be built against Mac OS X, iOS, and Android platforms, targets, and architectures from the Mac OS X platform. A convenience tool, `generateMakefile.pl`, can be found in the root of the pyCovertAudio repo to facilitate this process (*Note*: A TODO is port this script to Windows).
+pyCovertAudio was built from the ground up to be run on multiple different platforms. The cmake tool makes this possible through its cross-compiling functionality. The instructions that follow allow pyCovertAudio to be built against Mac OS X, iOS, and Android platforms, targets, and architectures from within the Mac OS X platform. A convenience tool, `generateMakefile.pl`, can be found in the root of the pyCovertAudio repos to facilitate this process (*Note*: A TODO is to port this script to Windows).
 
 ### Assumptions
 
-* To build for Mac OS X targets the Mac OS X toolchain must be install. Check this by running:
+* To build for Mac OS X targets the Mac OS X toolchain must be install. Check that it is by running:
 
 ```xcrun --sdk macosx --show-sdk-path```
 
-* To build for iOS targets the iOS toolchain must be installed. Check this by running:
+* To build for iOS targets the iOS toolchain must be installed. Check that it is by running:
 
 ```xcrun --sdk iphoneos --show-sdk-path```
 
@@ -206,7 +210,7 @@ where `<source directory>`, `<build directory>`, and `<install directory>` are t
 To build for a specific generated target first `cd <build directory>` then `cd` to the sub-directory of the target you would like to build. Each sub-directory of `<build directory>` has the following structure:
 
 ```
-build-<generator>-<platform>-<target>-<architecture>-<mode>
+build-<generator>-<platform>-<target>-<arch>-<mode>
 ```
 
 pyCovertAudio can be built and installed for the specific build target by executing:
@@ -216,7 +220,9 @@ make
 make install
 ```
 
-*Note*: In order for the build to succeedd PYTHON_LIB and PYTHON_INCLUDE must point to a location that contains python built for the same target and architecture that pyCovertAudio is being built for.
+*Note*: In order for the build to succeed PYTHON_LIB and PYTHON_INCLUDE must point to a location that contains python built for the same target and architecture that pyCovertAudio is being built for.
+
+pyCovertAudio can be installed to the same directory, the installation script will generate the appropriate sub-directories for each platform, target, and architecture combination. To execute pyCovertAudio copy the `<install directory>` to the platform you want to run it on, set the *PYTHONPATH* environment variable appropriately (see above), and run pyCovertAudio.
 
 Contributors
 ============
