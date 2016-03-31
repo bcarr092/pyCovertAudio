@@ -79,7 +79,7 @@ To execute tests to ensure the dependant libraries (e.g., CAHAL and CSignal) are
 To launch the pyCovertAudio application first run the command `make install` then set add the following paths to the **PYTHONPATH** environment variable:
 
 * lib
-* lib/<platform>/<target>/<arch>
+* lib/&lt;platform&gt;/<target>/<arch>
 
 Once environment variable has been set execute the following commands:
 
