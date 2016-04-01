@@ -3,7 +3,7 @@ pyCovertAudio
 
 ## Background
 
-pyCovertAudio is the result of [my](http://www.site.uottawa.ca/~bcarr092/) PhD studies at the University of Ottawa. My research focused on defining and characterizing *air-gap covert channels* (i.e., illicit communication between disconnected systems) and *out-of-band covert channels* (i.e., *air-gap covert channels* that do not require hardware modification) as well as on building and testing *covert-acoustic channels* (i.e., *out-of-band covert channels* established using audio signals). This tool was used to generate results for the following publications:
+pyCovertAudio is the result of [my](http://www.site.uottawa.ca/~bcarr092/) PhD studies at the University of Ottawa. My research focused on defining and characterizing *air-gap covert channels* (i.e., illicit communication between disconnected systems) and *out-of-band covert channels* (i.e., *air-gap covert channels* that do not require hardware modification at the transmitter or receiver) as well as on building and testing *covert-acoustic channels* (i.e., *out-of-band covert channels* established using audio signals). The pyCovertAudio tool was also used to generate results for the following publications:
 
 * *On Acoustic Covert Channels Between Air-Gapped Systems* (Foundations and Practice of Security, 2014 - Springer) and
 * *On Characterizing and Measuring Out-of-Band Covert Channels* (ACM Workshop on Information Hiding and Multimedia Security, 2015 - ACM).
