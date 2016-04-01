@@ -263,7 +263,7 @@ make install
 Bridging the Air-Gap
 ====================
 
-To bridge the air-gap between two systems, the **transmitter** (i.e., the system that will transmit a coded message using audio signals) and the **receiver** (i.e., the system that will receive the audio signal then demodulate and decode the messaage) using pyCovertAudio execute the following:
+To bridge the air-gap between two systems, the **transmitter** (i.e., the system that will transmit a coded message using audio signals) and the **receiver** (i.e., the system that will receive the audio signal then demodulate and decode the messaage) using pyCovertAudio, execute the following:
 
 1. On the **transmitter** run:
 
