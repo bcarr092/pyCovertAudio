@@ -109,9 +109,9 @@ The initial cmake configuration, as well as the build process, require knowledge
 
 Locate the appropriate Python include and lib directories and set the following three environment variables:
 
-* **PYTHON_BIN**: Set this to the directory that contains the python binary (e.g., /usr/local/bin, C:\python27)
-* **PYTHON_INCLUDE**: Set this to Python's include directory (e.g., C:\python27\include) that includes Python.h 
-* **PYTHON_LIB**: Set this to Python's libs directory (e.g., C:\python27\libs) that includes Python's dynamic library (e.g., libpython2.7.dylib, python27.lib)
+* *PYTHON_BIN*: Set this to the directory that contains the python binary (e.g., /usr/local/bin, C:\python27)
+* *PYTHON_INCLUDE*: Set this to Python's include directory (e.g., C:\python27\include) that includes Python.h 
+* *PYTHON_LIB*: Set this to Python's libs directory (e.g., C:\python27\libs) that includes Python's dynamic library (e.g., libpython2.7.dylib, python27.lib)
 
 ### Build
 
@@ -145,7 +145,7 @@ Automated tests can be executed in order to ensure that the dependant libraries 
 
 ### Running pyCovertAudio
 
-To launch the pyCovertAudio application first run the command `make install` then add the following paths to the **PYTHONPATH** environment variable:
+To launch the pyCovertAudio application first run the command `make install` then add the following paths to the *PYTHONPATH* environment variable:
 
 * lib
 * lib/&lt;platform&gt;/&lt;target&gt;/&lt;arch&gt;
@@ -158,6 +158,14 @@ python pyCovertAudio.py -c conf/ListDevices.json
 ```
 
 This should list all the input (i.e., recording) and output (i.e., playback) devices on your system.
+
+While it is unconventional to have to set *PYTHONPATH* before executing a python script this step is required because the build process for pyCovertAudio is designed around cmake's cross-compiling feature. When pyCovertAudio is built and `make install` is run, the platform-specific libraries are installed to:
+
+```
+..\bin\lib\<platform>\<target>\<arch>
+```
+
+The platform-independent Python scripts are installed to `..\bin`. To deploy pyCovertAudio to a specific system both the contents of `..\bin` and the platform-dependent `lib` directory, therefore, need to be copied.
 
 ## Cross-Compiling
 
