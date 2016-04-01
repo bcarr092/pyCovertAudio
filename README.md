@@ -31,7 +31,7 @@ pyCovertAudio has been tested on the following platforms and architectures:
 | Platform      | Target                        | Architecture  |
 |---------------|-------------------------------|---------------|
 | Mac OS X      | 10.9, 10.10, 10.11            | x86\_64       |
-| Windows       | 7, 10                         | x86           |
+| Windows       | 7, 10                         | i386          |
 | iOS           | 8                             | ARM           |
 | Android       | android-19 (KitKat, 4.4.4)    | ARM           |
 
@@ -93,15 +93,41 @@ Lastly, this project has been tested with the following toolchains:
 * Visual Studio 2013
 * Android (API level 19)
 
-## Building and Running on Your Current Platform
-
-### Checkout
+## Checkout
 
 Since this project uses Git submodules, execute the following command to checkout it out:
 
 ```
 git clone --recursive https://github.com/bcarr092/pyCovertAudio.git
 ```
+
+## Running a Pre-Built Instance of pyCovertAudio
+
+In the `bin` directory there are pre-built binary versions of the libraries (e.g., CAHAL, CPCommon, CSignal) that pyCovertAudio depends on. Pre-built libraries for have been prepared for the following platforms and architectures:
+
+| Platform      | Architecture      |
+|---------------|-------------------|
+| MacOSX        | x86\_64           |
+| MacOSX        | i386              |
+| Windows       | i386              |
+| iPhoneOS      | armv7             |
+| Android       | arm               |
+
+To execute pyCovertAudio on your platform using these pre-built libraries add the following paths to the *PYTHONPATH* environment variable:
+
+* lib
+* lib/&lt;platform&gt;/&lt;platform&gt;/&lt;arch&gt;
+
+where `<platform>` and `<arch>` are set to the values corresponding to the line from the table above that matches your current system's platform and architecture. Once the *PYTHONPATH* environment variable has been set, execute the following commands:
+
+```
+cd bin
+python pyCovertAudio.py -c conf/ListDevices.json
+```
+
+This should list all the input (i.e., recording) and output (i.e., playback) devices on your system.
+
+## Building and Running on Your Current Platform
 
 ### Configuration
 
