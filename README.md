@@ -41,22 +41,22 @@ Configuration
 pyCovertAudio is powered by JSON configuration files. Sample configuration files can be found in the `src/pyCovertAudio/conf` directory. Each JSON file is briefly outlined here:
 
 * **ListDevices.json**: Lists the audio input and output devices on the system
-* **&lt;platform&gt;Playback.json**: Plays a WAV audio file. The key parameters in this file are:
+* **&lt;platform&gt;Playback.json**: Plays a WAV audio file on a specific platform. The key parameters in this file are:
     * **deviceName**: The audio output device to use to play the WAV file
     * **inputFile**: Path to the WAV file to play
-* **&lt;platform&gt;Record.json**: Records samples into a WAV audio file. The key parameters in this file are:
+* **&lt;platform&gt;Record.json**: Records samples into a WAV audio file on a specific platform. The key parameters in this file are:
     * **deviceName**: The audio input device to use to record audio samples
     * **outputFile**: Path to the WAV file that will be created and populated with the recorded audio
     * **duration**: Duration, in seconds, to record audio for
 * **Transmitter.json**: Modulates a given text message using FSK and produces a WAV file. The key parameters in this file are:
     * **fileName**: Path to the WAV file that will be created containing the modulated message
-    * **carrierFrequency**: The carrier frequency, in Hz, that the modulated symbol will be transmitted on (*Note*: Frequencies above 20 kHz cannot be heard by humans and adults have trouble hearing frequencies above 18 kHz.).
+    * **carrierFrequency**: The carrier frequency, in Hz, that the modulated symbol will be transmitted on (*Note*: Frequencies above 20 kHz cannot be heard by humans and most adults cannot hear frequencies above 18 kHz.).
     * **data**: The text message that will be modulated
-    * **modifiers**: This section contains filter information. If the carrier frequency is modified this section must be updated accordingly.
+    * **modifiers**: This section contains filter information. If the carrier frequency is modified this section must be updated according to the bandwidth requirements of the transmitted signal.
 * **Receiver.json**: Demodulates a given WAV file using FSK to recreate the text message the audio file contains. The key parameters in this file are:
     * **fileName**: Path to the WAV file to demodulate
     * **carrierFrequency**: The carrier frequency, in Hz, that was used in Transmitter.json.
-    * **modifiers**: This section contains filter information. If the carrier frequency is modified this section must be updated accordingly.
+    * **modifiers**: This section contains filter information. If the carrier frequency is modified this section must be updated according to the bandwidth requirements of the transmitted signal.
 * **[FHSS,OFDM]Transmitter.json**: Modulates a given text message using FHSS or OFDM, respectively, and produces a WAV file.
     * **fileName**: Path to the WAV file that will be created containing the modulated message
     * **minimumFrequency** and **maximumFrequency**: Given that both FHSS and OFDM are multicarrier modulation schemes, these parameters define the passband that the schemes can use.
