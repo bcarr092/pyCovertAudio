@@ -141,7 +141,7 @@ Assuming "Unix Makefiles" was used in place of `<generator>` simply run `make` t
 
 To build all the documentation for pyCovertAudio and its dependencies run `make doc`. The generated documentation will be placed in `../bin/doc`.
 
-To execute tests to ensure that the dependant libraries (e.g., CAHAL and CSignal) are running correctly run `make test`. Be forewarned, these tests will attempt to record and playback audio as well as execute a number of the signal processing functions of CSignal. Therefore, these tests can take some time to run!
+Automated tests can be executed in order to ensure that the dependant libraries (e.g., CAHAL and CSignal) are running correctly. Simply run `make test` to do so. Be forewarned, however, these tests will attempt to record and playback audio as well as execute a number of the signal processing functions of CSignal. Therefore, these tests can take some time to run!
 
 ### Running pyCovertAudio
 
