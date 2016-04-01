@@ -1,0 +1,4 @@
+<map id="cahal_print_audio_format_description" name="cahal_print_audio_format_description">
+<area shape="rect" id="node2" href="$cahal__audio__format__description_8c.html#af13995a55091f6bdc6728039af8c8cbd" title="Logs a string representation of in_format_id using the logger. The log is logged at in_log_level and ..." alt="" coords="225,12,389,37"/>
+<area shape="rect" id="node3" href="$cahal__audio__format__description_8c.html#a18ef134bdabe82d86dd4ccb0f59af320" title="Converts in_audio_format_id to its string representation and returns the newly created string..." alt="" coords="437,5,586,44"/>
+</map>

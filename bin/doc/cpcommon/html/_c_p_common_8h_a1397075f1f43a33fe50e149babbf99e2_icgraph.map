@@ -1,0 +1,7 @@
+<map id="cpc_fprintf" name="cpc_fprintf">
+<area shape="rect" id="node2" href="$log__functions_8h.html#aee8c4c70cdf9be5c86af041f04f56a70" title="Logging function that will either not output the log (if in_log_level is below the current log level)..." alt="" coords="189,5,256,31"/>
+<area shape="rect" id="node4" href="$log__functions_8h.html#a82b2f44e3ea4ae3c56db48cf4b0e4e56" title="Prints in_buffer in hexdump format for analysis. " alt="" coords="136,55,309,80"/>
+<area shape="rect" id="node5" href="$log__functions_8h.html#a17c72af4f853fe95b25de63f70d89e21" title="Prints in_buffer in hexdump format for analysis. " alt="" coords="136,104,309,129"/>
+<area shape="rect" id="node6" href="$log__functions_8h.html#a42fa6773fd017fa6e1d5a64af53577df" title="Prints in_buffer in hexdump format for analysis. " alt="" coords="168,153,277,179"/>
+<area shape="rect" id="node3" href="$_c_p_common_8h.html#a6dd916ae0b5f9c9b215ef8441d2fe917" title="Converts in_code to its string representation if possible and outputs it using the logger..." alt="" coords="357,5,469,31"/>
+</map>

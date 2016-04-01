@@ -1,0 +1,4 @@
+<map id="windows_playback_send_data" name="windows_playback_send_data">
+<area shape="rect" id="node2" href="$windows__cahal__device_8cpp.html#aacf83db7f16a45cb6609e8064b9a5b3e" title="Called by the playback thread when signaled that a new capture buffer is required. This function will get the capture client and have to set a buffer full of data as set by the callback in in_callback_info. " alt="" coords="256,5,469,31"/>
+<area shape="rect" id="node3" href="$windows__cahal__device_8cpp.html#a659d2afa28a2eee575c238ae2c54a90f" title="The entry point into the CAHAL library to start playback. The caller is responsible for supplying all..." alt="" coords="517,5,663,31"/>
+</map>

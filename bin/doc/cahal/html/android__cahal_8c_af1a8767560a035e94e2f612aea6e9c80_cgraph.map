@@ -1,0 +1,3 @@
+<map id="android_init_input_device_struct" name="android_init_input_device_struct">
+<area shape="rect" id="node2" href="$android__cahal__audio__format__description_8c.html#a55f802aa7d561308a2686a5bd3cd95ec" title="This function bridges the android audio format constants to the cahal format constants. It takes as input an OpenSL audio format id and returns a cahal format id. " alt="" coords="180,5,362,57"/>
+</map>

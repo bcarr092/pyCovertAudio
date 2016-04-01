@@ -1,0 +1,6 @@
+<map id="ios_determine_supported_formats" name="ios_determine_supported_formats">
+<area shape="rect" id="node2" href="$darwin__cahal__device_8c.html#aa7f707d631530f0be6a85538085e66b3" title="Helper function to create the AudioStreamBasicDescrition. This is the platform specific model that is..." alt="" coords="238,56,397,81"/>
+<area shape="rect" id="node5" href="$ios__cahal__device__stream_8c.html#a57591d20cea1c2524292171bfe7c15b2" title="Mallocs a new format description struct and populates it with the the necessary parameters. One block is allocated per supported format. " alt="" coords="225,105,410,131"/>
+<area shape="rect" id="node3" href="$darwin__cahal__audio__format__flags_8c.html#adb312d455b2b582f8f3683bf22dc0c4c" title="Converts CAHAL format flags to platform specific flags. Note that the platform agnostic CAHAL flags d..." alt="" coords="459,5,634,57"/>
+<area shape="rect" id="node4" href="$darwin__cahal__audio__format__description_8c.html#a764e822e29d0d1ff389aad1228bb1bf5" title="This function maps cahal audio format constants back to the platform specific constants supported by ..." alt="" coords="458,81,635,133"/>
+</map>

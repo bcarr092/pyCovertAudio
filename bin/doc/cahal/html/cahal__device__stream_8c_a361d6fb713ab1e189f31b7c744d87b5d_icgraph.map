@@ -1,0 +1,6 @@
+<map id="cahal_free_device_stream_list" name="cahal_free_device_stream_list">
+<area shape="rect" id="node2" href="$cahal__device_8h.html#a0caeba80f7e99929f964be1578a88fad" title="Frees the list of cahal_devices. This function will free all devices in the list as well as all membe..." alt="" coords="255,31,408,56"/>
+<area shape="rect" id="node3" href="$android__cahal_8h.html#a6112a8a0ee42157dd828424721c469f7" title="Platform&#45;specific terminate entry point that handles destroying the OpenSLES objects. " alt="" coords="456,5,585,31"/>
+<area shape="rect" id="node5" href="$windows__cahal_8c.html#ab7709b79bab66ae70c76010ac26eb497" title="Termination point for the library. By calling this function all associated OS resources that are held..." alt="" coords="462,55,579,80"/>
+<area shape="rect" id="node4" href="$cahal_8h.html#ab7709b79bab66ae70c76010ac26eb497" title="Termination point for the library. By calling this function all associated OS resources that are held..." alt="" coords="633,5,749,31"/>
+</map>

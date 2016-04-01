@@ -1,0 +1,8 @@
+<map id="cpc_print_code" name="cpc_print_code">
+<area shape="rect" id="node2" href="$cpcommon_8c.html#aa25cec107e289ec5f640b3a457f26f1e" title="Converts in_code to its string representation if possible and returns the newly created string..." alt="" coords="165,9,313,48"/>
+<area shape="rect" id="node4" href="$log_8c.html#aee8c4c70cdf9be5c86af041f04f56a70" title="Logging function that will either not output the log (if in_log_level is below the current log level)..." alt="" coords="205,93,273,119"/>
+<area shape="rect" id="node3" href="$cpcommon_8c.html#acc436170382cb0d370cba6b0d235e776" title="This function is a safe implementation of free. This function will free io_pointer if it is a valid p..." alt="" coords="389,5,494,31"/>
+<area shape="rect" id="node5" href="$cpcommon_8c.html#a1397075f1f43a33fe50e149babbf99e2" title="Cross&#45;platform wrapper for vfprintf. " alt="" coords="400,55,483,80"/>
+<area shape="rect" id="node6" href="$log_8c.html#a0f61bc13a62a08f751e038567dc62f80" title="Translates the log level to its string representation. " alt="" coords="361,104,522,129"/>
+<area shape="rect" id="node7" href="$cpcommon_8c.html#a62dfb11785671bd6107b2820493ea6ec" title="Cross&#45;platform wrapper for vfprintf. " alt="" coords="397,153,486,179"/>
+</map>

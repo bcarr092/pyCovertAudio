@@ -1,0 +1,4 @@
+<map id="csignal_write_WAVE_header" name="csignal_write_WAVE_header">
+<area shape="rect" id="node2" href="$wav_8c.html#a2c843f2ba8f6d3e5008b059670402353" title="Main entry point to create a WAV file. Will write the data stored in in_samples to a file named in_fi..." alt="" coords="197,5,376,31"/>
+<area shape="rect" id="node3" href="$wav_8c.html#a8004d717f89fda3dc82fadb9c9e10c4e" title="Main entry point to create a WAV file. Will write the data stored in in_samples to a file named in_fi..." alt="" coords="199,55,373,80"/>
+</map>

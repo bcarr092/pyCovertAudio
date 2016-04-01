@@ -1,0 +1,11 @@
+<map id="src/include/darwin/darwin_cahal_device.h" name="src/include/darwin/darwin_cahal_device.h">
+<area shape="rect" id="node2" href="$darwin__cahal__device_8c.html" title="src/darwin/darwin_cahal\l_device.c" alt="" coords="5,99,170,137"/>
+<area shape="rect" id="node3" href="$ios__cahal__device__stream_8h_source.html" title="src/include/darwin\l/ios/ios_cahal_device\l_stream.h" alt="" coords="193,92,342,144"/>
+<area shape="rect" id="node4" href="$ios__cahal__device__stream_8c.html" title="src/darwin/ios/ios\l_cahal_device_stream.c" alt="" coords="92,192,257,231"/>
+<area shape="rect" id="node5" href="$ios__cahal__device_8h.html" title="iOS platform specific calls to generate the device struct. " alt="" coords="281,192,440,231"/>
+<area shape="rect" id="node6" href="$ios__cahal__device_8c.html" title="src/darwin/ios/ios\l_cahal_device.c" alt="" coords="150,279,273,317"/>
+<area shape="rect" id="node7" href="$ios__cahal_8h.html" title="iOS platform specific calls to initialize the audio API. " alt="" coords="297,279,425,317"/>
+<area shape="rect" id="node9" href="$ios__cahal__initialize_8h.html" title="objective&#45;c class that provides access to the underlying playback/ record hardware via an objective&#45;c..." alt="" coords="449,279,617,317"/>
+<area shape="rect" id="node8" href="$ios__cahal_8c.html" title="src/darwin/ios/ios\l_cahal.c" alt="" coords="299,365,423,404"/>
+<area shape="rect" id="node10" href="$ios__cahal__initialize_8m.html" title="src/darwin/ios/ios\l_cahal_initialize.m" alt="" coords="468,365,598,404"/>
+</map>

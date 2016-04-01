@@ -1,0 +1,5 @@
+<map id="cpc_safe_realloc" name="cpc_safe_realloc">
+<area shape="rect" id="node2" href="$cpcommon_8c.html#aaec64bca53868be1c61effcc878f3971" title="Creates a safe implementation of malloc. This function will safely allocate a new memory buffer..." alt="" coords="175,5,295,31"/>
+<area shape="rect" id="node3" href="$cpcommon_8c.html#acc436170382cb0d370cba6b0d235e776" title="This function is a safe implementation of free. This function will free io_pointer if it is a valid p..." alt="" coords="343,31,448,56"/>
+<area shape="rect" id="node4" href="$cpcommon_8c.html#a2bf0d9cc2896f27d5056fc5ea1ee5cea" title="Copies in_num_bytes from in_source to out_distination. " alt="" coords="185,107,285,132"/>
+</map>

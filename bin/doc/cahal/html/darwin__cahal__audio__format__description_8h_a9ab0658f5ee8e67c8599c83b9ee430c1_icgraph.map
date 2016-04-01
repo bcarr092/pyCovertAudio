@@ -1,0 +1,8 @@
+<map id="darwin_convert_core_audio_format_id_to_cahal_audio_format_id" name="darwin_convert_core_audio_format_id_to_cahal_audio_format_id">
+<area shape="rect" id="node2" href="$osx__cahal__audio__format__description_8h.html#ae34e028c53e0c1bcf575f97564042c88" title="Queries the audio formats supported in hardware by io_device_stream and generates a null&#45;temrinated l..." alt="" coords="217,5,379,44"/>
+<area shape="rect" id="node3" href="$osx__cahal__device__stream_8h.html#a3fc21b3318440ae602326218fad7e79e" title="Queries the hardware stream referenced in io_device_stream for its hardware preferred audio format..." alt="" coords="427,35,589,73"/>
+<area shape="rect" id="node4" href="$osx__cahal__device__stream_8h.html#a7b219f9b761554bca5243a4de48b3b40" title="Populates io_device_stream with all the stream&#39;s properties by querying the properties of the passed ..." alt="" coords="637,35,790,73"/>
+<area shape="rect" id="node5" href="$osx__cahal__device__stream_8h.html#a671a639296e9f52b3f98bf64eb892ad3" title="Populate the list of streams supported by the audio device identified by the handle in io_device..." alt="" coords="838,41,1007,67"/>
+<area shape="rect" id="node6" href="$osx__cahal__device_8h.html#a3a32ac95e53f55b6df7d322ed0180e54" title="Populate the given io_device struct with the parameters of the audio hardware object defined by in_de..." alt="" coords="1055,35,1207,73"/>
+<area shape="rect" id="node7" href="$osx__cahal_8h.html#a2c766f421fdf2004c3d898de2de3b39a" title="Generates and returns a new list of devices from the OS. This function only needs to be called once t..." alt="" coords="1255,41,1393,67"/>
+</map>

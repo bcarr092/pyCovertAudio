@@ -1,0 +1,4 @@
+<map id="android_configure_volume_level" name="android_configure_volume_level">
+<area shape="rect" id="node2" href="$android__cahal__device_8h.html#a59144af5d31100488264433d47aa5999" title="Configures the OpenSLES playback object, interface and output buffer queue. " alt="" coords="232,12,410,37"/>
+<area shape="rect" id="node3" href="$cahal__device_8h.html#a659d2afa28a2eee575c238ae2c54a90f" title="The entry point into the CAHAL library to start playback. The caller is responsible for supplying all..." alt="" coords="458,12,604,37"/>
+</map>

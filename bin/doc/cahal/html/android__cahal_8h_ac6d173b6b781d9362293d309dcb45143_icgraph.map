@@ -1,0 +1,8 @@
+<map id="android_create_input_source" name="android_create_input_source">
+<area shape="rect" id="node2" href="$android__cahal_8h.html#abce14920871448964473b3e7bacd7932" title="Test a specific configuration. Return true if the configuration defined in in_audio_format is support..." alt="" coords="200,5,331,44"/>
+<area shape="rect" id="node6" href="$android__cahal__device_8h.html#a9e18f4301f713bb503e124da346e23d4" title="Helper function to fill the necessary data structures required by the OpenSLES framework for recordin..." alt="" coords="200,68,331,107"/>
+<area shape="rect" id="node3" href="$android__cahal_8h.html#a4fd42d76fa0c60881cfedba285b7b934" title="Function that simply sets up a test input configuration and tests to see if it is supported in hardwa..." alt="" coords="379,5,528,44"/>
+<area shape="rect" id="node4" href="$android__cahal_8h.html#a9dacb11c8149d2764a59938c7b44a814" title="Collect the list of supported input audio configurations and adds them to the list. " alt="" coords="577,12,757,37"/>
+<area shape="rect" id="node5" href="$cahal__device_8h.html#a1c0a250dc3fd364f23fe2e3962e0570f" title="Instantiates a list of audio input/output devices in a platform&#45; agnostic way. " alt="" coords="805,12,953,37"/>
+<area shape="rect" id="node7" href="$cahal__device_8h.html#aec6bf662a89cae02dcb40d0a36336343" title="The entry point into the CAHAL library to start recording. The caller is responsible for supplying al..." alt="" coords="379,75,529,100"/>
+</map>

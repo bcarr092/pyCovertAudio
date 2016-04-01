@@ -1,0 +1,4 @@
+<map id="bit_packer_destroy" name="bit_packer_destroy">
+<area shape="rect" id="node2" href="$bit__stream_8h.html#a3dca7ce9314656cd64b86450ff333e00" title="Frees io_bit_stream along with the data buffer pointed to. " alt="" coords="189,5,324,31"/>
+<area shape="rect" id="node3" href="$bit__stream_8h.html#ad6e9ca126cc22d62b3796aeaf28b89e9" title="Copies up to io_num_bits from io_bit_stream, copies them to out_data and returns the size of out_data..." alt="" coords="187,55,325,80"/>
+</map>

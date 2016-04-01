@@ -1,0 +1,11 @@
+<map id="src/include/conv.h" name="src/include/conv.h">
+<area shape="rect" id="node2" href="$conv_8c.html" title="Implementation of the convolution algorithm. " alt="" coords="25,79,106,104"/>
+<area shape="rect" id="node3" href="$fir__filter_8h.html" title="This is the header file for the finite impulse response (FIR) filter struct and associated helper fun..." alt="" coords="130,79,273,104"/>
+<area shape="rect" id="node5" href="$csignal_8h.html" title="This is the main include file for the csignal library. This is the only header file that needs to be ..." alt="" coords="183,239,324,264"/>
+<area shape="rect" id="node4" href="$fir__filter_8c.html" title="The implementation of a passband FIR filter and filter (correlation) algorithm. " alt="" coords="239,159,335,184"/>
+<area shape="rect" id="node7" href="$detect_8h.html" title="Functions used to detect the presence of input (i.e., received) signals. " alt="" coords="115,312,251,337"/>
+<area shape="rect" id="node9" href="$kaiser__filter_8h.html" title="This is the header file for the finite impulse response (FIR) Kaiser filter struct and associated hel..." alt="" coords="39,152,164,191"/>
+<area shape="rect" id="node6" href="$csignal_8c.html" title="This file contains the implementation for generating data modulated audio signals. Currently, implementations for BFSK and DSSS are supported. " alt="" coords="276,312,370,337"/>
+<area shape="rect" id="node8" href="$detect_8c.html" title="Implementation of signal detection routines. " alt="" coords="138,385,228,411"/>
+<area shape="rect" id="node10" href="$kaiser__filter_8c_source.html" title="src/kaiser_filter.c" alt="" coords="39,239,159,264"/>
+</map>

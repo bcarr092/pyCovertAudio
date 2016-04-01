@@ -1,0 +1,4 @@
+<map id="cahal_stop_playback" name="cahal_stop_playback">
+<area shape="rect" id="node2" href="$android__cahal__device_8c.html#ae6f9a356488fd8816e130485ff5cbdb6" title="Safely frees all members of the callback struct. " alt="" coords="199,5,351,44"/>
+<area shape="rect" id="node3" href="$windows__cahal__device_8cpp.html#a6e0132cf8004b580fb376e66af0a4e45" title="Sets the terminate event and waits for io_thread to complete. " alt="" coords="200,68,350,93"/>
+</map>

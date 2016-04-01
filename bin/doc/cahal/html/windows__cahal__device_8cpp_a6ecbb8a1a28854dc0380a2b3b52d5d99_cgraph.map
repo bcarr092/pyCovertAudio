@@ -1,0 +1,7 @@
+<map id="windows_set_device_info" name="windows_set_device_info">
+<area shape="rect" id="node2" href="$windows__cahal__device_8cpp.html#a933e4ad4650240e144b12f2bad0e2201" title="Sets the device&#39;s ID by querying the underlying hardware. " alt="" coords="237,5,399,31"/>
+<area shape="rect" id="node3" href="$windows__cahal__device_8cpp.html#af7274836c1ed466a49d60e0fbab7222d" title="Sets the device&#39;s name by querying the underlying hardware. " alt="" coords="226,55,410,80"/>
+<area shape="rect" id="node4" href="$windows__cahal__device_8cpp.html#afc84d0c0bbfd976488f30a75736e8b4d" title="Sets the device&#39;s state (active or not) by querying the underlying hardware. " alt="" coords="246,104,390,143"/>
+<area shape="rect" id="node5" href="$windows__cahal__device_8cpp.html#a02e4be615ef077d196997e905b7544c3" title="Sets the preferred sample rate and number of channels for the device pointed to by in_endpoint..." alt="" coords="246,167,390,205"/>
+<area shape="rect" id="node6" href="$windows__cahal__device__stream_8hpp.html#ae6c27aa975b880169075549321caf76e" title="Mallocs a single stream for each device, sets the stream&#39;s info then sets the supported formats for t..." alt="" coords="246,229,390,268"/>
+</map>

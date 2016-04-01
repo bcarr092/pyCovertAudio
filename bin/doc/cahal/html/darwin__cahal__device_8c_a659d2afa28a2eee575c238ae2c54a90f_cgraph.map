@@ -1,0 +1,9 @@
+<map id="cahal_start_playback" name="cahal_start_playback">
+<area shape="rect" id="node2" href="$cahal__device_8c.html#a3eea0695d4d20950fae64c6b7f84b055" title="Tests to see if in_device is capable of supporting input or output depending on the value of in_direc..." alt="" coords="200,7,386,45"/>
+<area shape="rect" id="node3" href="$darwin__cahal__device_8c.html#aa7f707d631530f0be6a85538085e66b3" title="Helper function to create the AudioStreamBasicDescrition. This is the platform specific model that is..." alt="" coords="213,69,372,95"/>
+<area shape="rect" id="node6" href="$darwin__cahal__device_8c.html#ad55eee5f011b9761823ec6901c000ddc" title="Configures the platforms ouput (playback) audio queue. " alt="" coords="209,119,377,157"/>
+<area shape="rect" id="node7" href="$darwin__cahal__device_8c.html#a19914cf2a88212c7b7e531eb872a85f6" title="Allocates the necessary audio queue buffers and populates the queue with them. This function will cal..." alt="" coords="209,181,377,220"/>
+<area shape="rect" id="node4" href="$darwin__cahal__audio__format__flags_8c.html#adb312d455b2b582f8f3683bf22dc0c4c" title="Converts CAHAL format flags to platform specific flags. Note that the platform agnostic CAHAL flags d..." alt="" coords="434,5,610,57"/>
+<area shape="rect" id="node5" href="$darwin__cahal__audio__format__description_8c.html#a764e822e29d0d1ff389aad1228bb1bf5" title="This function maps cahal audio format constants back to the platform specific constants supported by ..." alt="" coords="434,81,610,133"/>
+<area shape="rect" id="node8" href="$darwin__cahal__device_8c.html#a78478e68ba0079c6a4ff8f7f1bd37533" title="Helper function to calculate number of bytes to put in each buffer based on the configured ASBD and i..." alt="" coords="443,181,601,220"/>
+</map>

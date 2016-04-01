@@ -1,0 +1,6 @@
+<map id="csignal_multiply_signal" name="csignal_multiply_signal">
+<area shape="rect" id="node2" href="$detect_8h.html#a0b2d4032c293105bfe6e13c37bfe7211" title="Calculates the energy in in_signal by executing the following algorithm: " alt="" coords="211,26,377,51"/>
+<area shape="rect" id="node3" href="$detect_8h.html#af9e80bc29cc4f42bcc6b990fd37e8517" title="This function performs the following algorithm: " alt="" coords="830,19,967,58"/>
+<area shape="rect" id="node4" href="$detect_8c.html#a1ca8fa95019c114cdc5256ddf24f4a0e" title="Performs an exhaustive search for the offset in in_signal between in_start_index and in_end_index tha..." alt="" coords="425,26,615,51"/>
+<area shape="rect" id="node5" href="$detect_8c.html#a8790a34d8b6270deb772bc8c4aed78bb" title="Performs a hill climbing algorithm until the energy difference on both sides of the hill are within i..." alt="" coords="663,76,782,102"/>
+</map>

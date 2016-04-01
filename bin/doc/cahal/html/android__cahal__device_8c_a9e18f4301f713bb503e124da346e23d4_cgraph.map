@@ -1,0 +1,5 @@
+<map id="android_initialize_recording_structs" name="android_initialize_recording_structs">
+<area shape="rect" id="node2" href="$android__cahal_8c.html#a2adf261da6eae23641d7bc3fcb433464" title="Create a new audio format struct with the given parameters. " alt="" coords="185,5,361,44"/>
+<area shape="rect" id="node3" href="$android__cahal_8c.html#ac6d173b6b781d9362293d309dcb45143" title="Generates a new input source (mic) " alt="" coords="200,68,347,107"/>
+<area shape="rect" id="node4" href="$android__cahal_8c.html#a6d3a2c1d2b17054c7164d582b5ad3076" title="Generates a new input sink (mic) " alt="" coords="184,131,362,156"/>
+</map>

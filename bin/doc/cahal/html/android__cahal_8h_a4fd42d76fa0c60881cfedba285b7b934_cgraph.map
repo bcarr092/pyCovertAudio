@@ -1,0 +1,7 @@
+<map id="android_init_and_test_input_configuration" name="android_init_and_test_input_configuration">
+<area shape="rect" id="node2" href="$android__cahal_8c.html#a2adf261da6eae23641d7bc3fcb433464" title="Create a new audio format struct with the given parameters. " alt="" coords="202,5,378,44"/>
+<area shape="rect" id="node3" href="$android__cahal_8c.html#abce14920871448964473b3e7bacd7932" title="Test a specific configuration. Return true if the configuration defined in in_audio_format is support..." alt="" coords="225,68,356,107"/>
+<area shape="rect" id="node4" href="$android__cahal_8c.html#ac6d173b6b781d9362293d309dcb45143" title="Generates a new input source (mic) " alt="" coords="442,12,589,51"/>
+<area shape="rect" id="node5" href="$android__cahal_8c.html#a6d3a2c1d2b17054c7164d582b5ad3076" title="Generates a new input sink (mic) " alt="" coords="426,75,604,100"/>
+<area shape="rect" id="node6" href="$android__cahal_8c.html#ae774d92ce94dc154b0d10eb7c980a954" title="Sets the configuration on the OpenSLES record object. The configuration sets what mic is used in reco..." alt="" coords="448,124,582,149"/>
+</map>

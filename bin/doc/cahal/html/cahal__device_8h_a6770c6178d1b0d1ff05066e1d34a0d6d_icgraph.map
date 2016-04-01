@@ -1,0 +1,4 @@
+<map id="cahal_print_device" name="cahal_print_device">
+<area shape="rect" id="node2" href="$cahal__device_8h.html#ae6b743f3ff621c73223dfad8a1b6e9ad" title="Prints all the devices in in__device_list. " alt="" coords="186,5,342,31"/>
+<area shape="rect" id="node3" href="$osx__cahal_8h.html#a2c766f421fdf2004c3d898de2de3b39a" title="Generates and returns a new list of devices from the OS. This function only needs to be called once t..." alt="" coords="195,55,333,80"/>
+</map>

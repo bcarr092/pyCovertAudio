@@ -1,0 +1,4 @@
+<map id="csignal_get_spreading_code" name="csignal_get_spreading_code">
+<area shape="rect" id="node2" href="$spreading__code_8c.html#a651addb5a3d28df737c047106bc35645" title="Executes one interation of the LFSR in in_spreading_code to generate one code bit. A single state change is done by bit&#45;wise anding the generator with the state, and summing the result modulo&#45;2 to get the next input bit. The output bit is simply the LSB of the state. " alt="" coords="244,5,399,44"/>
+<area shape="rect" id="node3" href="$spreading__code_8c.html#a87ef6ab904ce66a7330c21c8bf3f7a9d" title="Sumes the ones in the in_input vector modulo&#45;2. " alt="" coords="447,12,579,37"/>
+</map>

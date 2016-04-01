@@ -1,0 +1,4 @@
+<map id="windows_recorder_read_data" name="windows_recorder_read_data">
+<area shape="rect" id="node2" href="$windows__cahal__device_8cpp.html#a1164d0af46511af5718ab1db53a14ab0" title="Called by the recording thread when signaled that a new capture buffer is ready. This function will g..." alt="" coords="250,5,461,31"/>
+<area shape="rect" id="node3" href="$windows__cahal__device_8cpp.html#aec6bf662a89cae02dcb40d0a36336343" title="The entry point into the CAHAL library to start recording. The caller is responsible for supplying al..." alt="" coords="509,5,658,31"/>
+</map>

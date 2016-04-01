@@ -1,0 +1,9 @@
+<map id="darwin_convert_cahal_audio_format_flags_to_core_audio_format_flags" name="darwin_convert_cahal_audio_format_flags_to_core_audio_format_flags">
+<area shape="rect" id="node2" href="$darwin__cahal__device_8h.html#aa7f707d631530f0be6a85538085e66b3" title="Helper function to create the AudioStreamBasicDescrition. This is the platform specific model that is..." alt="" coords="229,55,388,80"/>
+<area shape="rect" id="node3" href="$darwin__cahal__device_8c.html#a659d2afa28a2eee575c238ae2c54a90f" title="The entry point into the CAHAL library to start playback. The caller is responsible for supplying all..." alt="" coords="449,5,595,31"/>
+<area shape="rect" id="node4" href="$darwin__cahal__device_8c.html#aec6bf662a89cae02dcb40d0a36336343" title="The entry point into the CAHAL library to start recording. The caller is responsible for supplying al..." alt="" coords="447,55,597,80"/>
+<area shape="rect" id="node5" href="$ios__cahal__device__stream_8c.html#a467f9a4f75bd92c6a24eebacaab6bcdf" title="Determines the audio formats that are supported by the hardware running iOS. " alt="" coords="436,104,608,143"/>
+<area shape="rect" id="node6" href="$ios__cahal__device_8h.html#a767c85018ae3765339ba25ea60990eb7" title="Configures the default input/output stream depending on in_direction This function sets the minimum f..." alt="" coords="656,111,814,136"/>
+<area shape="rect" id="node7" href="$ios__cahal__device_8h.html#ac5c2461e02b1909f44620386c0578192" title="Mallocs and populates a newly created cahal_device struct. Note that the returned structure is an arr..." alt="" coords="862,104,1010,143"/>
+<area shape="rect" id="node8" href="$ios__cahal_8c.html#a1c0a250dc3fd364f23fe2e3962e0570f" title="Instantiates a list of audio input/output devices in a platform&#45; agnostic way. " alt="" coords="1058,111,1207,136"/>
+</map>

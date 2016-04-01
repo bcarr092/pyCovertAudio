@@ -1,0 +1,6 @@
+<map id="bit_stream_initialize" name="bit_stream_initialize">
+<area shape="rect" id="node2" href="$bit__packer_8c.html#a3342c8eabe61a659d0b7898599b4e790" title="Initializes the bit_packer struct with an empty data buffer and sets both bit and byte offsets to 0..." alt="" coords="199,5,337,31"/>
+<area shape="rect" id="node3" href="$bit__packer_8c.html#adb6d2902b1f5d04c2721684371a13410" title="Adds the data in in_data to the bit packer. " alt="" coords="192,55,344,80"/>
+<area shape="rect" id="node4" href="$bit__packer_8c.html#a169b401cc9a75d9dc03ac6049939de0f" title="Adds the in_num_bits LSBs in in_data to the bit packer. " alt="" coords="392,55,532,80"/>
+<area shape="rect" id="node5" href="$bit__packer_8c.html#a19ba4d19f9af4262c0f50f3e084d379d" title="Grows the internal buffer stored in io_bit_packer by a factor of BIT_PACKER_GROWTH_RATE. " alt="" coords="580,55,699,80"/>
+</map>

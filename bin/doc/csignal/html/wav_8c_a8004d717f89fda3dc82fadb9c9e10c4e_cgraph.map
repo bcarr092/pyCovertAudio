@@ -1,0 +1,7 @@
+<map id="csignal_write_LPCM_wav" name="csignal_write_LPCM_wav">
+<area shape="rect" id="node2" href="$wav_8c.html#a3ebc206bbda5a094c7779aa9b19bdfe1" title="This function will write a new RIFF header to the file pointed to by in_file_pointer. " alt="" coords="248,5,383,44"/>
+<area shape="rect" id="node4" href="$wav_8c.html#a2de8d0594bb5a2829a7958e011c05490" title="This function will write a new WAVE format header to the file pointed to by in_file_pointer. " alt="" coords="244,117,387,156"/>
+<area shape="rect" id="node6" href="$wav_8c.html#a00a191e0912c009fffbdd54840a8be97" title="This function will write all the PCM data in in_samples in interleaved form to the file pointed to in..." alt="" coords="227,68,404,93"/>
+<area shape="rect" id="node3" href="$wav_8c.html#addec4f94a8a194adf55d8fe460617dc4" title="Converts in_number to little endian. If in_number is already in little endian format nothing is done..." alt="" coords="459,55,595,93"/>
+<area shape="rect" id="node5" href="$wav_8c.html#a1c23e637640b4fd4a2b5a8ef89ea23d3" title="Converts in_number to little endian. If in_number is already in little endian format nothing is done..." alt="" coords="452,117,603,156"/>
+</map>

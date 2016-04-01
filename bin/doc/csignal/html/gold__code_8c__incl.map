@@ -1,0 +1,5 @@
+<map id="src/gold_code.c" name="src/gold_code.c">
+<area shape="rect" id="node2" href="$gold__code_8h.html" title="Contains the headers for generating gold codes. Gold codes are used in CDMA applications and provide ..." alt="" coords="106,79,200,104"/>
+<area shape="rect" id="node3" href="$spreading__code_8h.html" title="This file contains all functions related to creating a spreading code (i.e. the c(t) function in spre..." alt="" coords="38,152,166,177"/>
+<area shape="rect" id="node5" href="$csignal__error__codes_8h.html" title="The error codes produced by the csignal library are defined here. These error codes are superset of e..." alt="" coords="127,225,280,251"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="windows_initialize_device" name="windows_initialize_device">
+<area shape="rect" id="node2" href="$windows__cahal__device_8cpp.html#a82c30f69909119ceb7c541fdc6fbfb00" title="Entry point to configure the WASAPI to process audio samples. This function will enumerate the audio ..." alt="" coords="181,31,361,56"/>
+<area shape="rect" id="node3" href="$windows__cahal__device_8cpp.html#aec6bf662a89cae02dcb40d0a36336343" title="The entry point into the CAHAL library to start recording. The caller is responsible for supplying al..." alt="" coords="409,5,559,31"/>
+<area shape="rect" id="node4" href="$windows__cahal__device_8cpp.html#a659d2afa28a2eee575c238ae2c54a90f" title="The entry point into the CAHAL library to start playback. The caller is responsible for supplying all..." alt="" coords="411,55,557,80"/>
+</map>

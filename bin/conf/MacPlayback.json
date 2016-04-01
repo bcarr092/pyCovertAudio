@@ -1,0 +1,14 @@
+{
+  "playback" :
+  {
+    "deviceName"        : "Built-in Output",
+    "inputFile"         : "output/out.wav",
+    "duration"          : 45,
+    "volume"            : 1.0,
+    "delay"             : 0.0
+  },
+
+  "debugDirectory"  : "debug",
+  "debugEnabled"    : 1,
+  "outputDirectory" : "output"
+}

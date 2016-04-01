@@ -1,0 +1,5 @@
+<map id="src/include/csignal.h" name="src/include/csignal.h">
+<area shape="rect" id="node2" href="$csignal_8c.html" title="This file contains the implementation for generating data modulated audio signals. Currently, implementations for BFSK and DSSS are supported. " alt="" coords="5,79,100,104"/>
+<area shape="rect" id="node3" href="$detect_8h.html" title="Functions used to detect the presence of input (i.e., received) signals. " alt="" coords="125,79,261,104"/>
+<area shape="rect" id="node4" href="$detect_8c.html" title="Implementation of signal detection routines. " alt="" coords="148,152,237,177"/>
+</map>

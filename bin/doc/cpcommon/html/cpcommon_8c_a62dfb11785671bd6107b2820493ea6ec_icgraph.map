@@ -1,0 +1,4 @@
+<map id="cpc_vfprintf" name="cpc_vfprintf">
+<area shape="rect" id="node2" href="$log__functions_8h.html#aee8c4c70cdf9be5c86af041f04f56a70" title="Logging function that will either not output the log (if in_log_level is below the current log level)..." alt="" coords="143,5,210,31"/>
+<area shape="rect" id="node3" href="$_c_p_common_8h.html#a6dd916ae0b5f9c9b215ef8441d2fe917" title="Converts in_code to its string representation if possible and outputs it using the logger..." alt="" coords="258,5,370,31"/>
+</map>

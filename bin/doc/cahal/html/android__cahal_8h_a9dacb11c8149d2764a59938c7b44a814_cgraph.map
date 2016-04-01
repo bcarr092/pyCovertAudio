@@ -1,0 +1,12 @@
+<map id="android_set_input_devices" name="android_set_input_devices">
+<area shape="rect" id="node2" href="$android__cahal_8c.html#af1a8767560a035e94e2f612aea6e9c80" title="Create the structures required to define a cahal_device. Android has one stream per device..." alt="" coords="244,5,371,44"/>
+<area shape="rect" id="node4" href="$android__cahal_8c.html#a4fd42d76fa0c60881cfedba285b7b934" title="Function that simply sets up a test input configuration and tests to see if it is supported in hardwa..." alt="" coords="233,131,382,169"/>
+<area shape="rect" id="node10" href="$android__cahal_8c.html#a5f59d7ef95ea8a67a3f92ad20c83c6fe" title="Adds the supported format to the cahal struct. " alt="" coords="237,68,378,107"/>
+<area shape="rect" id="node11" href="$android__cahal_8c.html#aaae6b4619770aa9a4ae899adeb3020e3" title="Helper function to add in_device to io_device_list. Updates the number of devices in io_number_of_dev..." alt="" coords="237,193,378,232"/>
+<area shape="rect" id="node3" href="$android__cahal__audio__format__description_8c.html#a55f802aa7d561308a2686a5bd3cd95ec" title="This function bridges the android audio format constants to the cahal format constants. It takes as input an OpenSL audio format id and returns a cahal format id. " alt="" coords="430,13,612,65"/>
+<area shape="rect" id="node5" href="$android__cahal_8c.html#a2adf261da6eae23641d7bc3fcb433464" title="Create a new audio format struct with the given parameters. " alt="" coords="433,117,609,156"/>
+<area shape="rect" id="node6" href="$android__cahal_8c.html#abce14920871448964473b3e7bacd7932" title="Test a specific configuration. Return true if the configuration defined in in_audio_format is support..." alt="" coords="456,180,587,219"/>
+<area shape="rect" id="node7" href="$android__cahal_8c.html#ac6d173b6b781d9362293d309dcb45143" title="Generates a new input source (mic) " alt="" coords="676,124,823,163"/>
+<area shape="rect" id="node8" href="$android__cahal_8c.html#a6d3a2c1d2b17054c7164d582b5ad3076" title="Generates a new input sink (mic) " alt="" coords="660,187,838,212"/>
+<area shape="rect" id="node9" href="$android__cahal_8c.html#ae774d92ce94dc154b0d10eb7c980a954" title="Sets the configuration on the OpenSLES record object. The configuration sets what mic is used in reco..." alt="" coords="682,236,816,261"/>
+</map>

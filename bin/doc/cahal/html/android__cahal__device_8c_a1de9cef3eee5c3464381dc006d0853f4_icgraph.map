@@ -1,0 +1,4 @@
+<map id="android_recorder_callback" name="android_recorder_callback">
+<area shape="rect" id="node2" href="$android__cahal__device_8h.html#a5d1d4c4063e09528e9c9c063073d7eae" title="Registers a callback function to be called when a buffer is full. " alt="" coords="232,5,407,44"/>
+<area shape="rect" id="node3" href="$cahal__device_8h.html#aec6bf662a89cae02dcb40d0a36336343" title="The entry point into the CAHAL library to start recording. The caller is responsible for supplying al..." alt="" coords="455,12,604,37"/>
+</map>

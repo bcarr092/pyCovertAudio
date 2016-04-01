@@ -1,0 +1,9 @@
+<map id="csignal_convert_int_to_little_endian" name="csignal_convert_int_to_little_endian">
+<area shape="rect" id="node2" href="$wav_8c.html#ab2200c41aa7db21e3da2db990c19a0ba" title="This function will write all the data in in_samples in interleaved form to the WAVE file pointed to i..." alt="" coords="189,68,370,93"/>
+<area shape="rect" id="node4" href="$wav_8c.html#a00a191e0912c009fffbdd54840a8be97" title="This function will write all the PCM data in in_samples in interleaved form to the file pointed to in..." alt="" coords="191,243,368,268"/>
+<area shape="rect" id="node6" href="$wav_8c.html#a2de8d0594bb5a2829a7958e011c05490" title="This function will write a new WAVE format header to the file pointed to by in_file_pointer. " alt="" coords="208,180,351,219"/>
+<area shape="rect" id="node7" href="$wav_8c.html#a0663b1eb825ea390414f23d00f043207" title="Writes a fact header chunk to the file pointed to by in_file_pointer. This is a required chunk for no..." alt="" coords="216,5,343,44"/>
+<area shape="rect" id="node8" href="$wav_8c.html#a3ebc206bbda5a094c7779aa9b19bdfe1" title="This function will write a new RIFF header to the file pointed to by in_file_pointer. " alt="" coords="212,117,347,156"/>
+<area shape="rect" id="node3" href="$wav_8c.html#a2c843f2ba8f6d3e5008b059670402353" title="Main entry point to create a WAV file. Will write the data stored in in_samples to a file named in_fi..." alt="" coords="418,96,597,121"/>
+<area shape="rect" id="node5" href="$wav_8c.html#a8004d717f89fda3dc82fadb9c9e10c4e" title="Main entry point to create a WAV file. Will write the data stored in in_samples to a file named in_fi..." alt="" coords="420,187,594,212"/>
+</map>

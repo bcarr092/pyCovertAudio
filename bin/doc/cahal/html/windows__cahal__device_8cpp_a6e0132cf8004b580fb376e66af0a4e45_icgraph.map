@@ -1,0 +1,4 @@
+<map id="windows_stop_thread" name="windows_stop_thread">
+<area shape="rect" id="node2" href="$windows__cahal__device_8cpp.html#a662559b543a161142d22fcc81151e275" title="Calling this function will stop recording and free all structures related to the recording back to th..." alt="" coords="204,5,352,31"/>
+<area shape="rect" id="node3" href="$windows__cahal__device_8cpp.html#a30cb2441ebd6aaa5ca0c42b371bd1828" title="Calling this function will stop playback and free all structures related to the playback to the OS..." alt="" coords="205,55,351,80"/>
+</map>

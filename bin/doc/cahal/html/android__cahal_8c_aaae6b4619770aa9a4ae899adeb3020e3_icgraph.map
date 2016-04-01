@@ -1,0 +1,5 @@
+<map id="android_add_device_to_list" name="android_add_device_to_list">
+<area shape="rect" id="node2" href="$android__cahal_8h.html#a2dd5bdfbf207cf5fe572766aef39b8b0" title="Collect the list of supported output audio configurations and adds them to the list. " alt="" coords="217,5,352,44"/>
+<area shape="rect" id="node4" href="$android__cahal_8h.html#a9dacb11c8149d2764a59938c7b44a814" title="Collect the list of supported input audio configurations and adds them to the list. " alt="" coords="195,68,375,93"/>
+<area shape="rect" id="node3" href="$cahal__device_8h.html#a1c0a250dc3fd364f23fe2e3962e0570f" title="Instantiates a list of audio input/output devices in a platform&#45; agnostic way. " alt="" coords="423,40,572,65"/>
+</map>

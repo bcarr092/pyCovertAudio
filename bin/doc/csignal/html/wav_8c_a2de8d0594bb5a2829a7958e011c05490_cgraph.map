@@ -1,0 +1,4 @@
+<map id="csignal_write_WAVE_header" name="csignal_write_WAVE_header">
+<area shape="rect" id="node2" href="$wav_8c.html#a1c23e637640b4fd4a2b5a8ef89ea23d3" title="Converts in_number to little endian. If in_number is already in little endian format nothing is done..." alt="" coords="197,5,348,44"/>
+<area shape="rect" id="node3" href="$wav_8c.html#addec4f94a8a194adf55d8fe460617dc4" title="Converts in_number to little endian. If in_number is already in little endian format nothing is done..." alt="" coords="205,68,340,107"/>
+</map>

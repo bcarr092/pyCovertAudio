@@ -1,0 +1,9 @@
+<map id="src/include/darwin/osx/osx_cahal_device_stream.h" name="src/include/darwin/osx/osx_cahal_device_stream.h">
+<area shape="rect" id="node2" href="$osx__cahal__device__stream_8c.html" title="The implementation for OSX specific device streams. " alt="" coords="5,112,170,151"/>
+<area shape="rect" id="node3" href="$osx__cahal__device_8h.html" title="This interface takes care of creating the platform&#45;agnostic device structs as well as the implementat..." alt="" coords="194,112,361,151"/>
+<area shape="rect" id="node7" href="$osx__cahal__audio__format__description_8h.html" title="The OSX specific audio format description code. " alt="" coords="385,105,535,157"/>
+<area shape="rect" id="node4" href="$osx__cahal__device_8c.html" title="The OSX implementation of cahal devices. " alt="" coords="69,212,200,251"/>
+<area shape="rect" id="node5" href="$osx__cahal_8h.html" title="Provides access at the top level (the device level) to the platform specific audio devices (both inpu..." alt="" coords="224,212,352,251"/>
+<area shape="rect" id="node6" href="$osx__cahal_8c_source.html" title="src/darwin/osx/osx\l_cahal.c" alt="" coords="222,305,353,344"/>
+<area shape="rect" id="node8" href="$osx__cahal__audio__format__description_8c_source.html" title="src/darwin/osx/osx\l_cahal_audio_format\l_description.c" alt="" coords="387,205,533,257"/>
+</map>

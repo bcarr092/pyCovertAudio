@@ -1,0 +1,7 @@
+<map id="src/include/wav.h" name="src/include/wav.h">
+<area shape="rect" id="node2" href="$csignal_8h.html" title="This is the main include file for the csignal library. This is the only header file that needs to be ..." alt="" coords="122,79,263,104"/>
+<area shape="rect" id="node6" href="$wav_8c.html" title="This file contains the implementation of the read/write methods for WAV files. " alt="" coords="287,79,363,104"/>
+<area shape="rect" id="node3" href="$csignal_8c.html" title="This file contains the implementation for generating data modulated audio signals. Currently, implementations for BFSK and DSSS are supported. " alt="" coords="5,152,100,177"/>
+<area shape="rect" id="node4" href="$detect_8h.html" title="Functions used to detect the presence of input (i.e., received) signals. " alt="" coords="125,152,261,177"/>
+<area shape="rect" id="node5" href="$detect_8c.html" title="Implementation of signal detection routines. " alt="" coords="148,225,237,251"/>
+</map>

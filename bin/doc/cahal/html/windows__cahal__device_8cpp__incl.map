@@ -1,0 +1,9 @@
+<map id="src/windows/windows_cahal_device.cpp" name="src/windows/windows_cahal_device.cpp">
+<area shape="rect" id="node2" href="$windows__cahal__device_8hpp.html" title="All APIs related to querying the underlying audio IO hardware are in this file. " alt="" coords="350,92,516,131"/>
+<area shape="rect" id="node8" href="$cahal_8h.html" title="This is the only header that an external library/binary should have include. Provides a cross&#45;platfor..." alt="" coords="365,265,429,291"/>
+<area shape="rect" id="node10" href="$cahal__device_8h.html" title="The platform agnostic CAHAL device struct is defined in this file. All helper functions that are impl..." alt="" coords="328,339,439,364"/>
+<area shape="rect" id="node14" href="$windows__cahal__device__stream_8hpp.html" title="Function prototypes for functions related to querying the underlying hardware for supported device st..." alt="" coords="134,179,292,217"/>
+<area shape="rect" id="node11" href="$cahal__audio__format__flags_8h.html" title="List of platform agnostic audio format flags and helper functions to display their value..." alt="" coords="421,412,559,451"/>
+<area shape="rect" id="node12" href="$cahal__audio__format__description_8h.html" title="All constants, typedefs and functions related to audio formats and sample rates are defined in this f..." alt="" coords="208,499,346,537"/>
+<area shape="rect" id="node13" href="$cahal__device__stream_8h.html" title="All cahal_device_stream structs and typedefs are defined in this file. All functions related to the s..." alt="" coords="87,419,245,444"/>
+</map>

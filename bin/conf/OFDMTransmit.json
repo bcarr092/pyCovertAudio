@@ -1,0 +1,69 @@
+{
+  "transmitter" :
+  {
+    "class"       : "WAVMultiCarrierTransmitter.WAVMultiCarrierTransmitter",
+    "attributes"  :
+    {
+      "bitsPerSymbol"         : 1,
+      "sampleRate"            : 48000,
+      "samplesPerSymbol"      : 480,
+      "symbolExpansionFactor" : 9,
+      "separationIntervals"   : 2,
+
+      "WAVInfo" :
+      {
+        "fileName"          : "out.wav",
+        "numberOfChannels"  : 2,
+        "channelMode"       : "blank"
+      },
+
+      "modulator" :
+      {
+        "class"       : "OFDMModulator.OFDMModulator",
+        "attributes"  :
+        {
+          "minimumFrequency"              : 18000,
+          "maximumFrequency"              : 19600,
+          "bandwidthDivisor"              : 1.0
+        }
+      },
+
+      "modifiers" :
+      [
+        {
+          "class"       : "BandpassFilter.BandpassFilter",
+          "attributes"  :
+          {
+            "firstStopband"       : 17800,
+            "firstPassband"       : 18000,
+            "secondPassband"      : 19600,
+            "secondStopband"      : 19800,
+            "passbandAttenuation" : 0.1,
+            "stopbandAttenuation" : 80
+          }
+        }
+      ],
+  
+      "dataInfo"  :
+      {
+        "data"      : "What hath God wrought?",
+        "sentinel"  : "UUUUUUUUW",
+        "modifiers" :
+        [
+          {
+            "class"       : "ReedSolomonEncoder.ReedSolomonEncoder",
+            "attributes"  :
+            {
+              "messageLength" : 16,
+              "blockLength"   : 32
+            }
+          }
+        ]
+      }
+    }
+  },
+
+  "debugDirectory"  : "debug",
+  "debugEnabled"    : 1,
+  "outputDirectory" : "output"
+}

@@ -1,0 +1,4 @@
+<map id="bit_packer_add_bytes" name="bit_packer_add_bytes">
+<area shape="rect" id="node2" href="$bit__packer_8c.html#a169b401cc9a75d9dc03ac6049939de0f" title="Adds the in_num_bits LSBs in in_data to the bit packer. " alt="" coords="205,5,346,31"/>
+<area shape="rect" id="node3" href="$bit__packer_8c.html#a19ba4d19f9af4262c0f50f3e084d379d" title="Grows the internal buffer stored in io_bit_packer by a factor of BIT_PACKER_GROWTH_RATE. " alt="" coords="394,5,513,31"/>
+</map>

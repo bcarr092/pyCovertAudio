@@ -1,0 +1,3 @@
+<map id="bit_packer_get_bytes" name="bit_packer_get_bytes">
+<area shape="rect" id="node2" href="$bit__stream_8h.html#ad6e9ca126cc22d62b3796aeaf28b89e9" title="Copies up to io_num_bits from io_bit_stream, copies them to out_data and returns the size of out_data..." alt="" coords="201,5,339,31"/>
+</map>

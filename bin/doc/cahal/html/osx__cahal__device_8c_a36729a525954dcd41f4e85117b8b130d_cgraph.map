@@ -1,0 +1,3 @@
+<map id="osx_get_number_of_channels" name="osx_get_number_of_channels">
+<area shape="rect" id="node2" href="$osx__cahal__device_8c.html#ae8645a8ea93655207465ed943d8905b7" title="Generic function to extract the value for in_property from the audio hardware in_device_id. The extracted value is stored in out_device_property_value. This is a helper function to wrap the OSX interface for audio hardware. " alt="" coords="253,5,424,44"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="src/include/detect.h" name="src/include/detect.h">
+<area shape="rect" id="node3" href="$csignal_8h.html" title="This is the main include file for the csignal library. This is the only header file that needs to be ..." alt="" coords="512,79,586,104"/>
+<area shape="rect" id="node5" href="$csignal__error__codes_8h.html" title="The error codes produced by the csignal library are defined here. These error codes are superset of e..." alt="" coords="678,372,831,397"/>
+<area shape="rect" id="node7" href="$gold__code_8h.html" title="Contains the headers for generating gold codes. Gold codes are used in CDMA applications and provide ..." alt="" coords="808,152,902,177"/>
+<area shape="rect" id="node8" href="$fir__filter_8h.html" title="This is the header file for the finite impulse response (FIR) filter struct and associated helper fun..." alt="" coords="178,225,254,251"/>
+<area shape="rect" id="node11" href="$fft_8h.html" title="This file contains the headers for to calculate the FFT of a real&#45; valued signal. The algorightm to c..." alt="" coords="741,152,784,177"/>
+<area shape="rect" id="node4" href="$wav_8h.html" title="This library contains methods to read and write WAV files. " alt="" coords="342,299,397,324"/>
+<area shape="rect" id="node6" href="$spreading__code_8h.html" title="This file contains all functions related to creating a spreading code (i.e. the c(t) function in spre..." alt="" coords="691,225,818,251"/>
+<area shape="rect" id="node9" href="$conv_8h.html" title="Header file for convolution of signals. " alt="" coords="208,299,267,324"/>
+<area shape="rect" id="node10" href="$kaiser__filter_8h.html" title="This is the header file for the finite impulse response (FIR) Kaiser filter struct and associated hel..." alt="" coords="194,152,294,177"/>
+<area shape="rect" id="node12" href="$bit__packer_8h.html" title="Definition for methods to store bits in a data structure. " alt="" coords="472,299,565,324"/>
+<area shape="rect" id="node13" href="$bit__stream_8h.html" title="Functions to handle reading bits from a byte buffer. " alt="" coords="419,225,514,251"/>
+</map>

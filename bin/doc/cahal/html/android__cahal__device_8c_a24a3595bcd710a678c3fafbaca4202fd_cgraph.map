@@ -1,0 +1,4 @@
+<map id="android_enqueue_playback_buffers" name="android_enqueue_playback_buffers">
+<area shape="rect" id="node2" href="$android__cahal__device_8c.html#ade42711a1ee086d09cc9c9d27125b22c" title="Computes the number of bytes in an audio buffer passed on the audio format being used and the number ..." alt="" coords="247,5,411,44"/>
+<area shape="rect" id="node3" href="$android__cahal__device_8c.html#a442f0c20a7d331ee58310dd7f6a53c01" title="Callback called when a full buffer of samples is needed for playback. This is the interface for Andro..." alt="" coords="239,68,420,93"/>
+</map>
