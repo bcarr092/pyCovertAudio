@@ -59,12 +59,12 @@ pyCovertAudio is powered by JSON configuration files. Sample configuration files
     * **modifiers**: This section contains filter information. If the carrier frequency is modified this section must be updated according to the bandwidth requirements of the transmitted signal.
 * **[FHSS,OFDM]Transmitter.json**: Modulates a given text message using FHSS or OFDM, respectively, and produces a WAV file.
     * **fileName**: Path to the WAV file that will be created containing the modulated message
-    * **minimumFrequency** and **maximumFrequency**: Given that both FHSS and OFDM are multicarrier modulation schemes, these parameters define the passband that the schemes can use.
+    * **minimumFrequency** and **maximumFrequency**: Given that both FHSS and OFDM are multicarrier modulation schemes, these parameters define the passband that the schemes can operate within.
     * **data**: The text message that will be modulated
     * **modifiers**: This section contains filter information. If minimumFrequency or maximumFrequency are modified this section must be updated accordingly.
 * **[FHSS,OFDM]Receiver.json**: Demodulates a given WAV file using FHSS or OFDM, respectively, to recreate the text message the audio file contains.
     * **fileName**: Path to the WAV file to demodulate
-    * **minimumFrequency** and **maximumFrequency**: Given that both FHSS and OFDM are multicarrier modulation schemes, these parameters define the passband that the schemes can use.
+    * **minimumFrequency** and **maximumFrequency**: Given that both FHSS and OFDM are multicarrier modulation schemes, these parameters define the passband that the schemes can operate within.
     * **modifiers**: This section contains filter information. If the carrier frequency is modified this section must be updated accordingly.
 
 
@@ -80,7 +80,7 @@ This project requires the following software to build/run:
 * [Perl](https://www.perl.org/)
 * [Doxygen](http://www.stack.nl/~dimitri/doxygen/) (optional, required for generating documentation)
 
-This project includes the following GitHub projects:
+This project also includes the following GitHub projects as *git submodules*:
 
 * [CPCommon](https://github.com/bcarr092/CPCommon)
 * [CSignal](https://github.com/bcarr092/CSignal)
@@ -97,7 +97,7 @@ Lastly, this project has been tested with the following toolchains:
 
 ### Checkout
 
-Note that this project uses Git submodules. As such, execute the following command to checkout this project:
+Since this project uses Git submodules, execute the following command to checkout it out:
 
 ```
 git clone --recursive https://github.com/bcarr092/pyCovertAudio.git
@@ -105,7 +105,7 @@ git clone --recursive https://github.com/bcarr092/pyCovertAudio.git
 
 ### Configuration
 
-The cmake configuration as well as the build process require knowledge of the Python include and lib directories for the Python installation that matches the platform and architecture that pyCovertAudio is being built for. Setting these environment variables correctly is required in order to build all tests as well as the main library that pyCovertAudio.py relies upon.
+The initial cmake configuration, as well as the build process, require knowledge of the Python include and lib directories for the Python installation that matches the platform and architecture that pyCovertAudio is being built for. Setting the *PYTHON_\** environment variables correctly is required in order to build all tests as well as the main library that pyCovertAudio.py relies upon.
 
 Locate the appropriate Python include and lib directories and set the following three environment variables:
 
