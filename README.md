@@ -135,13 +135,13 @@ The generators are listed at the end of cmake's help output. For a point of refe
 * "Unix Makefiles" on Mac OS X
 * "NMake Makefiles" on Windows 7 and 10
 
-If "Unix Makefiles" was used in place of `<generator>` simply run `make` to build the application. If "NMake Makefiles" was used run `nmake` (and use `nmake` in the subsequent instructions in place of `make`, as well). Otherwise, execute the build command for your generator.
+Assuming "Unix Makefiles" was used in place of `<generator>` simply run `make` to build the application. If "NMake Makefiles" was used run `nmake` (and use `nmake` in the subsequent instructions in place of `make`, as well). Otherwise, execute the build command for your chosen generator.
 
 ### Documentation and Tests
 
 To build all the documentation for pyCovertAudio and its dependencies run `make doc`. The generated documentation will be placed in `../bin/doc`.
 
-To execute tests to ensure that the dependant libraries (e.g., CAHAL and CSignal) are running correctly run `make test`.
+To execute tests to ensure that the dependant libraries (e.g., CAHAL and CSignal) are running correctly run `make test`. Be forewarned, these tests will attempt to record and playback audio as well as execute a number of the signal processing functions of CSignal. Therefore, these tests can take some time to run!
 
 ### Running pyCovertAudio
 
