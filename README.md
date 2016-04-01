@@ -103,7 +103,7 @@ git clone --recursive https://github.com/bcarr092/pyCovertAudio.git
 
 ## Running a Pre-Built Instance of pyCovertAudio
 
-In the `bin` directory there are pre-built binary versions of the libraries (e.g., CAHAL, CPCommon, CSignal) that pyCovertAudio depends on. Pre-built libraries for have been prepared for the following platforms and architectures:
+In the `bin` directory there are pre-built binary versions of the libraries (e.g., CAHAL, CPCommon, CSignal) that pyCovertAudio depends on coverting the following platforms and architectures:
 
 | Platform      | Architecture      |
 |---------------|-------------------|
