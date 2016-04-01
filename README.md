@@ -127,6 +127,8 @@ python pyCovertAudio.py -c conf/ListDevices.json
 
 This should list all the input (i.e., recording) and output (i.e., playback) devices on your system.
 
+*Note*: In order to execute the Windows version of the pre-built pyCovertAudio script the Visual Studio 2013 redistributable [run-time](https://www.microsoft.com/en-ca/download/details.aspx?id=40784) must be installed on your system.
+
 ## Building and Running on Your Current Platform
 
 ### Configuration
