@@ -150,7 +150,7 @@ To launch the pyCovertAudio application first run the command `make install` the
 * lib
 * lib/&lt;platform&gt;/&lt;target&gt;/&lt;arch&gt;
 
-Once the environment variable has been set, execute the following commands:
+Once the *PYTHONPATH* environment variable has been set, execute the following commands:
 
 ```
 cd ../bin
@@ -159,13 +159,13 @@ python pyCovertAudio.py -c conf/ListDevices.json
 
 This should list all the input (i.e., recording) and output (i.e., playback) devices on your system.
 
-While it is unconventional to have to set *PYTHONPATH* before executing a python script this step is required because the build process for pyCovertAudio is designed around cmake's cross-compiling feature. When pyCovertAudio is built and `make install` is run, the platform-specific libraries are installed to:
+While it is unconventional to have to set *PYTHONPATH* before executing a python script, this step is required because the build process for pyCovertAudio is designed around cmake's cross-compiling feature. When pyCovertAudio is built and `make install` is run, the platform-specific libraries are installed to:
 
 ```
 ..\bin\lib\<platform>\<target>\<arch>
 ```
 
-The platform-independent Python scripts are installed to `..\bin`. To deploy pyCovertAudio to a specific system both the contents of `..\bin` and the platform-dependent `lib` directory, therefore, need to be copied.
+While the platform-independent Python scripts are installed to `..\lib`. To deploy pyCovertAudio to a specific system the contents of the platform-independent `..\lib` directory, the contents of the platform-dependent `..\lib\<platform>\<target>\<arch>` directory, and the pyCovertAudio script, therefore, need to be copied to the destination directory. By copying this content to a single directory pyCovertAudio can be run without having to set the *PYTHONPATH* variable.
 
 ## Cross-Compiling
 
