@@ -267,33 +267,33 @@ To bridge the air-gap between two systems, the **transmitter** (i.e., the system
 
 1. On the **transmitter** run:
 
-..```
-..python pyCovertAudio.py -c conf/Transmit.json
-..```
+...```
+python pyCovertAudio.py -c conf/Transmit.json
+```
 
 2. On the **receiver** run:
 
-..```
-..python pyCovertAudio.py -c conf/<platform>Record.json
-..```
+...```
+python pyCovertAudio.py -c conf/<platform>Record.json
+```
 
 3. _Within a few seconds of running the previous command_, run the following command on the **transmitter**:
 
-..```
-..python pyCovertAudio.py -c conf/<platform>Playback.json
-..```
+...```
+python pyCovertAudio.py -c conf/<platform>Playback.json
+```
 
 4. Once the **receiver** has stopped recording, run the following command on the **receiver**:
 
-..```
-..python pyCovertAudio.py -c conf/Receive.json
-..```
+...```
+python pyCovertAudio.py -c conf/Receive.json
+```
 
 5. Once the **receiver** has completed demodulating and decoding the transmitted message, you should see the following [text](https://en.wikipedia.org/wiki/Samuel_Morse) on your screen:
 
-..```
-..Decoded string: 'What hath God wrought?'
-..```
+...```
+Decoded string: 'What hath God wrought?'
+```
 
 Ensure that in the commands above you replace `<platform>` with the platform of either the **transmitter** or **receiver** depending on the instruction. Additionally, ensure that the **transmitter** completes step #3 before the **receiver**  completes step #2 to guarantee that the **receiver** received the whole audio message.
 
