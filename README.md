@@ -187,9 +187,9 @@ pyCovertAudio was built from the ground up to be run on multiple different platf
 
 The following environment variables must also be set:
 
-* **APPLE_TOOLCHAIN_DIR**: This must point to the Xcode 'Developer' directory. The 'Platforms' directory must be a sub-directory of the location pointed to by this environment variable. This variable must be set to build for Mac OS X and iOS targets.
-* **ANDROID_TOOLCHAIN_DIR**: This must be set to the directory the Android NDK was extracted to. The 'platforms' directory must be a sub-directory of the location pointed to by this environment variable. This variable, along with DEVELOPER_ROOT, must be set to build Android targets.
-* **DEVELOPER_ROOT**: The `generateMakefile.pl` script will automatically build all the Android toolchains contained in the ANDROID_TOOLCHAIN_DIR and store them in the location pointed to by this environment variable. This variable, along with ANDROID_TOOLCHAIN_DIR, must be set to build Android targets. 
+* *APPLE_TOOLCHAIN_DIR*: This must point to the Xcode 'Developer' directory. The 'Platforms' directory must be a sub-directory of the location pointed to by this environment variable. This variable must be set to build for Mac OS X and iOS targets.
+* *ANDROID_TOOLCHAIN_DIR*: This must be set to the directory the Android NDK was extracted to. The 'platforms' directory must be a sub-directory of the location pointed to by this environment variable. This variable, along with *DEVELOPER_ROOT*, must be set to build Android targets.
+* *DEVELOPER_ROOT*: The `generateMakefile.pl` script will automatically build all the Android toolchains contained in the *ANDROID_TOOLCHAIN_DIR* and store them in the location pointed to by this environment variable. This variable, along with *ANDROID_TOOLCHAIN_DIR*, must be set to build Android targets. 
 
 Note that in addition to these environment variables the *PYTHON_BIN*, *PYTHON_LIB*, and *PYTHON_INCLUDE* environment variables (described above) must also be set.
 
@@ -203,7 +203,7 @@ perl generateMakefile.pl --mode=Release --source=<source directory> --platform
 
 where `<source directory>` is the absolute path of the 'src' sub-directory of the pyCovertAudio repos.
 
-Before generating the build Makefiles for the desired targets create a build directory (`mkdir build`) and an install directory (`mkdir bin`). Also note that the default generator used by `generateMakefile.pl` is "Unix Makefiles." To change this use the appropriate switch.
+Before generating the build Makefiles for the desired targets, create a build directory (`mkdir build`) and an install directory (`mkdir bin`). Also note that the default generator used by `generateMakefile.pl` is "Unix Makefiles." To change this use the appropriate switch (i.e., `-g <generator>`).
 
 To build for the Mac OS X platform, v10.10 target, and x86_64 architecture, as an example, execute the following command
 
@@ -228,9 +228,9 @@ make
 make install
 ```
 
-*Note*: In order for the build to succeed *PYTHON_LIB* and *PYTHON_INCLUDE* must point to a location that contains python built for the same target and architecture that pyCovertAudio is being built for.
+*Note 1*: In order for the build to successfully complete, *PYTHON_LIB* and *PYTHON_INCLUDE* must point to a location that contains the copy of Python that is built for the same target and architecture that pyCovertAudio is being built for.
 
-All pyCovertAudio build targets can be installed to the same directory since the installation script will generate the appropriate sub-directories for each platform, target, and architecture combination within `<install directory>`. To execute pyCovertAudio copy the `<install directory>` to the platform you want to run it on, set the *PYTHONPATH* environment variable appropriately (see above), and run pyCovertAudio.
+*Note 2*: All pyCovertAudio build targets can be installed to the same directory since the installation script will generate the appropriate sub-directories for each platform, target, and architecture combination within `<install directory>`.
 
 Contributors
 ============
