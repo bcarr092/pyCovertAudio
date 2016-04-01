@@ -260,6 +260,45 @@ make install
 
 *Note 2*: All pyCovertAudio build targets can be installed to the same directory since the installation script will generate the appropriate sub-directories for each platform, target, and architecture combination within `<install directory>`.
 
+Bridging the Air-Gap
+====================
+
+To bridge the air-gap between two systems, the **transmitter** (i.e., the system that will transmit a coded message using audio signals) and the **receiver** (i.e., the system that will receive the audio signal then demodulate and decode the messaage) using pyCovertAudio execute the following:
+
+1. On the **transmitter** run:
+
+```
+python pyCovertAudio.py -c conf/Transmit.json
+```
+
+2. On the **receiver** run:
+
+```
+python pyCovertAudio.py -c conf/<platform>Record.json
+```
+
+3. _Within a few seconds of running the previous command_, run the following command on the **transmitter**:
+
+```
+python pyCovertAudio.py -c conf/<platform>Playback.json
+```
+
+4. Once the **receiver** has stopped recording, run the following command on the **receiver**:
+
+```
+python pyCovertAudio.py -c conf/Receive.json
+```
+
+5. Once the **receiver** has completed demodulating and decoding the transmitted message, you should see the following [text](https://en.wikipedia.org/wiki/Samuel_Morse) on your screen:
+
+```
+Decoded string: 'What hath God wrought?'
+```
+
+Ensure that in the commands above you replace `<platform>` with the platform of either the **transmitter** or **receiver** depending on the instruction. Additionally, ensure that the **transmitter** completes step #3 before the **receiver**  completes step #2 to guarantee that the **receiver** received the whole audio message.
+
+*Note*: The transmitted message is about 45 seconds long and has been modulated to increase the probability of successful transmission. As such, the transmission bit rate is low and the receiver will have to perform demodulation and error correction, which could take some time. Depending on the hardware you are using as the receiver step #4 could take upwards of a minute or two (and perhaps even longer if your **receiver** is a mobile device). 
+
 Contributors
 ============
 Brent Carrara (bcarr092@uottawa.ca)
