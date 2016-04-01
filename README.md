@@ -122,7 +122,7 @@ cd build
 cmake -DPLATFORM=<platform> -DTARGET=<target> -DARCHITECTURE=<arch> -DCMAKE_INSTALL_PREFIX=../bin -G "<generator>" -DCMAKE_BUILD_TYPE=Release ../src
 ```
 
-Since, at this point, we are building for a specific target the values for `<platform>`, `<target>`, and `<arch>` are not all that important. They become more important when cross-compiling this application, however (see below).
+Since, at this point, we are building for a specific target, the values for `<platform>`, `<target>`, and `<arch>` are not all that important. They become more important when cross-compiling this application, however (see below). As part of convention, `<platform>` should be set to the operating system (OS) that pyCovertAudio is being built for (e.g., Windows, MacOSX), `<target>` should be set to the version of the OS that pyCovertAudio is being built for, and `<arch>` should be set to the architecture that pyCovertAudio is being built for.
 
 The value for `<generator>` should be set to the build system that will be used to actually build the pyCovertAudio application. For a complete list of the generators that are supported on your platform run the command:
 
