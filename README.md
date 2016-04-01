@@ -105,7 +105,7 @@ git clone --recursive https://github.com/bcarr092/pyCovertAudio.git
 
 ### Configuration
 
-The initial cmake configuration, as well as the build process, require knowledge of the Python include and lib directories for the Python installation that matches the platform and architecture that pyCovertAudio is being built for. Setting the _PYTHON\_*_ environment variables correctly is required in order to build all tests as well as the main library that pyCovertAudio.py relies upon.
+The initial cmake configuration, as well as the build process, require knowledge of the Python include and lib directories for the Python installation that matches the platform and architecture that pyCovertAudio is being built for. Setting the *PYTHON_** environment variables correctly is required in order to build all tests as well as the main library that pyCovertAudio.py relies upon.
 
 Locate the appropriate Python include and lib directories and set the following three environment variables:
 
