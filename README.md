@@ -275,9 +275,9 @@ To bridge the air-gap between two systems, the **transmitter** (i.e., the system
 
 5. Once the **receiver** has completed demodulating and decoding the transmitted message, you should see the following [text](https://en.wikipedia.org/wiki/Samuel_Morse) on your screen: `Decoded string: 'What hath God wrought?'`
 
-Ensure that in the commands above you replace `<platform>` with the platform of either the **transmitter** or **receiver** depending on the instruction. Additionally, ensure that the **transmitter** completes step #3 before the **receiver**  completes step #2 to guarantee that the **receiver** received the whole audio message.
+Ensure that in the commands above you replace `<platform>` with the platform of either the **transmitter** or **receiver**, depending on the instruction. Additionally, ensure that the **transmitter** completes step #3 before the **receiver**  completes step #2 to guarantee that the **receiver** received the whole audio message.
 
-*Note*: The transmitted message is about 45 seconds long and has been modulated to increase the probability of successful transmission. As such, the transmission bit rate is low and the receiver will have to perform demodulation and error correction, which could take some time. Depending on the hardware you are using as the receiver step #4 could take upwards of a minute or two (and perhaps even longer if your **receiver** is a mobile device). 
+*Note*: The transmitted message is about 45 seconds long and has been modulated to increase the probability of successful transmission. As such, the transmission bit rate is low and the receiver will have to perform demodulation and error correction, which could take some time. Depending on the hardware you are using as the receiver, step #4 could take upwards of a minute or two (and perhaps even longer if your **receiver** is a mobile device) to complete. 
 
 Contributors
 ============
