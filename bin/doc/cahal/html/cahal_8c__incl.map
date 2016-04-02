@@ -1,7 +1,0 @@
-<map id="src/common/cahal.c" name="src/common/cahal.c">
-<area shape="rect" id="node2" href="$cahal_8h.html" title="This is the only header that an external library/binary should have include. Provides a cross&#45;platfor..." alt="" coords="173,79,238,104"/>
-<area shape="rect" id="node4" href="$cahal__device_8h.html" title="The platform agnostic CAHAL device struct is defined in this file. All helper functions that are impl..." alt="" coords="150,152,261,177"/>
-<area shape="rect" id="node5" href="$cahal__audio__format__flags_8h.html" title="List of platform agnostic audio format flags and helper functions to display their value..." alt="" coords="26,225,164,264"/>
-<area shape="rect" id="node6" href="$cahal__audio__format__description_8h.html" title="All constants, typedefs and functions related to audio formats and sample rates are defined in this f..." alt="" coords="239,312,377,351"/>
-<area shape="rect" id="node7" href="$cahal__device__stream_8h.html" title="All cahal_device_stream structs and typedefs are defined in this file. All functions related to the s..." alt="" coords="340,232,498,257"/>
-</map>

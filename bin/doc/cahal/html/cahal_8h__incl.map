@@ -1,6 +1,0 @@
-<map id="src/include/cahal.h" name="src/include/cahal.h">
-<area shape="rect" id="node3" href="$cahal__device_8h.html" title="The platform agnostic CAHAL device struct is defined in this file. All helper functions that are impl..." alt="" coords="150,79,261,104"/>
-<area shape="rect" id="node4" href="$cahal__audio__format__flags_8h.html" title="List of platform agnostic audio format flags and helper functions to display their value..." alt="" coords="26,152,164,191"/>
-<area shape="rect" id="node5" href="$cahal__audio__format__description_8h.html" title="All constants, typedefs and functions related to audio formats and sample rates are defined in this f..." alt="" coords="239,239,377,277"/>
-<area shape="rect" id="node6" href="$cahal__device__stream_8h.html" title="All cahal_device_stream structs and typedefs are defined in this file. All functions related to the s..." alt="" coords="340,159,498,184"/>
-</map>

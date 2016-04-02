@@ -1,6 +1,0 @@
-<map id="darwin_compute_bytes_per_buffer" name="darwin_compute_bytes_per_buffer">
-<area shape="rect" id="node2" href="$darwin__cahal__device_8h.html#a7080994b4cb4f50629509cccf4346546" title="Allocates the necessary audio queue buffers and populates the queue with them. " alt="" coords="216,5,375,44"/>
-<area shape="rect" id="node4" href="$darwin__cahal__device_8h.html#a19914cf2a88212c7b7e531eb872a85f6" title="Allocates the necessary audio queue buffers and populates the queue with them. This function will cal..." alt="" coords="212,68,379,107"/>
-<area shape="rect" id="node3" href="$darwin__cahal__device_8c.html#aec6bf662a89cae02dcb40d0a36336343" title="The entry point into the CAHAL library to start recording. The caller is responsible for supplying al..." alt="" coords="427,12,577,37"/>
-<area shape="rect" id="node5" href="$darwin__cahal__device_8c.html#a659d2afa28a2eee575c238ae2c54a90f" title="The entry point into the CAHAL library to start playback. The caller is responsible for supplying all..." alt="" coords="429,75,575,100"/>
-</map>

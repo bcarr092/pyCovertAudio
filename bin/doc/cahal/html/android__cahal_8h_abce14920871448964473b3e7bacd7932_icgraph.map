@@ -1,5 +1,0 @@
-<map id="android_test_input_configuration" name="android_test_input_configuration">
-<area shape="rect" id="node2" href="$android__cahal_8h.html#a4fd42d76fa0c60881cfedba285b7b934" title="Function that simply sets up a test input configuration and tests to see if it is supported in hardwa..." alt="" coords="184,5,333,44"/>
-<area shape="rect" id="node3" href="$android__cahal_8h.html#a9dacb11c8149d2764a59938c7b44a814" title="Collect the list of supported input audio configurations and adds them to the list. " alt="" coords="381,12,561,37"/>
-<area shape="rect" id="node4" href="$cahal__device_8h.html#a1c0a250dc3fd364f23fe2e3962e0570f" title="Instantiates a list of audio input/output devices in a platform&#45; agnostic way. " alt="" coords="609,12,758,37"/>
-</map>

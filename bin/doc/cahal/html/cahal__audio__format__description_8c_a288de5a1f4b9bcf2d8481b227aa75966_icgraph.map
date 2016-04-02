@@ -1,7 +1,0 @@
-<map id="cahal_print_audio_format_id" name="cahal_print_audio_format_id">
-<area shape="rect" id="node2" href="$cahal__device__stream_8h.html#aaa4ac3590d126ced199bb81bea1d4711" title="Prints a single device stream using the logger. The stream is logger at CPC_LOG_LEVEL_INFO. " alt="" coords="243,24,375,63"/>
-<area shape="rect" id="node3" href="$cahal__device__stream_8h.html#aad7b37dffc935ac39b9c754baa09cc58" title="Prints all device streams using the logger. The streams are logged at CPC_LOG_LEVEL_INFO. " alt="" coords="423,24,556,63"/>
-<area shape="rect" id="node4" href="$cahal__device_8h.html#a6770c6178d1b0d1ff05066e1d34a0d6d" title="Prints in_device using the logger at the LOG level. " alt="" coords="604,31,736,56"/>
-<area shape="rect" id="node5" href="$cahal__device_8h.html#ae6b743f3ff621c73223dfad8a1b6e9ad" title="Prints all the devices in in__device_list. " alt="" coords="784,5,941,31"/>
-<area shape="rect" id="node6" href="$osx__cahal_8h.html#a2c766f421fdf2004c3d898de2de3b39a" title="Generates and returns a new list of devices from the OS. This function only needs to be called once t..." alt="" coords="794,55,931,80"/>
-</map>

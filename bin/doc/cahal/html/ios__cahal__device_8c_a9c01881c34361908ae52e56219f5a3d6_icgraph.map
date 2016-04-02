@@ -1,7 +1,0 @@
-<map id="ios_get_device_uint32_property" name="ios_get_device_uint32_property">
-<area shape="rect" id="node2" href="$ios__cahal__device_8h.html#a5af20d688948cb3f4ca099c488d8c804" title="Configures the only built in output device supported by iOS. This sets the minimum required fields (e..." alt="" coords="207,5,391,31"/>
-<area shape="rect" id="node5" href="$ios__cahal__device_8h.html#aac63b0d23fd3b6518fb991a7e0a618f2" title="Configures the only built in input device supported by iOS. This sets the minimum required fields (e..." alt="" coords="211,55,387,80"/>
-<area shape="rect" id="node6" href="$ios__cahal__device_8h.html#a9c537b430f11dfed9041007f6c76fea8" title="Query the audio session to determine if audio input is supported. Note that even if the hardware supp..." alt="" coords="216,104,383,129"/>
-<area shape="rect" id="node3" href="$ios__cahal__device_8h.html#ac5c2461e02b1909f44620386c0578192" title="Mallocs and populates a newly created cahal_device struct. Note that the returned structure is an arr..." alt="" coords="439,48,588,87"/>
-<area shape="rect" id="node4" href="$ios__cahal_8c.html#a1c0a250dc3fd364f23fe2e3962e0570f" title="Instantiates a list of audio input/output devices in a platform&#45; agnostic way. " alt="" coords="636,55,785,80"/>
-</map>

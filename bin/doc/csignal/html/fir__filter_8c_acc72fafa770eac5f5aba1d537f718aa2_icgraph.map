@@ -1,4 +1,0 @@
-<map id="csignal_destroy_passband_filter" name="csignal_destroy_passband_filter">
-<area shape="rect" id="node2" href="$kaiser__filter_8h.html#a8bf1d0c0e072a20677e689e04a11ae42" title="Initializesk a new fir_passband_filter struct as a Kaiser filter and designed according to the input ..." alt="" coords="250,5,368,44"/>
-<area shape="rect" id="node3" href="$kaiser__filter_8h.html#afa72afd06815e6ec8d255d7005ca610d" title="Initializes a new fir_passband_filter struct as a LP Kaiser filter, designed according to the input p..." alt="" coords="233,68,385,107"/>
-</map>

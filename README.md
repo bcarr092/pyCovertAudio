@@ -101,34 +101,6 @@ Since this project uses Git submodules, execute the following command to checkou
 git clone --recursive https://github.com/bcarr092/pyCovertAudio.git
 ```
 
-## Running a Pre-Built Instance of pyCovertAudio
-
-In the `bin` directory there are pre-built binary versions of the libraries (e.g., CAHAL, CPCommon, CSignal), covering the following platforms and architectures, that pyCovertAudio depends on :
-
-| Platform      | Architecture      |
-|---------------|-------------------|
-| MacOSX        | x86\_64           |
-| MacOSX        | i386              |
-| Windows       | i386              |
-| iPhoneOS      | armv7             |
-| Android       | arm               |
-
-To execute pyCovertAudio on your platform using these pre-built libraries add the following paths to the *PYTHONPATH* environment variable:
-
-* lib
-* lib/&lt;platform&gt;/&lt;platform&gt;/&lt;arch&gt;
-
-where `<platform>` and `<arch>` are set to the values corresponding to the line from the table above that matches your current system's platform and architecture. Once the *PYTHONPATH* environment variable has been set, execute the following commands:
-
-```
-cd bin
-python pyCovertAudio.py -c conf/ListDevices.json
-```
-
-This should list all the input (i.e., recording) and output (i.e., playback) devices on your system.
-
-*Note*: In order to execute the Windows version of the pre-built pyCovertAudio script the Visual Studio 2013 redistributable [run-time](https://www.microsoft.com/en-ca/download/details.aspx?id=40784) must be installed on your system.
-
 ## Building and Running on Your Current Platform
 
 ### Configuration

@@ -1,4 +1,0 @@
-<map id="android_init_input_device_struct" name="android_init_input_device_struct">
-<area shape="rect" id="node2" href="$android__cahal_8h.html#a9dacb11c8149d2764a59938c7b44a814" title="Collect the list of supported input audio configurations and adds them to the list. " alt="" coords="180,12,360,37"/>
-<area shape="rect" id="node3" href="$cahal__device_8h.html#a1c0a250dc3fd364f23fe2e3962e0570f" title="Instantiates a list of audio input/output devices in a platform&#45; agnostic way. " alt="" coords="408,12,557,37"/>
-</map>

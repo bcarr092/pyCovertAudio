@@ -1,6 +1,0 @@
-<map id="src/include/log_definitions.h" name="src/include/log_definitions.h">
-<area shape="rect" id="node2" href="$_c_p_common_8h.html" title="This is the cross&#45;platform entry point to the cpcommon lib. This is the only file that external libra..." alt="" coords="206,79,378,104"/>
-<area shape="rect" id="node3" href="$cpcommon_8c.html" title="src/common/cpcommon.c" alt="" coords="5,152,179,177"/>
-<area shape="rect" id="node4" href="$log__functions_8h.html" title="Logging functions that allow for messages to be logged at multiple different logging levels are defin..." alt="" coords="203,152,381,177"/>
-<area shape="rect" id="node5" href="$log_8c.html" title="src/common/log.c" alt="" coords="229,225,355,251"/>
-</map>

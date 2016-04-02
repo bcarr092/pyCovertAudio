@@ -1,4 +1,0 @@
-<map id="detect_exhaustive_find_max" name="detect_exhaustive_find_max">
-<area shape="rect" id="node2" href="$detect_8h.html#af9e80bc29cc4f42bcc6b990fd37e8517" title="This function performs the following algorithm: " alt="" coords="411,5,548,44"/>
-<area shape="rect" id="node3" href="$detect_8c.html#a8790a34d8b6270deb772bc8c4aed78bb" title="Performs a hill climbing algorithm until the energy difference on both sides of the hill are within i..." alt="" coords="244,37,363,63"/>
-</map>

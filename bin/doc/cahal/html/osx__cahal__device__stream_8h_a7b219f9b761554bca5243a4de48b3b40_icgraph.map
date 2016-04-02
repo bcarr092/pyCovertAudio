@@ -1,5 +1,0 @@
-<map id="osx_set_cahal_device_stream_struct" name="osx_set_cahal_device_stream_struct">
-<area shape="rect" id="node2" href="$osx__cahal__device__stream_8h.html#a671a639296e9f52b3f98bf64eb892ad3" title="Populate the list of streams supported by the audio device identified by the handle in io_device..." alt="" coords="206,12,375,37"/>
-<area shape="rect" id="node3" href="$osx__cahal__device_8h.html#a3a32ac95e53f55b6df7d322ed0180e54" title="Populate the given io_device struct with the parameters of the audio hardware object defined by in_de..." alt="" coords="423,5,575,44"/>
-<area shape="rect" id="node4" href="$osx__cahal_8h.html#a2c766f421fdf2004c3d898de2de3b39a" title="Generates and returns a new list of devices from the OS. This function only needs to be called once t..." alt="" coords="623,12,761,37"/>
-</map>

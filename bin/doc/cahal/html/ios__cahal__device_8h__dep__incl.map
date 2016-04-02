@@ -1,7 +1,0 @@
-<map id="src/include/darwin/ios/ios_cahal_device.h" name="src/include/darwin/ios/ios_cahal_device.h">
-<area shape="rect" id="node2" href="$ios__cahal__device_8c.html" title="src/darwin/ios/ios\l_cahal_device.c" alt="" coords="5,92,129,131"/>
-<area shape="rect" id="node3" href="$ios__cahal_8h.html" title="iOS platform specific calls to initialize the audio API. " alt="" coords="152,92,280,131"/>
-<area shape="rect" id="node5" href="$ios__cahal__initialize_8h.html" title="objective&#45;c class that provides access to the underlying playback/ record hardware via an objective&#45;c..." alt="" coords="304,92,473,131"/>
-<area shape="rect" id="node4" href="$ios__cahal_8c.html" title="src/darwin/ios/ios\l_cahal.c" alt="" coords="155,179,278,217"/>
-<area shape="rect" id="node6" href="$ios__cahal__initialize_8m.html" title="src/darwin/ios/ios\l_cahal_initialize.m" alt="" coords="323,179,454,217"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="csignal_calculate_FFT" name="csignal_calculate_FFT">
-<area shape="rect" id="node2" href="$fft_8c.html#abacf9ebc86e4f8d0058274af327632de" title="Finds the next power of 2 larger than or equal to in_number. " alt="" coords="429,5,600,44"/>
-<area shape="rect" id="node3" href="$fft_8c.html#aa806f8789288a12d98e6092431b092a9" title="Takes the elements in in_real_signal and copies their values to the even elements in in_complex_signa..." alt="" coords="208,33,381,72"/>
-<area shape="rect" id="node4" href="$fft_8c.html#aa1d9bbe8f936da36ba662496b7772e88" title="The Numerical Recipes implementation of the FFT algorithm. " alt="" coords="254,96,335,121"/>
-</map>

@@ -1,3 +1,0 @@
-<map id="bit_stream_destroy" name="bit_stream_destroy">
-<area shape="rect" id="node2" href="$bit__packer_8c.html#abdf630b288cdb85b3e3c843d925d9848" title="Frees the struct in_bit_packer. Will also destroy the internal buffer data of the struct..." alt="" coords="188,5,322,31"/>
-</map>

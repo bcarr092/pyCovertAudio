@@ -1,5 +1,0 @@
-<map id="detect_calculate_energy" name="detect_calculate_energy">
-<area shape="rect" id="node2" href="$detect_8h.html#af9e80bc29cc4f42bcc6b990fd37e8517" title="This function performs the following algorithm: " alt="" coords="625,19,762,58"/>
-<area shape="rect" id="node3" href="$detect_8c.html#a1ca8fa95019c114cdc5256ddf24f4a0e" title="Performs an exhaustive search for the offset in in_signal between in_start_index and in_end_index tha..." alt="" coords="219,26,410,51"/>
-<area shape="rect" id="node4" href="$detect_8c.html#a8790a34d8b6270deb772bc8c4aed78bb" title="Performs a hill climbing algorithm until the energy difference on both sides of the hill are within i..." alt="" coords="458,76,577,102"/>
-</map>

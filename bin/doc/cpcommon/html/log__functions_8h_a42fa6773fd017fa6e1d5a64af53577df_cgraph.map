@@ -1,4 +1,0 @@
-<map id="cpc_log_buffer" name="cpc_log_buffer">
-<area shape="rect" id="node2" href="$cpcommon_8c.html#a1397075f1f43a33fe50e149babbf99e2" title="Cross&#45;platform wrapper for vfprintf. " alt="" coords="201,5,284,31"/>
-<area shape="rect" id="node3" href="$log_8c.html#a0f61bc13a62a08f751e038567dc62f80" title="Translates the log level to its string representation. " alt="" coords="162,55,323,80"/>
-</map>

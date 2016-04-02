@@ -1,9 +1,0 @@
-<map id="src/include/bit_packer.h" name="src/include/bit_packer.h">
-<area shape="rect" id="node2" href="$bit__packer_8c.html" title="Implementation of storate class for bits. " alt="" coords="5,79,119,104"/>
-<area shape="rect" id="node3" href="$bit__stream_8h.html" title="Functions to handle reading bits from a byte buffer. " alt="" coords="144,79,306,104"/>
-<area shape="rect" id="node5" href="$csignal_8h.html" title="This is the main include file for the csignal library. This is the only header file that needs to be ..." alt="" coords="273,152,414,177"/>
-<area shape="rect" id="node4" href="$bit__stream_8c.html" title="Implementation of functions to read bits from a byte buffer. " alt="" coords="134,152,249,177"/>
-<area shape="rect" id="node6" href="$csignal_8c.html" title="This file contains the implementation for generating data modulated audio signals. Currently, implementations for BFSK and DSSS are supported. " alt="" coords="156,225,251,251"/>
-<area shape="rect" id="node7" href="$detect_8h.html" title="Functions used to detect the presence of input (i.e., received) signals. " alt="" coords="276,225,412,251"/>
-<area shape="rect" id="node8" href="$detect_8c.html" title="Implementation of signal detection routines. " alt="" coords="299,299,388,324"/>
-</map>

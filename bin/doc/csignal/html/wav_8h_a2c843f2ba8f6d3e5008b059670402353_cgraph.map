@@ -1,8 +1,0 @@
-<map id="csignal_write_FLOAT_wav" name="csignal_write_FLOAT_wav">
-<area shape="rect" id="node2" href="$wav_8c.html#a3ebc206bbda5a094c7779aa9b19bdfe1" title="This function will write a new RIFF header to the file pointed to by in_file_pointer. " alt="" coords="255,5,391,44"/>
-<area shape="rect" id="node4" href="$wav_8c.html#a2de8d0594bb5a2829a7958e011c05490" title="This function will write a new WAVE format header to the file pointed to by in_file_pointer. " alt="" coords="251,180,395,219"/>
-<area shape="rect" id="node6" href="$wav_8c.html#a0663b1eb825ea390414f23d00f043207" title="Writes a fact header chunk to the file pointed to by in_file_pointer. This is a required chunk for no..." alt="" coords="259,68,387,107"/>
-<area shape="rect" id="node7" href="$wav_8c.html#ab2200c41aa7db21e3da2db990c19a0ba" title="This function will write all the data in in_samples in interleaved form to the WAVE file pointed to i..." alt="" coords="232,131,413,156"/>
-<area shape="rect" id="node3" href="$wav_8c.html#addec4f94a8a194adf55d8fe460617dc4" title="Converts in_number to little endian. If in_number is already in little endian format nothing is done..." alt="" coords="469,93,605,132"/>
-<area shape="rect" id="node5" href="$wav_8c.html#a1c23e637640b4fd4a2b5a8ef89ea23d3" title="Converts in_number to little endian. If in_number is already in little endian format nothing is done..." alt="" coords="461,180,612,219"/>
-</map>

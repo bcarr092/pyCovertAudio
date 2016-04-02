@@ -1,9 +1,0 @@
-<map id="src/include/types.h" name="src/include/types.h">
-<area shape="rect" id="node2" href="$_c_p_common_8h.html" title="This is the cross&#45;platform entry point to the cpcommon lib. This is the only file that external libra..." alt="" coords="143,165,316,191"/>
-<area shape="rect" id="node6" href="$cpcommon__error__codes_8h.html" title="File containing the enum of errors used by the logger. " alt="" coords="267,79,421,117"/>
-<area shape="rect" id="node7" href="$windows_2function__map_8h.html" title="File that maps the platform indepent functions to the platform specific functions by using macros..." alt="" coords="445,79,585,117"/>
-<area shape="rect" id="node3" href="$cpcommon_8c.html" title="src/common/cpcommon.c" alt="" coords="5,239,179,264"/>
-<area shape="rect" id="node4" href="$log__functions_8h.html" title="Logging functions that allow for messages to be logged at multiple different logging levels are defin..." alt="" coords="203,239,381,264"/>
-<area shape="rect" id="node5" href="$log_8c.html" title="src/common/log.c" alt="" coords="229,312,355,337"/>
-<area shape="rect" id="node8" href="$windows_2functions_8c_source.html" title="src/windows/functions.c" alt="" coords="434,165,595,191"/>
-</map>

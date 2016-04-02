@@ -1,9 +1,0 @@
-<map id="ios_get_device_property_value" name="ios_get_device_property_value">
-<area shape="rect" id="node2" href="$ios__cahal__device_8h.html#a9c01881c34361908ae52e56219f5a3d6" title="Extract the UINT32 value of in_property from the audio session The extracted value is stored in out_d..." alt="" coords="222,68,376,107"/>
-<area shape="rect" id="node8" href="$ios__cahal__device_8h.html#ae225b841e6d161ba5da6a3febb232156" title="Extract the FLOAT64 value of in_property from the audio session The extracted value is stored in out_..." alt="" coords="220,5,378,44"/>
-<area shape="rect" id="node3" href="$ios__cahal__device_8h.html#a5af20d688948cb3f4ca099c488d8c804" title="Configures the only built in output device supported by iOS. This sets the minimum required fields (e..." alt="" coords="426,61,609,87"/>
-<area shape="rect" id="node6" href="$ios__cahal__device_8h.html#aac63b0d23fd3b6518fb991a7e0a618f2" title="Configures the only built in input device supported by iOS. This sets the minimum required fields (e..." alt="" coords="430,12,605,37"/>
-<area shape="rect" id="node7" href="$ios__cahal__device_8h.html#a9c537b430f11dfed9041007f6c76fea8" title="Query the audio session to determine if audio input is supported. Note that even if the hardware supp..." alt="" coords="434,111,601,136"/>
-<area shape="rect" id="node4" href="$ios__cahal__device_8h.html#ac5c2461e02b1909f44620386c0578192" title="Mallocs and populates a newly created cahal_device struct. Note that the returned structure is an arr..." alt="" coords="657,55,806,93"/>
-<area shape="rect" id="node5" href="$ios__cahal_8c.html#a1c0a250dc3fd364f23fe2e3962e0570f" title="Instantiates a list of audio input/output devices in a platform&#45; agnostic way. " alt="" coords="854,61,1003,87"/>
-</map>

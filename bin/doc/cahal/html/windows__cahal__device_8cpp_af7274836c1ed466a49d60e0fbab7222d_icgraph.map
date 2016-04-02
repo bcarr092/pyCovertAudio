@@ -1,5 +1,0 @@
-<map id="windows_set_device_name" name="windows_set_device_name">
-<area shape="rect" id="node2" href="$windows__cahal__device_8cpp.html#a6ecbb8a1a28854dc0380a2b3b52d5d99" title="Sets out_device&#39;s name, ID, and state by querying the hardware pointed to by in_endpoint. A call is made from this function to set the streams. Success is returned if this device has streams. " alt="" coords="238,5,410,31"/>
-<area shape="rect" id="node3" href="$windows__cahal__device_8cpp.html#a56fbdce3a8984a291fe214f0c2e6ea85" title="Enumerates the audio IO devices and creates the device list struct. " alt="" coords="458,5,626,31"/>
-<area shape="rect" id="node4" href="$windows__cahal_8c.html#a1c0a250dc3fd364f23fe2e3962e0570f" title="Instantiates a list of audio input/output devices in a platform&#45; agnostic way. " alt="" coords="674,5,823,31"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="osx_set_cahal_audio_format_description_list" name="osx_set_cahal_audio_format_description_list">
-<area shape="rect" id="node2" href="$osx__cahal__device_8c.html#a6dd7236ef8dc84e26d16bebd57b9e459" title="Generic function to extract both the size and value for in_property from the audio hardware in_device..." alt="" coords="215,5,386,44"/>
-<area shape="rect" id="node4" href="$darwin__cahal__audio__format__description_8c.html#a9ab0658f5ee8e67c8599c83b9ee430c1" title="This function bridges the core audio format constants to the cahal format constants. It takes as input a core audio format id and returns a cahal format id. The platform specific format valules are not bitmasks and must be checked for equality since only one value can be set at a time. " alt="" coords="219,68,382,120"/>
-<area shape="rect" id="node3" href="$osx__cahal__device_8c.html#ae8645a8ea93655207465ed943d8905b7" title="Generic function to extract the value for in_property from the audio hardware in_device_id. The extracted value is stored in out_device_property_value. This is a helper function to wrap the OSX interface for audio hardware. " alt="" coords="434,5,604,44"/>
-</map>

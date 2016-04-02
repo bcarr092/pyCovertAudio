@@ -1,4 +1,0 @@
-<map id="windows_set_device_info" name="windows_set_device_info">
-<area shape="rect" id="node2" href="$windows__cahal__device_8cpp.html#a56fbdce3a8984a291fe214f0c2e6ea85" title="Enumerates the audio IO devices and creates the device list struct. " alt="" coords="226,5,394,31"/>
-<area shape="rect" id="node3" href="$windows__cahal_8c.html#a1c0a250dc3fd364f23fe2e3962e0570f" title="Instantiates a list of audio input/output devices in a platform&#45; agnostic way. " alt="" coords="442,5,591,31"/>
-</map>

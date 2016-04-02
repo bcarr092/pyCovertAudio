@@ -1,4 +1,0 @@
-<map id="darwin_configure_asbd" name="darwin_configure_asbd">
-<area shape="rect" id="node2" href="$darwin__cahal__audio__format__flags_8c.html#adb312d455b2b582f8f3683bf22dc0c4c" title="Converts CAHAL format flags to platform specific flags. Note that the platform agnostic CAHAL flags d..." alt="" coords="213,5,388,57"/>
-<area shape="rect" id="node3" href="$darwin__cahal__audio__format__description_8c.html#a764e822e29d0d1ff389aad1228bb1bf5" title="This function maps cahal audio format constants back to the platform specific constants supported by ..." alt="" coords="213,81,389,133"/>
-</map>

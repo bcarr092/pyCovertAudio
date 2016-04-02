@@ -1,6 +1,0 @@
-<map id="ios_add_format_description" name="ios_add_format_description">
-<area shape="rect" id="node2" href="$ios__cahal__device__stream_8c.html#a467f9a4f75bd92c6a24eebacaab6bcdf" title="Determines the audio formats that are supported by the hardware running iOS. " alt="" coords="238,5,410,44"/>
-<area shape="rect" id="node3" href="$ios__cahal__device_8h.html#a767c85018ae3765339ba25ea60990eb7" title="Configures the default input/output stream depending on in_direction This function sets the minimum f..." alt="" coords="458,12,616,37"/>
-<area shape="rect" id="node4" href="$ios__cahal__device_8h.html#ac5c2461e02b1909f44620386c0578192" title="Mallocs and populates a newly created cahal_device struct. Note that the returned structure is an arr..." alt="" coords="664,5,813,44"/>
-<area shape="rect" id="node5" href="$ios__cahal_8c.html#a1c0a250dc3fd364f23fe2e3962e0570f" title="Instantiates a list of audio input/output devices in a platform&#45; agnostic way. " alt="" coords="861,12,1010,37"/>
-</map>

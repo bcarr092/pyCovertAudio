@@ -1,5 +1,0 @@
-<map id="csignal_get_gold_code" name="csignal_get_gold_code">
-<area shape="rect" id="node2" href="$spreading__code_8h.html#a8cbfa75c5ebbfa25c460a1e77cd982c9" title="Gets the next in_number_of_bits from the sequence generator configured in in_spreading_code. The generated bits are returned as a byte array in out_code. The size of the byte array is in out_size. " alt="" coords="211,12,402,37"/>
-<area shape="rect" id="node3" href="$spreading__code_8c.html#a651addb5a3d28df737c047106bc35645" title="Executes one interation of the LFSR in in_spreading_code to generate one code bit. A single state change is done by bit&#45;wise anding the generator with the state, and summing the result modulo&#45;2 to get the next input bit. The output bit is simply the LSB of the state. " alt="" coords="450,5,605,44"/>
-<area shape="rect" id="node4" href="$spreading__code_8c.html#a87ef6ab904ce66a7330c21c8bf3f7a9d" title="Sumes the ones in the in_input vector modulo&#45;2. " alt="" coords="653,12,785,37"/>
-</map>

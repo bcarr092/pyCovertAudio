@@ -1,5 +1,0 @@
-<map id="android_playback_callback" name="android_playback_callback">
-<area shape="rect" id="node2" href="$android__cahal__device_8h.html#af22c1255bf98e2eddce9998987065c51" title="Registers a callback function to be called when more samples are required by the OS. " alt="" coords="238,5,416,44"/>
-<area shape="rect" id="node4" href="$android__cahal__device_8h.html#a24a3595bcd710a678c3fafbaca4202fd" title="Allocate, populate and enqueue buffers onto the OpenSLES buffer. " alt="" coords="235,68,420,107"/>
-<area shape="rect" id="node3" href="$cahal__device_8h.html#a659d2afa28a2eee575c238ae2c54a90f" title="The entry point into the CAHAL library to start playback. The caller is responsible for supplying all..." alt="" coords="468,44,615,69"/>
-</map>

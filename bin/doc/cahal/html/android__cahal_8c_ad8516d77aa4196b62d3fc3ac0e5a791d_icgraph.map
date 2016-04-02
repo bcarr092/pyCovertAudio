@@ -1,4 +1,0 @@
-<map id="android_init_and_test_output_configuration" name="android_init_and_test_output_configuration">
-<area shape="rect" id="node2" href="$android__cahal_8h.html#a2dd5bdfbf207cf5fe572766aef39b8b0" title="Collect the list of supported output audio configurations and adds them to the list. " alt="" coords="203,5,338,44"/>
-<area shape="rect" id="node3" href="$cahal__device_8h.html#a1c0a250dc3fd364f23fe2e3962e0570f" title="Instantiates a list of audio input/output devices in a platform&#45; agnostic way. " alt="" coords="386,12,535,37"/>
-</map>

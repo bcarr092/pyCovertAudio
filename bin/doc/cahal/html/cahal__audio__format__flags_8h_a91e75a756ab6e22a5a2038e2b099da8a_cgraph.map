@@ -1,4 +1,0 @@
-<map id="cahal_print_audio_format_flag" name="cahal_print_audio_format_flag">
-<area shape="rect" id="node2" href="$cahal__audio__format__flags_8c.html#acbe8e7915e362c49fb5922cdbd0b5224" title="Pretty print hte audio format flags. " alt="" coords="254,5,418,44"/>
-<area shape="rect" id="node3" href="$cahal__audio__format__flags_8c.html#aafb8929b217a135b8a0eb93dc7ca5bd9" title="Returns the string representation of the flag represented by in_audio_format_flag. " alt="" coords="466,5,626,44"/>
-</map>

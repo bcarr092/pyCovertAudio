@@ -1,4 +1,0 @@
-<map id="darwin_free_context" name="darwin_free_context">
-<area shape="rect" id="node2" href="$darwin__cahal__device_8c.html#a30cb2441ebd6aaa5ca0c42b371bd1828" title="Calling this function will stop playback and free all structures related to the playback to the OS..." alt="" coords="196,5,342,31"/>
-<area shape="rect" id="node3" href="$darwin__cahal__device_8c.html#a662559b543a161142d22fcc81151e275" title="Calling this function will stop recording and free all structures related to the recording back to th..." alt="" coords="195,55,344,80"/>
-</map>

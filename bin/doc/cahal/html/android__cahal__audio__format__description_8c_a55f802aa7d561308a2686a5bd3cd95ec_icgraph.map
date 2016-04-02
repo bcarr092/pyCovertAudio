@@ -1,8 +1,0 @@
-<map id="android_convert_android_audio_format_id_to_cahal_audio_format_id" name="android_convert_android_audio_format_id_to_cahal_audio_format_id">
-<area shape="rect" id="node2" href="$android__cahal_8c.html#a4bb23a4ef5de0f31bb23aae58349b895" title="Initialize the list of configured output (speakers) devices and their associated supported audio form..." alt="" coords="238,5,373,44"/>
-<area shape="rect" id="node5" href="$android__cahal_8h.html#af1a8767560a035e94e2f612aea6e9c80" title="Create the structures required to define a cahal_device. Android has one stream per device..." alt="" coords="243,131,369,169"/>
-<area shape="rect" id="node7" href="$android__cahal_8c.html#a5f59d7ef95ea8a67a3f92ad20c83c6fe" title="Adds the supported format to the cahal struct. " alt="" coords="236,68,376,107"/>
-<area shape="rect" id="node3" href="$android__cahal_8h.html#a2dd5bdfbf207cf5fe572766aef39b8b0" title="Collect the list of supported output audio configurations and adds them to the list. " alt="" coords="446,40,582,79"/>
-<area shape="rect" id="node4" href="$cahal__device_8h.html#a1c0a250dc3fd364f23fe2e3962e0570f" title="Instantiates a list of audio input/output devices in a platform&#45; agnostic way. " alt="" coords="652,75,801,100"/>
-<area shape="rect" id="node6" href="$android__cahal_8h.html#a9dacb11c8149d2764a59938c7b44a814" title="Collect the list of supported input audio configurations and adds them to the list. " alt="" coords="424,103,604,128"/>
-</map>

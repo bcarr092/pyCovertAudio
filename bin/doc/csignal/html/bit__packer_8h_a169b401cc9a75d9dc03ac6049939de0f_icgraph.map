@@ -1,5 +1,0 @@
-<map id="bit_packer_add_bits" name="bit_packer_add_bits">
-<area shape="rect" id="node2" href="$bit__packer_8h.html#adb6d2902b1f5d04c2721684371a13410" title="Adds the data in in_data to the bit packer. " alt="" coords="194,5,346,31"/>
-<area shape="rect" id="node4" href="$bit__stream_8h.html#ad6e9ca126cc22d62b3796aeaf28b89e9" title="Copies up to io_num_bits from io_bit_stream, copies them to out_data and returns the size of out_data..." alt="" coords="201,55,339,80"/>
-<area shape="rect" id="node3" href="$bit__stream_8h.html#a544dba77cf76c24394b77265b3f9ce79" title="Initializes the bit_stream struct with a data buffer and sets both bit and byte offsets to 0..." alt="" coords="394,5,532,31"/>
-</map>

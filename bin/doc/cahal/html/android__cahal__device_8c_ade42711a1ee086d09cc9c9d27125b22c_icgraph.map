@@ -1,6 +1,0 @@
-<map id="android_compute_bytes_per_buffer" name="android_compute_bytes_per_buffer">
-<area shape="rect" id="node2" href="$android__cahal__device_8h.html#a24a3595bcd710a678c3fafbaca4202fd" title="Allocate, populate and enqueue buffers onto the OpenSLES buffer. " alt="" coords="217,5,402,44"/>
-<area shape="rect" id="node4" href="$android__cahal__device_8h.html#a99bf385af08368ad8f3e193ba9a7270b" title="Allocate and enqueue buffers onto the OpenSLES buffer. " alt="" coords="224,68,395,107"/>
-<area shape="rect" id="node3" href="$cahal__device_8h.html#a659d2afa28a2eee575c238ae2c54a90f" title="The entry point into the CAHAL library to start playback. The caller is responsible for supplying all..." alt="" coords="452,12,598,37"/>
-<area shape="rect" id="node5" href="$cahal__device_8h.html#aec6bf662a89cae02dcb40d0a36336343" title="The entry point into the CAHAL library to start recording. The caller is responsible for supplying al..." alt="" coords="450,75,600,100"/>
-</map>

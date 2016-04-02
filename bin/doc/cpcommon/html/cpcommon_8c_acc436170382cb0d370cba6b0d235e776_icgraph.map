@@ -1,7 +1,0 @@
-<map id="cpc_safe_free" name="cpc_safe_free">
-<area shape="rect" id="node2" href="$_c_p_common_8h.html#a6c66ba1f9880e5d72e73ef373e24b7f8" title="Cross&#45;platform wrapper for vsnprintf. " alt="" coords="186,5,279,31"/>
-<area shape="rect" id="node3" href="$_c_p_common_8h.html#a43d7fb53deec6cf654c66ffdcccb7cb0" title="Converts in_code to its string representation if possible and returns the newly created string..." alt="" coords="158,55,307,93"/>
-<area shape="rect" id="node5" href="$_c_p_common_8h.html#aaec64bca53868be1c61effcc878f3971" title="Creates a safe implementation of malloc. This function will safely allocate a new memory buffer..." alt="" coords="172,117,293,143"/>
-<area shape="rect" id="node6" href="$_c_p_common_8h.html#acece01847bc691b7c7f07116df9a14c3" title="Reallocates io_pointer to a buffer of size in_new_size and copies the contents of io_pointer to the n..." alt="" coords="355,143,476,168"/>
-<area shape="rect" id="node4" href="$_c_p_common_8h.html#a6dd916ae0b5f9c9b215ef8441d2fe917" title="Converts in_code to its string representation if possible and outputs it using the logger..." alt="" coords="359,61,471,87"/>
-</map>

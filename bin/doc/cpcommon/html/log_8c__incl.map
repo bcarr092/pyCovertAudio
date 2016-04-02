@@ -1,8 +1,0 @@
-<map id="src/common/log.c" name="src/common/log.c">
-<area shape="rect" id="node2" href="$log__functions_8h.html" title="Logging functions that allow for messages to be logged at multiple different logging levels are defin..." alt="" coords="169,79,280,104"/>
-<area shape="rect" id="node3" href="$_c_p_common_8h.html" title="This is the cross&#45;platform entry point to the cpcommon lib. This is the only file that external libra..." alt="" coords="176,152,274,177"/>
-<area shape="rect" id="node13" href="$cpcommon__error__codes_8h.html" title="File containing the enum of errors used by the logger. " alt="" coords="358,225,534,251"/>
-<area shape="rect" id="node6" href="$types_8h.html" title="This is the cross&#45;platform and cross&#45;architecture standard types file. This header is automatically i..." alt="" coords="222,299,286,324"/>
-<area shape="rect" id="node12" href="$log__definitions_8h.html" title="This file contains the definitions for the logger. All constants and typedefs have been placed in thi..." alt="" coords="217,225,334,251"/>
-<area shape="rect" id="node11" href="$target_8h.html" title="File that determines the platform the cpcommon library is being built for. This file deteremines the ..." alt="" coords="444,372,510,397"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="convolve" name="convolve">
-<area shape="rect" id="node2" href="$fir__filter_8h.html#a522cab3b421c91eb45eb10a6070d2991" title="Performs a convolution of the coefficients in in_filter and the signal values in in_signal. Stores the results in out_filtered_signal. If an error occurrs out_filtered_signal_length will be set to 0 and out_filtered_signal will be set to NULL. " alt="" coords="127,26,265,51"/>
-<area shape="rect" id="node3" href="$detect_8h.html#a0b2d4032c293105bfe6e13c37bfe7211" title="Calculates the energy in in_signal by executing the following algorithm: " alt="" coords="313,26,479,51"/>
-<area shape="rect" id="node4" href="$detect_8h.html#af9e80bc29cc4f42bcc6b990fd37e8517" title="This function performs the following algorithm: " alt="" coords="932,19,1069,58"/>
-<area shape="rect" id="node5" href="$detect_8c.html#a1ca8fa95019c114cdc5256ddf24f4a0e" title="Performs an exhaustive search for the offset in in_signal between in_start_index and in_end_index tha..." alt="" coords="527,26,717,51"/>
-<area shape="rect" id="node6" href="$detect_8c.html#a8790a34d8b6270deb772bc8c4aed78bb" title="Performs a hill climbing algorithm until the energy difference on both sides of the hill are within i..." alt="" coords="765,76,884,102"/>
-</map>

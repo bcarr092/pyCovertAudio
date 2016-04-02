@@ -1,4 +1,0 @@
-<map id="ios_get_output_device_info" name="ios_get_output_device_info">
-<area shape="rect" id="node2" href="$ios__cahal__device_8h.html#ac5c2461e02b1909f44620386c0578192" title="Mallocs and populates a newly created cahal_device struct. Note that the returned structure is an arr..." alt="" coords="237,5,386,44"/>
-<area shape="rect" id="node3" href="$ios__cahal_8c.html#a1c0a250dc3fd364f23fe2e3962e0570f" title="Instantiates a list of audio input/output devices in a platform&#45; agnostic way. " alt="" coords="434,12,583,37"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="src/include/kaiser_filter.h" name="src/include/kaiser_filter.h">
-<area shape="rect" id="node2" href="$csignal_8h.html" title="This is the main include file for the csignal library. This is the only header file that needs to be ..." alt="" coords="122,92,263,117"/>
-<area shape="rect" id="node6" href="$kaiser__filter_8c_source.html" title="src/kaiser_filter.c" alt="" coords="287,92,408,117"/>
-<area shape="rect" id="node3" href="$csignal_8c.html" title="This file contains the implementation for generating data modulated audio signals. Currently, implementations for BFSK and DSSS are supported. " alt="" coords="5,165,100,191"/>
-<area shape="rect" id="node4" href="$detect_8h.html" title="Functions used to detect the presence of input (i.e., received) signals. " alt="" coords="125,165,261,191"/>
-<area shape="rect" id="node5" href="$detect_8c.html" title="Implementation of signal detection routines. " alt="" coords="148,239,237,264"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="android_initialize_playback_structs" name="android_initialize_playback_structs">
-<area shape="rect" id="node2" href="$android__cahal_8c.html#a2adf261da6eae23641d7bc3fcb433464" title="Create a new audio format struct with the given parameters. " alt="" coords="186,5,362,44"/>
-<area shape="rect" id="node3" href="$android__cahal_8c.html#abd2674b0579d973e1f2351bac06d0c5a" title="Generates a new output source (buffer queue) " alt="" coords="197,68,352,107"/>
-<area shape="rect" id="node4" href="$android__cahal_8c.html#a4db07269c7949e373a85c63f943cf35f" title="Generates a new output sink (speaker) " alt="" coords="181,131,367,156"/>
-</map>

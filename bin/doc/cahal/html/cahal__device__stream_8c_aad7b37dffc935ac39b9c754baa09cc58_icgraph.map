@@ -1,5 +1,0 @@
-<map id="cahal_print_device_stream_list" name="cahal_print_device_stream_list">
-<area shape="rect" id="node2" href="$cahal__device_8h.html#a6770c6178d1b0d1ff05066e1d34a0d6d" title="Prints in_device using the logger at the LOG level. " alt="" coords="186,31,318,56"/>
-<area shape="rect" id="node3" href="$cahal__device_8h.html#ae6b743f3ff621c73223dfad8a1b6e9ad" title="Prints all the devices in in__device_list. " alt="" coords="366,5,523,31"/>
-<area shape="rect" id="node4" href="$osx__cahal_8h.html#a2c766f421fdf2004c3d898de2de3b39a" title="Generates and returns a new list of devices from the OS. This function only needs to be called once t..." alt="" coords="376,55,513,80"/>
-</map>

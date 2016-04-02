@@ -1,7 +1,0 @@
-<map id="src/include/windows/windows_cahal_device_stream.hpp" name="src/include/windows/windows_cahal_device_stream.hpp">
-<area shape="rect" id="node2" href="$windows__cahal__device_8hpp.html" title="All APIs related to querying the underlying audio IO hardware are in this file. " alt="" coords="70,105,257,144"/>
-<area shape="rect" id="node6" href="$windows__cahal__device__stream_8cpp_source.html" title="src/windows/windows\l_cahal_device_stream.cpp" alt="" coords="282,105,462,144"/>
-<area shape="rect" id="node3" href="$windows__cahal_8h.html" title="Entry for the Windows CAHAL API. " alt="" coords="10,192,150,231"/>
-<area shape="rect" id="node5" href="$windows__cahal__device_8cpp.html" title="Implementation that queries the underlying Windows hardware and creates the device_list struct..." alt="" coords="173,192,322,231"/>
-<area shape="rect" id="node4" href="$windows__cahal_8c.html" title="src/windows/windows\l_cahal.c" alt="" coords="5,279,154,317"/>
-</map>

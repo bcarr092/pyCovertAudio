@@ -1,3 +1,0 @@
-<map id="cpc_safe_malloc" name="cpc_safe_malloc">
-<area shape="rect" id="node2" href="$cpcommon_8c.html#acc436170382cb0d370cba6b0d235e776" title="This function is a safe implementation of free. This function will free io_pointer if it is a valid p..." alt="" coords="174,5,279,31"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="cahal_device_t" name="cahal_device_t">
-<area shape="rect" id="node2" href="$structcahal__device__stream__t.html" title="cahal_device_stream_t" alt="" coords="121,192,279,217"/>
-<area shape="rect" id="node3" href="$structcahal__audio__format__description__t.html" title="cahal_audio_format\l_description_t" alt="" coords="127,92,265,131"/>
-<area shape="rect" id="node4" href="$structcahal__sample__rate__range__t.html" title="cahal_sample_rate_range_t" alt="" coords="5,5,192,31"/>
-</map>

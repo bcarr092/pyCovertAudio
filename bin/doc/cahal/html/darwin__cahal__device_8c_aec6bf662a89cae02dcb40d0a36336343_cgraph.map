@@ -1,9 +1,0 @@
-<map id="cahal_start_recording" name="cahal_start_recording">
-<area shape="rect" id="node2" href="$cahal__device_8c.html#a3eea0695d4d20950fae64c6b7f84b055" title="Tests to see if in_device is capable of supporting input or output depending on the value of in_direc..." alt="" coords="203,7,389,45"/>
-<area shape="rect" id="node3" href="$darwin__cahal__device_8c.html#aa7f707d631530f0be6a85538085e66b3" title="Helper function to create the AudioStreamBasicDescrition. This is the platform specific model that is..." alt="" coords="216,69,375,95"/>
-<area shape="rect" id="node6" href="$darwin__cahal__device_8c.html#adc68411bd69aa34e1fa7eb38b781e47b" title="Configures the platforms input (record) audio queue. " alt="" coords="216,119,375,157"/>
-<area shape="rect" id="node7" href="$darwin__cahal__device_8c.html#a7080994b4cb4f50629509cccf4346546" title="Allocates the necessary audio queue buffers and populates the queue with them. " alt="" coords="216,181,375,220"/>
-<area shape="rect" id="node4" href="$darwin__cahal__audio__format__flags_8c.html#adb312d455b2b582f8f3683bf22dc0c4c" title="Converts CAHAL format flags to platform specific flags. Note that the platform agnostic CAHAL flags d..." alt="" coords="437,5,613,57"/>
-<area shape="rect" id="node5" href="$darwin__cahal__audio__format__description_8c.html#a764e822e29d0d1ff389aad1228bb1bf5" title="This function maps cahal audio format constants back to the platform specific constants supported by ..." alt="" coords="437,81,613,133"/>
-<area shape="rect" id="node8" href="$darwin__cahal__device_8c.html#a78478e68ba0079c6a4ff8f7f1bd37533" title="Helper function to calculate number of bytes to put in each buffer based on the configured ASBD and i..." alt="" coords="446,181,604,220"/>
-</map>

@@ -1,4 +1,0 @@
-<map id="osx_get_device_supported_sample_rates" name="osx_get_device_supported_sample_rates">
-<area shape="rect" id="node2" href="$osx__cahal__device_8c.html#a6dd7236ef8dc84e26d16bebd57b9e459" title="Generic function to extract both the size and value for in_property from the audio hardware in_device..." alt="" coords="234,5,404,44"/>
-<area shape="rect" id="node3" href="$osx__cahal__device_8c.html#ae8645a8ea93655207465ed943d8905b7" title="Generic function to extract the value for in_property from the audio hardware in_device_id. The extracted value is stored in out_device_property_value. This is a helper function to wrap the OSX interface for audio hardware. " alt="" coords="452,5,623,44"/>
-</map>
